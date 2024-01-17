@@ -33,7 +33,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-lmcrean-budgetbusterswo-aqcl7zrah5d.ws-eu107.gitpod.io']
+ALLOWED_HOSTS = ['8000-lmcrean-budgetbusterswo-aqcl7zrah5d.ws-eu107.gitpod.io','budget-busters-working-title-d9dc880855f0.herokuapp.com']
 
 
 # Application definition
