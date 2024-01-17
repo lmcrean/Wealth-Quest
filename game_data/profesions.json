@@ -1,0 +1,92 @@
+[
+  {
+    "Id": 1,
+    "Profession": "Police Officer",
+    "Income": {
+      "Salary": 3000,
+      "Interest": 0,
+      "Real Estate": 0
+    },
+    "Expenses": {
+      "Taxes": 580,
+      "Home Mortgage payment": 400,
+      "School Loan Payment": 0,
+      "Car Loan Payment": 100,
+      "Credit Card Payment": 60,
+      "Retail Payment": 50,
+      "Other Expenses": 690,
+      "Child Expenses": 0
+    },
+    "Per Child Expense": 160,
+    "Assets": {
+      "Saving": 520
+    },
+    "Liabilities": {
+      "Home Mortages": 46000,
+      "School Loans": 0,
+      "Car Loans": 5000,
+      "Credit Cards": 2000,
+      "Retail Debt": 1000
+    }
+  },
+  {
+    "Id": 2,
+    "Profession": "Truck Driver",
+    "Income": {
+      "Salary": 2500,
+      "Interest": 0,
+      "Real Estate": 0
+    },
+    "Expenses": {
+      "Taxes": 460,
+      "Home Mortgage payment": 400,
+      "School Loan Payment": 0,
+      "Car Loan Payment": 80,
+      "Credit Card Payment": 60,
+      "Retail Payment": 50,
+      "Other Expenses": 570,
+      "Child Expenses": 0
+    },
+    "Per Child Expense": 140,
+    "Assets": {
+      "Saving": 750
+    },
+    "Liabilities": {
+      "Home Mortages": 38000,
+      "School Loans": 0,
+      "Car Loans": 4000,
+      "Credit Cards": 2000,
+      "Retail Debt": 1000
+    }
+  },
+  {
+    "Id": 3,
+    "Profession": "Janitor",
+    "Income": {
+      "Salary": 1600,
+      "Interest": 0,
+      "Real Estate": 0
+    },
+    "Expenses": {
+      "Taxes": 280,
+      "Home Mortgage payment": 200,
+      "School Loan Payment": 0,
+      "Car Loan Payment": 60,
+      "Credit Card Payment": 60,
+      "Retail Payment": 50,
+      "Other Expenses": 300,
+      "Child Expenses": 0
+    },
+    "Per Child Expense": 70,
+    "Assets": {
+      "Saving": 560
+    },
+    "Liabilities": {
+      "Home Mortages": 20000,
+      "School Loans": 0,
+      "Car Loans": 4000,
+      "Credit Cards": 2000,
+      "Retail Debt": 1000
+    }
+  }
+]
