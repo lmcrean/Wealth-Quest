@@ -1,92 +1,362 @@
 [
   {
-    "Id": 1,
-    "Profession": "Police Officer",
-    "Income": {
-      "Salary": 3000,
-      "Interest": 0,
-      "Real Estate": 0
+    "id": 0,
+    "profession": "Police Officer",
+    "income": {
+      "salary": 3000,
+      "interest": 0,
+      "real estate": 0
     },
-    "Expenses": {
-      "Taxes": 580,
-      "Home Mortgage payment": 400,
-      "School Loan Payment": 0,
-      "Car Loan Payment": 100,
-      "Credit Card Payment": 60,
-      "Retail Payment": 50,
-      "Other Expenses": 690,
-      "Child Expenses": 0
+    "expenses": {
+      "taxes": 580,
+      "home mortgage payment": 400,
+      "school loan payment": 0,
+      "car loan payment": 100,
+      "credit card payment": 60,
+      "retail payment": 50,
+      "other expenses": 690,
+      "child expenses": 0
     },
-    "Per Child Expense": 160,
-    "Assets": {
-      "Saving": 520
+    "per child expense": 160,
+    "assets": {
+      "saving": 520
     },
-    "Liabilities": {
-      "Home Mortages": 46000,
-      "School Loans": 0,
-      "Car Loans": 5000,
-      "Credit Cards": 2000,
-      "Retail Debt": 1000
+    "liabilities": {
+      "home mortages": 46000,
+      "school loans": 0,
+      "car loans": 5000,
+      "credit cards": 2000,
+      "retail debt": 1000
     }
   },
   {
-    "Id": 2,
-    "Profession": "Truck Driver",
-    "Income": {
-      "Salary": 2500,
-      "Interest": 0,
-      "Real Estate": 0
+    "id": 1,
+    "profession": "Truck Driver",
+    "income": {
+      "salary": 2500,
+      "interest": 0,
+      "real estate": 0
     },
-    "Expenses": {
-      "Taxes": 460,
-      "Home Mortgage payment": 400,
-      "School Loan Payment": 0,
-      "Car Loan Payment": 80,
-      "Credit Card Payment": 60,
-      "Retail Payment": 50,
-      "Other Expenses": 570,
-      "Child Expenses": 0
+    "expenses": {
+      "taxes": 460,
+      "home mortgage payment": 400,
+      "school loan payment": 0,
+      "car loan payment": 80,
+      "credit card payment": 60,
+      "retail payment": 50,
+      "other expenses": 570,
+      "child expenses": 0
     },
-    "Per Child Expense": 140,
-    "Assets": {
-      "Saving": 750
+    "per child expense": 140,
+    "assets": {
+      "saving": 750
     },
-    "Liabilities": {
-      "Home Mortages": 38000,
-      "School Loans": 0,
-      "Car Loans": 4000,
-      "Credit Cards": 2000,
-      "Retail Debt": 1000
+    "liabilities": {
+      "home mortages": 38000,
+      "school loans": 0,
+      "car loans": 4000,
+      "credit cards": 2000,
+      "retail debt": 1000
     }
   },
   {
-    "Id": 3,
-    "Profession": "Janitor",
-    "Income": {
-      "Salary": 1600,
-      "Interest": 0,
-      "Real Estate": 0
+    "id": 2,
+    "profession": "Janitor",
+    "income": {
+      "salary": 1600,
+      "interest": 0,
+      "real estate": 0
     },
-    "Expenses": {
-      "Taxes": 280,
-      "Home Mortgage payment": 200,
-      "School Loan Payment": 0,
-      "Car Loan Payment": 60,
-      "Credit Card Payment": 60,
-      "Retail Payment": 50,
-      "Other Expenses": 300,
-      "Child Expenses": 0
+    "expenses": {
+      "taxes": 280,
+      "home mortgage payment": 200,
+      "school loan payment": 0,
+      "car loan payment": 60,
+      "credit card payment": 60,
+      "retail payment": 50,
+      "other expenses": 300,
+      "child expenses": 0
     },
-    "Per Child Expense": 70,
-    "Assets": {
-      "Saving": 560
+    "per child expense": 70,
+    "assets": {
+      "saving": 560
     },
-    "Liabilities": {
-      "Home Mortages": 20000,
-      "School Loans": 0,
-      "Car Loans": 4000,
-      "Credit Cards": 2000,
-      "Retail Debt": 1000
+    "liabilities": {
+      "home mortages": 20000,
+      "school loans": 0,
+      "car loans": 4000,
+      "credit cards": 2000,
+      "retail debt": 1000
+    }
+  },
+  {
+    "id": 3,
+    "profession": "Teacher",
+    "income": {
+      "salary": 3300,
+      "interest": 0,
+      "real estate": 0
+    },
+    "expenses": {
+      "taxes": 630,
+      "home mortgage payment": 500,
+      "school loan payment": 60,
+      "car loan payment": 100,
+      "credit card payment": 90,
+      "retail payment": 50,
+      "other expenses": 760,
+      "child expenses": 0
+    },
+    "per child expense": 180,
+    "assets": {
+      "saving": 400
+    },
+    "liabilities": {
+      "home mortages": 50000,
+      "school loans": 12000,
+      "car loans": 5000,
+      "credit cards": 3000,
+      "retail debt": 1000
+    }
+  },
+  {
+    "id": 4,
+    "profession": "Doctor",
+    "income": {
+      "salary": 13200,
+      "interest": 0,
+      "real estate": 0
+    },
+    "expenses": {
+      "taxes": 3420,
+      "home mortgage payment": 1900,
+      "school loan payment": 750,
+      "car loan payment": 380,
+      "credit card payment": 270,
+      "retail payment": 50,
+      "other expenses": 2880,
+      "child expenses": 0
+    },
+    "per child expense": 640,
+    "assets": {
+      "saving": 400
+    },
+    "liabilities": {
+      "home mortages": 202000,
+      "school loans": 150000,
+      "car loans": 19000,
+      "credit cards": 9000,
+      "retail debt": 1000
+    }
+  },
+  {
+    "id": 5,
+    "profession": "Business Manager",
+    "income": {
+      "salary": 4600,
+      "interest": 0,
+      "real estate": 0
+    },
+    "expenses": {
+      "taxes": 910,
+      "home mortgage payment": 700,
+      "school loan payment": 60,
+      "car loan payment": 120,
+      "credit card payment": 90,
+      "retail payment": 50,
+      "other expenses": 1000,
+      "child expenses": 0
+    },
+    "per child expense": 240,
+    "assets": {
+      "saving": 400
+    },
+    "liabilities": {
+      "home mortages": 75000,
+      "school loans": 12000,
+      "car loans": 6000,
+      "credit cards": 3000,
+      "retail debt": 1000
+    }
+  },
+  {
+    "id": 6,
+    "profession": "Lawyer",
+    "income": {
+      "salary": 7500,
+      "interest": 0,
+      "real estate": 0
+    },
+    "expenses": {
+      "taxes": 1830,
+      "home mortgage payment": 1100,
+      "school loan payment": 390,
+      "car loan payment": 220,
+      "credit card payment": 180,
+      "retail payment": 50,
+      "other expenses": 1650,
+      "child expenses": 0
+    },
+    "per child expense": 380,
+    "assets": {
+      "saving": 400
+    },
+    "liabilities": {
+      "home mortages": 115000,
+      "school loans": 78000,
+      "car loans": 11000,
+      "credit cards": 6000,
+      "retail debt": 1000
+    }
+  },
+  {
+    "id": 7,
+    "profession": "Airline Pilot",
+    "income": {
+      "salary": 9500,
+      "interest": 0,
+      "real estate": 0
+    },
+    "expenses": {
+      "taxes": 2350,
+      "home mortgage payment": 1330,
+      "school loan payment": 0,
+      "car loan payment": 300,
+      "credit card payment": 660,
+      "retail payment": 50,
+      "other expenses": 2210,
+      "child expenses": 0
+    },
+    "per child expense": 480,
+    "assets": {
+      "saving": 400
+    },
+    "liabilities": {
+      "home mortages": 143000,
+      "school loans": 0,
+      "car loans": 15000,
+      "credit cards": 22000,
+      "retail debt": 1000
+    }
+  },
+  {
+    "id": 8,
+    "profession": "Mechanic",
+    "income": {
+      "salary": 2000,
+      "interest": 0,
+      "real estate": 0
+    },
+    "expenses": {
+      "taxes": 360,
+      "home mortgage payment": 300,
+      "school loan payment": 0,
+      "car loan payment": 60,
+      "credit card payment": 60,
+      "retail payment": 50,
+      "other expenses": 450,
+      "child expenses": 0
+    },
+    "per child expense": 110,
+    "assets": {
+      "saving": 670
+    },
+    "liabilities": {
+      "home mortages": 31000,
+      "school loans": 0,
+      "car loans": 3000,
+      "credit cards": 2000,
+      "retail debt": 1000
+    }
+  },
+  {
+    "id": 9,
+    "profession": "Engineer",
+    "income": {
+      "salary": 4900,
+      "interest": 0,
+      "real estate": 0
+    },
+    "expenses": {
+      "taxes": 1050,
+      "home mortgage payment": 700,
+      "school loan payment": 60,
+      "car loan payment": 140,
+      "credit card payment": 120,
+      "retail payment": 50,
+      "other expenses": 1090,
+      "child expenses": 0
+    },
+    "per child expense": 250,
+    "assets": {
+      "saving": 400
+    },
+    "liabilities": {
+      "home mortages": 75000,
+      "school loans": 12000,
+      "car loans": 7000,
+      "credit cards": 4000,
+      "retail debt": 1000
+    }
+  },
+  {
+    "id": 10,
+    "profession": "Nurse",
+    "income": {
+      "salary": 3100,
+      "interest": 0,
+      "real estate": 0
+    },
+    "expenses": {
+      "taxes": 600,
+      "home mortgage payment": 400,
+      "school loan payment": 30,
+      "car loan payment": 100,
+      "credit card payment": 90,
+      "retail payment": 50,
+      "other expenses": 710,
+      "child expenses": 0
+    },
+    "per child expense": 170,
+    "assets": {
+      "saving": 480
+    },
+    "liabilities": {
+      "home mortages": 47000,
+      "school loans": 6000,
+      "car loans": 5000,
+      "credit cards": 3000,
+      "retail debt": 1000
+    }
+  },
+  {
+    "id": 11,
+    "profession": "Secretary",
+    "income": {
+      "salary": 2500,
+      "interest": 0,
+      "real estate": 0
+    },
+    "expenses": {
+      "taxes": 460,
+      "home mortgage payment": 400,
+      "school loan payment": 0,
+      "car loan payment": 80,
+      "credit card payment": 60,
+      "retail payment": 50,
+      "other expenses": 570,
+      "child expenses": 0
+    },
+    "per child expense": 140,
+    "assets": {
+      "saving": 710
+    },
+    "liabilities": {
+      "home mortages": 400,
+      "school loans": 0,
+      "car loans": 4000,
+      "credit cards": 2000,
+      "retail debt": 1000
     }
   }
 ]

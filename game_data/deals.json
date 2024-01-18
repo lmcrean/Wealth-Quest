@@ -1,0 +1,28 @@
+[
+  {
+    "id": 0,
+    "type": "property",
+    "title": "Duplex to sell",
+    "description": "Description",
+    "resell_roi": 48,
+    "min_resell": 50000,
+    "max_resell": 80000,
+    "initial_cost": 45000,
+    "down_pay": 8000,
+    "passive_income": 320,
+    "chance": 5
+  },
+  {
+    "id": 1,
+    "type": "business",
+    "title": "Bed and Breakfast",
+    "description": "Description",
+    "resell_roi": 40,
+    "min_resell": 100000,
+    "max_resell": 300000,
+    "initial_cost": 150000,
+    "down_pay": 30000,
+    "passive_income": 1000,
+    "chance": 5
+  }
+]
