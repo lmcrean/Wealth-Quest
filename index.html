@@ -181,6 +181,8 @@
               </div>
             </div>
           </div>
+
+          <!-- progress Bar -->
           <div
             id="progress-bar-container"
             class="progress"
@@ -190,21 +192,28 @@
             aria-valuemin="0"
             aria-valuemax="100"
           >
-            <div class="progress-bar" id="progress-bar" style="width: 25%">25%</div>
+            <div class="progress-bar" id="progress-bar">0/0</div>
           </div>
         </div>
 
         <!-- Game column-->
         <div class="col col-lg-6">
-          <!-- modal buttons -->
           <div class="row">
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#professionModal">
-              profession
-            </button>
-          </div>
+            <!-- modal buttons -->
+            <div class="col-12">
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#professionModal">
+                Profession
+              </button>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-primary m-2" onclick="selectRandomEvent()">Roll Dice</button>
+              <button type="button" class="btn btn-secondary m-2" onclick="finishTurn()">Finish Turn</button>
+            </div>
 
-          <div class="row"></div>
+            <div class="col-12 border">
+              <div id="event-card"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

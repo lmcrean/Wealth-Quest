@@ -9,8 +9,9 @@ function selectProfession() {
 
   // INITIAL VALUES
   profession.childrenCount = 0;
-  profession.totalIncome = calculateTotalIncome(profession);
+  profession.expenses.child = profession.perChildExpense * profession.childrenCount;
   profession.passiveIncome = calculatePassiveIncome(profession);
+  profession.totalIncome = calculateTotalIncome(profession);
   profession.totalExpenses = calculateTotalExpenses(profession);
   profession.finalCashFlow = profession.totalIncome - profession.totalExpenses;
   childrenCountChange(0);
@@ -19,6 +20,26 @@ function selectProfession() {
   updateGameData();
 }
 
+// called when spin the weal button is clicked
+function selectRandomEvent() {
+  const event = choseRandomEvent(gameData.chances).id;
+  console.log(event);
+  switch (event) {
+    case 1:
+      payday();
+      break;
+    case 2:
+      moneyLoss();
+      break;
+    case 3:
+      deal();
+      break;
+    default:
+      break;
+  }
+}
+
+// updates profestion card HTML with new values
 function updateProfession() {
   // Income tab
   professionCard.salary.innerText = profession.incomes.salary;
@@ -35,7 +56,7 @@ function updateProfession() {
   professionCard.creditCard.innerText = profession.expenses.creditCard;
   professionCard.retailExpenses.innerText = profession.expenses.retail;
   professionCard.otherExpenses.innerText = profession.expenses.other;
-  professionCard.childExpenses.innerText = profession.perChildExpense * profession.childrenCount;
+  professionCard.childExpenses.innerText = profession.expenses.child;
 
   //  Totals
   professionCard.childrenCount.innerText = profession.childrenCount;
@@ -52,6 +73,7 @@ function updateProfession() {
   professionCard.retailLiabilities.innerText = profession.liabilities.retailDebt;
 }
 
+// updates game data HTML with new values
 function updateGameData() {
   gameData.totalExpenses = profession.totalExpenses;
   gameData.passiveIncome = profession.passiveIncome;
@@ -60,4 +82,16 @@ function updateGameData() {
   gameDataHTML.progressBar.style.width = `${gameData.progressBarPerecentage}%`;
   console.log(gameData.progressBarPerecentage);
   gameDataHTML.progressBar.innerText = `${gameData.passiveIncome} / ${gameData.totalExpenses}`;
+}
+
+function finishTurn() {
+  profession.passiveIncome = calculatePassiveIncome(profession);
+  profession.totalIncome = calculateTotalIncome(profession);
+  profession.totalExpenses = calculateTotalExpenses(profession);
+  profession.finalCashFlow = profession.totalIncome - profession.totalExpenses;
+  updateProfession();
+  updateGameData();
+
+  // add logic that check if saving is less than 0 and monthly cash flow is less than 0
+  // if true then game over
 }
