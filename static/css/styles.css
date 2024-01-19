@@ -43,7 +43,7 @@ body {
 
 p {
   letter-spacing: 1.5px;
-  margin-bottom: 0!important;
+  margin-bottom: 0 !important;
 }
 
 h1,
@@ -54,4 +54,10 @@ h5,
 h6 {
   font-family: var(--title);
   letter-spacing: 2px;
+}
+
+/* profesion carousel */
+
+.carousel-item {
+  text-align: center;
 }

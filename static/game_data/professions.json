@@ -1,0 +1,362 @@
+[
+  {
+    "id": 0,
+    "profession": "Police Officer",
+    "income": {
+      "salary": 3000,
+      "interest": 0,
+      "realEstate": 0
+    },
+    "expenses": {
+      "taxes": 580,
+      "homeMortgage": 400,
+      "schoolLoan": 0,
+      "carLoan": 100,
+      "creditCard": 60,
+      "retail": 50,
+      "other": 690,
+      "child": 0
+    },
+    "perChildExpense": 160,
+    "assets": {
+      "saving": 520
+    },
+    "liabilities": {
+      "homeMortages": 46000,
+      "cchoolLoans": 0,
+      "carLoans": 5000,
+      "creditCards": 2000,
+      "retailDebt": 1000
+    }
+  },
+  {
+    "id": 1,
+    "profession": "Truck Driver",
+    "income": {
+      "salary": 2500,
+      "interest": 0,
+      "realEstate": 0
+    },
+    "expenses": {
+      "taxes": 460,
+      "homeMortgage": 400,
+      "schoolLoan": 0,
+      "carLoan": 80,
+      "creditCard": 60,
+      "retail": 50,
+      "other": 570,
+      "child": 0
+    },
+    "perChildExpense": 140,
+    "assets": {
+      "saving": 750
+    },
+    "liabilities": {
+      "homeMortages": 38000,
+      "cchoolLoans": 0,
+      "carLoans": 4000,
+      "creditCards": 2000,
+      "retailDebt": 1000
+    }
+  },
+  {
+    "id": 2,
+    "profession": "Janitor",
+    "income": {
+      "salary": 1600,
+      "interest": 0,
+      "realEstate": 0
+    },
+    "expenses": {
+      "taxes": 280,
+      "homeMortgage": 200,
+      "schoolLoan": 0,
+      "carLoan": 60,
+      "creditCard": 60,
+      "retail": 50,
+      "other": 300,
+      "child": 0
+    },
+    "perChildExpense": 70,
+    "assets": {
+      "saving": 560
+    },
+    "liabilities": {
+      "homeMortages": 20000,
+      "cchoolLoans": 0,
+      "carLoans": 4000,
+      "creditCards": 2000,
+      "retailDebt": 1000
+    }
+  },
+  {
+    "id": 3,
+    "profession": "Teacher",
+    "income": {
+      "salary": 3300,
+      "interest": 0,
+      "realEstate": 0
+    },
+    "expenses": {
+      "taxes": 630,
+      "homeMortgage": 500,
+      "schoolLoan": 60,
+      "carLoan": 100,
+      "creditCard": 90,
+      "retail": 50,
+      "other": 760,
+      "child": 0
+    },
+    "perChildExpense": 180,
+    "assets": {
+      "saving": 400
+    },
+    "liabilities": {
+      "homeMortages": 50000,
+      "cchoolLoans": 12000,
+      "carLoans": 5000,
+      "creditCards": 3000,
+      "retailDebt": 1000
+    }
+  },
+  {
+    "id": 4,
+    "profession": "Doctor",
+    "income": {
+      "salary": 13200,
+      "interest": 0,
+      "realEstate": 0
+    },
+    "expenses": {
+      "taxes": 3420,
+      "homeMortgage": 1900,
+      "schoolLoan": 750,
+      "carLoan": 380,
+      "creditCard": 270,
+      "retail": 50,
+      "other": 2880,
+      "child": 0
+    },
+    "perChildExpense": 640,
+    "assets": {
+      "saving": 400
+    },
+    "liabilities": {
+      "homeMortages": 202000,
+      "cchoolLoans": 150000,
+      "carLoans": 19000,
+      "creditCards": 9000,
+      "retailDebt": 1000
+    }
+  },
+  {
+    "id": 5,
+    "profession": "Business Manager",
+    "income": {
+      "salary": 4600,
+      "interest": 0,
+      "realEstate": 0
+    },
+    "expenses": {
+      "taxes": 910,
+      "homeMortgage": 700,
+      "schoolLoan": 60,
+      "carLoan": 120,
+      "creditCard": 90,
+      "retail": 50,
+      "other": 1000,
+      "child": 0
+    },
+    "perChildExpense": 240,
+    "assets": {
+      "saving": 400
+    },
+    "liabilities": {
+      "homeMortages": 75000,
+      "cchoolLoans": 12000,
+      "carLoans": 6000,
+      "creditCards": 3000,
+      "retailDebt": 1000
+    }
+  },
+  {
+    "id": 6,
+    "profession": "Lawyer",
+    "income": {
+      "salary": 7500,
+      "interest": 0,
+      "realEstate": 0
+    },
+    "expenses": {
+      "taxes": 1830,
+      "homeMortgage": 1100,
+      "schoolLoan": 390,
+      "carLoan": 220,
+      "creditCard": 180,
+      "retail": 50,
+      "other": 1650,
+      "child": 0
+    },
+    "perChildExpense": 380,
+    "assets": {
+      "saving": 400
+    },
+    "liabilities": {
+      "homeMortages": 115000,
+      "cchoolLoans": 78000,
+      "carLoans": 11000,
+      "creditCards": 6000,
+      "retailDebt": 1000
+    }
+  },
+  {
+    "id": 7,
+    "profession": "Airline Pilot",
+    "income": {
+      "salary": 9500,
+      "interest": 0,
+      "realEstate": 0
+    },
+    "expenses": {
+      "taxes": 2350,
+      "homeMortgage": 1330,
+      "schoolLoan": 0,
+      "carLoan": 300,
+      "creditCard": 660,
+      "retail": 50,
+      "other": 2210,
+      "child": 0
+    },
+    "perChildExpense": 480,
+    "assets": {
+      "saving": 400
+    },
+    "liabilities": {
+      "homeMortages": 143000,
+      "cchoolLoans": 0,
+      "carLoans": 15000,
+      "creditCards": 22000,
+      "retailDebt": 1000
+    }
+  },
+  {
+    "id": 8,
+    "profession": "Mechanic",
+    "income": {
+      "salary": 2000,
+      "interest": 0,
+      "realEstate": 0
+    },
+    "expenses": {
+      "taxes": 360,
+      "homeMortgage": 300,
+      "schoolLoan": 0,
+      "carLoan": 60,
+      "creditCard": 60,
+      "retail": 50,
+      "other": 450,
+      "child": 0
+    },
+    "perChildExpense": 110,
+    "assets": {
+      "saving": 670
+    },
+    "liabilities": {
+      "homeMortages": 31000,
+      "cchoolLoans": 0,
+      "carLoans": 3000,
+      "creditCards": 2000,
+      "retailDebt": 1000
+    }
+  },
+  {
+    "id": 9,
+    "profession": "Engineer",
+    "income": {
+      "salary": 4900,
+      "interest": 0,
+      "realEstate": 0
+    },
+    "expenses": {
+      "taxes": 1050,
+      "homeMortgage": 700,
+      "schoolLoan": 60,
+      "carLoan": 140,
+      "creditCard": 120,
+      "retail": 50,
+      "other": 1090,
+      "child": 0
+    },
+    "perChildExpense": 250,
+    "assets": {
+      "saving": 400
+    },
+    "liabilities": {
+      "homeMortages": 75000,
+      "cchoolLoans": 12000,
+      "carLoans": 7000,
+      "creditCards": 4000,
+      "retailDebt": 1000
+    }
+  },
+  {
+    "id": 10,
+    "profession": "Nurse",
+    "income": {
+      "salary": 3100,
+      "interest": 0,
+      "realEstate": 0
+    },
+    "expenses": {
+      "taxes": 600,
+      "homeMortgage": 400,
+      "schoolLoan": 30,
+      "carLoan": 100,
+      "creditCard": 90,
+      "retail": 50,
+      "other": 710,
+      "child": 0
+    },
+    "perChildExpense": 170,
+    "assets": {
+      "saving": 480
+    },
+    "liabilities": {
+      "homeMortages": 47000,
+      "cchoolLoans": 6000,
+      "carLoans": 5000,
+      "creditCards": 3000,
+      "retailDebt": 1000
+    }
+  },
+  {
+    "id": 11,
+    "profession": "Secretary",
+    "income": {
+      "salary": 2500,
+      "interest": 0,
+      "realEstate": 0
+    },
+    "expenses": {
+      "taxes": 460,
+      "homeMortgage": 400,
+      "schoolLoan": 0,
+      "carLoan": 80,
+      "creditCard": 60,
+      "retail": 50,
+      "other": 570,
+      "child": 0
+    },
+    "perChildExpense": 140,
+    "assets": {
+      "saving": 710
+    },
+    "liabilities": {
+      "homeMortages": 400,
+      "cchoolLoans": 0,
+      "carLoans": 4000,
+      "creditCards": 2000,
+      "retailDebt": 1000
+    }
+  }
+]
