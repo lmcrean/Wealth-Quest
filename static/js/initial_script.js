@@ -38,6 +38,7 @@ const professionCard = {
 const gameDataHTML = {
   progressBar: document.getElementById("progress-bar"),
   progressBarContainer: document.getElementById("progress-bar-container"),
+  eventCard: document.getElementById("event-card"),
 };
 
 // Profession card modal carousel
@@ -52,6 +53,24 @@ let gameData = {
   passiveIncome: 0,
   totalExpenses: 0,
   progressBarPerecentage: 0,
+
+  chances: [
+    {
+      id: 1,
+      name: "Payday",
+      chance: 5,
+    },
+    {
+      id: 2,
+      name: "Money Loss",
+      chance: 5,
+    },
+    {
+      id: 3,
+      name: "Deal",
+      chance: 5,
+    },
+  ],
 };
 
 // variable that is selected by player chosing his profession within selectProfession() function

@@ -5,7 +5,7 @@
     "incomes": {
       "salary": 3000,
       "interest": 0,
-      "realEstate": 1000
+      "realEstate": 300
     },
     "expenses": {
       "taxes": 580,
@@ -35,7 +35,7 @@
     "incomes": {
       "salary": 2500,
       "interest": 0,
-      "realEstate": 600
+      "realEstate": 300
     },
     "expenses": {
       "taxes": 460,
@@ -65,7 +65,7 @@
     "incomes": {
       "salary": 1600,
       "interest": 0,
-      "realEstate": 400
+      "realEstate": 1000
     },
     "expenses": {
       "taxes": 280,
@@ -95,7 +95,7 @@
     "incomes": {
       "salary": 3300,
       "interest": 0,
-      "realEstate": 0
+      "realEstate": 1000
     },
     "expenses": {
       "taxes": 630,
