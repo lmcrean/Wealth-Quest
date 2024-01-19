@@ -29,10 +29,161 @@
     <div class="container">
       <div class="row">
         <div class="col">
-          <h1>Home</h1>
+          <h1 class="text-center">Budget game</h1>
         </div>
       </div>
-    </div>
+      <div class="row">
+        <!-- Profesion Card -->
+        <div class="col col-lg-6 ">
+          <div class="row">
+            <div class="col">
+              <h2 id="profesion-card-name" class="text-center">Police officer</h2>
+            </div>
+          </div>
+          <!-- Income tab -->
+          <div class="row border">
+            <div class="col-7">
+              <h3 class="text-center">Income</h3>
+              <div class="d-flex justify-content-between">
+                <p>Salary:</p>
+                <p id="profesion-card-salary">0</p>
+              </div>
+              <div class="d-flex justify-content-between">
+                <p>Interest/Dividends:</p>
+                <p id="profesion-card-interest">0</p>
+              </div>
+              <div class="d-flex justify-content-between">
+                <p>Real Estate/Business:</p>
+                <p id="profesion-card-real-estate">0</p>
+              </div>
+            </div>
+            <!-- income totals -->
+            <div class="col-5">
+              <div class="d-flex justify-content-between">
+                <p>Passive Income:</p>
+                <p id="profesion-card-pasive-income" >0</p>
+              </div>
+              <div>
+                <p><small>(Cashflow from Interes/Dividents + realestate/Business)</small></p>
+              </div>
+              <div class="d-flex justify-content-between">
+                <p>Total income:</p>
+                <p id="profesion-card-total-income">0</p>
+              </div>
+            </div>
+          </div>
+              
+          <!-- Expenses tab -->
+          <div class="row border">
+            <div class="col-7">
+              <div>
+                <h3 class="text-center">Expenses</h3>
+              </div>
+              <div class="d-flex justify-content-between">
+                <p>Taxes:</p>
+                <p id="profesion-card-taxes">0</p>
+              </div>
+              <div class="d-flex justify-content-between">
+                <p>Home Mortgage Payment:</p>
+                <p id="profesion-card-home-mortgage">0</p>
+              </div>
+              <div class="d-flex justify-content-between">
+                <p>School Loan Payment:</p>
+                <p id="profesion-card-school-loan">0</p>
+              </div>
+              <div class="d-flex justify-content-between">
+                <p>Car Loan Payment:</p>
+                <p id="profesion-card-car-loan">0</p>
+              </div>
+              <div class="d-flex justify-content-between">
+                <p>Credit Card Payment:</p>
+                <p id="profesion-card-credit-card">0</p>
+              </div>
+              <div class="d-flex justify-content-between">
+                <p>Retail Payment:</p>
+                <p id="profesion-card-retail-expenses">0</p>
+              </div>
+              <div class="d-flex justify-content-between">
+                <p>Other Expenses:</p>
+                <p id="profesion-card-other-expenses:">0</p>
+              </div>
+              <div class="d-flex justify-content-between">
+                <p>Child Expenses:</p>
+                <p id="profesion-card-child-expenses:">0</p>
+              </div>
+            </div>
+            
+            <div class="col-5">
+              <div class="d-flex justify-content-between">
+                <p>Children:</p>
+                <p id="profesion-card-children-count">0</p>
+              </div>
+              <div class="d-flex justify-content-between">
+                <p>Per Child Expense:</p>
+                <p id="profesion-card-per-child-expense">0</p>
+              </div>
+                <div class="d-flex justify-content-between">
+                <p>Total Expenses:</p>
+                <p id="profesion-card-total-expenses">0</p>
+              </div>
+              <div class="d-flex justify-content-between">
+                <p>Monthly Cash Flow</p>
+                <p id="profesion-card-monthly Cashflow">0</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Assets and Liabilities -->
+          <div class="row border">
+            <div class="col-7">
+              <div>
+                <h3 class="text-center">Assets</h3>
+              </div>
+              <div class="d-flex justify-content-between">
+                <p>Savings:</p>
+                <p id="profesion-savings">0</p>
+              </div>
+              <!-- javascript renderet addditional assets -->
+              <div id="profesion-card-additional-assets"></div>
+            </div>
+            
+            <div class="col-5">
+              <div>
+                <h3 class="text-center">Liabilities</h3>
+              </div>
+              <div class="d-flex justify-content-between">
+                <p>Home Mortgage:</p>
+                <p id="profesion-card-home-mortgage-liabilities">0</p>
+              </div>
+              <div class="d-flex justify-content-between">
+                <p>School Loan:</p>
+                <p id="profesion-card-school-loan-liabilities">0</p>
+              </div>
+                <div class="d-flex justify-content-between">
+                <p>Car Loan:</p>
+                <p id="profesion-card-car-loan-liabilities">0</p>
+              </div>
+              <div class="d-flex justify-content-between">
+                <p>Credit Card:</p>
+                <p id="profesion-card-credit-card-liabilities">0</p>
+              </div>
+              <div class="d-flex justify-content-between">
+                <p>Retail debt:</p>
+                <p id="profesion-card-retail-liabilities">0</p>
+              </div>
+            </div>  
+          </div>
+        </div>
+        
+        <!-- Game column-->
+        <div class="col col-lg-6">
+          <!-- modal buttons -->
+          <div class="row"></div>
+          
+          <div class="row"></div>
+        </div>
+      </div>
+    </div>  
     
     <script defer type="text/javascript" src="static/js/script.js"></script>
     

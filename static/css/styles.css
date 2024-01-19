@@ -1,0 +1,57 @@
+/* header */
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap");
+
+:root {
+  /* fonts */
+  --title: "Lato", sans-serif;
+  --main-font: "Playfair Display", serif;
+  --navigation-font: "Roboto", sans-serif;
+
+  /* Colours */
+  --text: #000000;
+  --background: #fafafa;
+  --primary: #4e4e4e;
+  --secondary: #919191;
+  --accent: #b6b6b6;
+
+  /* Utility */
+  --form-shadow: 0 0 0.7rem var(--primary);
+  --small-boxshadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+  --boxshadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+  --border: 2px 2px 2px 2px;
+}
+
+/* testing class with red order */
+.test {
+  border: 1px solid red;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--main-font);
+}
+
+html,
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+p {
+  letter-spacing: 1.5px;
+  margin-bottom: 0!important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--title);
+  letter-spacing: 2px;
+}
