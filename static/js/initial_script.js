@@ -35,67 +35,48 @@ const professionCard = {
   retailLiabilities: document.getElementById("profession-card-retail-liabilities"),
 };
 
+const gameDataHTML = {
+  progressBar: document.getElementById("progress-bar"),
+  progressBarContainer: document.getElementById("progress-bar-container"),
+};
+
 // Profession card modal carousel
 const carouselInner = document.querySelector(".carousel-inner");
 
+// variable taken from json to have list of all professions
 let professions;
+
+// Game variables with initial values
+let gameData = {
+  currentMonth: 1,
+  passiveIncome: 0,
+  totalExpenses: 0,
+  progressBarPerecentage: 0,
+};
+
+// variable that is selected by player chosing his profession within selectProfession() function
+let profession;
+
+const bakLoanProcentage = 0.05; // 5%
+
 fetch("/static/game_data/professions.json")
   .then((response) => response.json())
   .then((json) => {
     professions = json;
-    console.log(professions);
-    createProfesionCarousel();
+    createProfessionCarousel();
   });
 
-function createProfesionCarousel() {
+function createProfessionCarousel() {
   professions.forEach((profession, index) => {
     const isActive = index === 0 ? "active" : "";
     const carouselItem = `
           <div class="carousel-item ${isActive}" data-profession-id="${profession.id}">
             <h5>${profession.profession}</h5>
-            <p>Salary: $${profession.income.salary}</p>
-            <p>Total Expenses: $${calculateTotalExpenses(profession.expenses)}</p>
+            <p>Salary: $${profession.incomes.salary}</p>
+            <p>Total Expenses: $${calculateTotalExpenses(profession)}</p>
             <p>Savings: $${profession.assets.saving}</p>
           </div>
         `;
     carouselInner.innerHTML += carouselItem;
   });
-}
-
-function selectProfesion() {
-  let id = document.querySelector(".carousel-item.active").getAttribute("data-profession-id");
-
-  const profession = professions.find((profession) => profession.id === parseInt(id));
-  console.log(profession);
-  professionCard.name.innerText = profession.profession;
-
-  // Income tab
-  professionCard.salary.innerText = profession.income.salary;
-  professionCard.interest.innerText = profession.income.interest;
-  professionCard.realEstate.innerText = profession.income.realEstate;
-  professionCard.passiveIncome.innerText = profession.income.passiveIncome;
-  professionCard.totalIncome.innerText = profession.income.totalIncome;
-
-  // Expenses tab
-  professionCard.taxes.innerText = profession.expenses.taxes;
-  professionCard.homeMortgage.innerText = profession.expenses.homeMortgage;
-  professionCard.schoolLoan.innerText = profession.expenses.schoolLoan;
-  professionCard.carLoan.innerText = profession.expenses.carLoan;
-  professionCard.creditCard.innerText = profession.expenses.creditCard;
-  professionCard.retailExpenses.innerText = profession.expenses.retail;
-  professionCard.otherExpenses.innerText = profession.expenses.other;
-  professionCard.childExpenses.innerText = profession.expenses.child;
-  professionCard.childrenCount.innerText = 0;
-  professionCard.perChildExpense.innerText = profession.perChildExpense;
-  professionCard.totalExpenses.innerText = profession.expenses.totalExpenses;
-  professionCard.monthlyCashFlow.innerText = profession.expenses.monthlyCashFlow;
-
-  // Assets and Liabilities
-  professionCard.savings.innerText = profession.assets.savings;
-  professionCard.additionalAssets.innerText = profession.assets.additionalAssets;
-  professionCard.homeMortgageLiabilities.innerText = profession.liabilities.homeMortgage;
-  professionCard.schoolLoanLiabilities.innerText = profession.liabilities.schoolLoan;
-  professionCard.carLoanLiabilities.innerText = profession.liabilities.carLoan;
-  professionCard.creditCardLiabilities.innerText = profession.liabilities.creditCard;
-  professionCard.retailLiabilities.innerText = profession.liabilities.retailLiabilities;
 }

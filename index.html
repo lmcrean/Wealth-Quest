@@ -181,6 +181,17 @@
               </div>
             </div>
           </div>
+          <div
+            id="progress-bar-container"
+            class="progress"
+            role="progressbar"
+            aria-label="Example with label"
+            aria-valuenow="0"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >
+            <div class="progress-bar" id="progress-bar" style="width: 25%">25%</div>
+          </div>
         </div>
 
         <!-- Game column-->
@@ -239,15 +250,16 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" onclick="selectProfesion()">Select Profession</button>
+            <button type="button" class="btn btn-primary" onclick="selectProfession()">Select Profession</button>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Main script -->
+    <script defer src="static/js/initial_script.js"></script>
     <script defer src="static/js/calculator_functions.js"></script>
-    <script defer src="static/js/script.js"></script>
+    <script defer src="static/js/card_updates.js"></script>
 
     <!-- Bootstrap -->
     <script
