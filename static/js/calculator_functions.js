@@ -22,7 +22,11 @@ function calculateTotalIncome(profession) {
 
 // call this function when player interest and real estate changes
 function calculatePassiveIncome(profession) {
-  let totalPasiveIncome = profession.incomes.interest + profession.incomes.realEstate;
+  if (profession.additionalAssets) {
+    const totalPassiveIncome = profession.additionalAssets.reduce((total, asset) => total + asset.passive_income, 0);
+    profession.incomes.realEstate += totalPassiveIncome;
+  }
+  let totalPasiveIncome = profession.incomes.realEstate;
   return totalPasiveIncome;
 }
 
@@ -124,6 +128,7 @@ function lifeEvent() {
 }
 
 function deal() {
+  console.log(profession);
   const deal = choseRandomEvent(deals);
   const dealType = deal.type;
 
@@ -178,14 +183,13 @@ function deal() {
   let buttons;
 
   if (dealType === "stocks") {
-    buttons = createButtonElements(true);
+    buttons = createButtonElements(true, deal.id);
   } else {
-    buttons = createButtonElements(false);
+    buttons = createButtonElements(false, deal.id);
   }
 
-  cardNumbers.appendChild(buttons);
-
   card.appendChild(cardNumbers);
+  card.appendChild(buttons);
 
   gameDataHTML.eventCard.appendChild(card);
 }
@@ -285,12 +289,12 @@ function createElement(tag, attributes, text) {
 }
 
 // Function to create button elements
-function createButtonElements(isStocks) {
+function createButtonElements(isStocks, dealId) {
   const buttons = document.createElement("div");
   buttons.className = "deal-buttons";
 
-  const buyButton = createElement("button", { class: "buy-button" }, "Buy");
-  const sellButton = createElement("button", { class: "sell-button" }, "Sell");
+  const acceptButton = createElement("button", { class: "buy-button", onclick: `acceptOffer(${dealId})` }, "Accept");
+  const rejectButton = createElement("button", { class: "sell-button", onclick: "finishTurn()" }, "Reject");
 
   if (isStocks) {
     const numberInput = document.createElement("input");
@@ -298,17 +302,72 @@ function createButtonElements(isStocks) {
     // Set attributes for the number input
     numberInput.type = "number";
     numberInput.id = "orderCountInput";
-    numberInput.min = "0"; // Set minimum value
-    numberInput.max = "100"; // Set maximum value
-    numberInput.step = "1"; // Set step value
-    numberInput.value = "0"; // Set default value
+    numberInput.min = "0";
+    numberInput.max = "100";
+    numberInput.step = "1";
+    numberInput.value = "0";
 
     // Append the number input element to the body of the document
-    buttons.body.appendChild(numberInput);
+    buttons.appendChild(numberInput);
   }
 
-  buttons.appendChild(buyButton);
-  buttons.appendChild(sellButton);
+  buttons.appendChild(acceptButton);
+  buttons.appendChild(rejectButton);
 
   return buttons;
+}
+
+// Function to accept the deal
+function acceptOffer(dealId) {
+  const deal = deals.find((deal) => deal.id === dealId);
+  const inputValue = document.getElementById("orderCountInput");
+  let acceptedValue;
+
+  if (inputValue === null || inputValue === undefined) {
+    acceptedValue = 1;
+    console.log("No value accepted");
+  } else if (parseInt(inputValue.value) === 0) {
+    acceptedValue = parseInt(inputValue.value);
+    alert(`You need to buy at least 1 stock.`);
+    return;
+  } else {
+    acceptedValue = parseInt(inputValue.value);
+    console.log("more than 0 value accepted");
+  }
+
+  if (profession.assets.saving < deal.initial_cost * acceptedValue) {
+    alert(`You do not have enough money to buy this deal.`);
+    return;
+  } else {
+    profession.assets.saving -= deal.initial_cost * acceptedValue;
+
+    // check if deal is already in additional assets array
+    const originalDeal = profession.additionalAssets.find((original) => original.id === deal.id);
+    if (originalDeal) {
+      originalDeal.additionalAmount += acceptedValue;
+      return;
+    } else {
+      deal.additionalAmount = acceptedValue;
+      profession.additionalAssets.push(deal);
+    }
+
+    // remove deal from deals array
+    console.log(deal);
+    if (deal.type != "stocks") {
+      removeDealById(deals, deal.id);
+    }
+  }
+}
+
+// Function to remove a deal from the deals array
+function removeDealById(dealsArray, targetId) {
+  const index = dealsArray.findIndex((deal) => deal.id === targetId);
+
+  if (index !== -1) {
+    // Deal found, remove it and return the removed deal
+    return dealsArray.splice(index, 1)[0];
+  } else {
+    // Deal not found, return null or handle accordingly
+    return null;
+  }
 }

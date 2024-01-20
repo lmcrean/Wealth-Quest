@@ -5,7 +5,6 @@ const professionCard = {
 
   // Income tab
   salary: document.getElementById("profession-card-salary"),
-  interest: document.getElementById("profession-card-interest"),
   realEstate: document.getElementById("profession-card-real-estate"),
   passiveIncome: document.getElementById("profession-card-pasive-income"),
   totalIncome: document.getElementById("profession-card-total-income"),
@@ -26,9 +25,11 @@ const professionCard = {
   totalExpenses: document.getElementById("profession-card-total-expenses"),
   monthlyCashFlow: document.getElementById("profession-card-monthly-cashflow"),
 
-  // Assets and Liabilities
+  // Assets
   savings: document.getElementById("profession-savings"),
   additionalAssets: document.getElementById("profession-card-additional-assets"),
+
+  // Liabilities
   homeMortgageLiabilities: document.getElementById("profession-card-home-mortgage-liabilities"),
   schoolLoanLiabilities: document.getElementById("profession-card-school-loan-liabilities"),
   carLoanLiabilities: document.getElementById("profession-card-car-loan-liabilities"),
@@ -87,7 +88,6 @@ fetch("static/game_data/professions.json")
   });
 
 let deals;
-
 fetch("static/game_data/deals.json")
   .then((response) => response.json())
   .then((json) => {
