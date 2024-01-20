@@ -19,6 +19,27 @@
   --small-boxshadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
   --boxshadow: 0 0 1rem rgba(0, 0, 0, 0.2);
   --border: 2px 2px 2px 2px;
+
+  /* Primary Color Variations - color not yet decided */
+  --primary-color-lightest: #e0f7fa; /* Example color */
+  --primary-color-light: #b2ebf2; /* Example color */
+  --primary-color-medium: #80deea; /* Example color */
+  --primary-color-dark: #4dd0e1; /* Example color */
+  --primary-color-darkest: #26c6da; /* Example color */
+
+  /* Secondary Color Variations - color not yet decided */
+  --secondary-color-lightest: #f8bbd0; /* Example color */
+  --secondary-color-light: #f48fb1; /* Example color */
+  --secondary-color-medium: #f06292; /* Example color */
+  --secondary-color-dark: #ec407a; /* Example color */
+  --secondary-color-darkest: #e91e63; /* Example color */
+
+  /* Monochrome Color Variations - color not yet decided */
+  --mono-lightest: #eceff1; /* Example color */
+  --mono-light: #cfd8dc; /* Example color */
+  --mono-medium: #b0bec5; /* Example color */
+  --mono-dark: #90a4ae; /* Example color */
+  --mono-darkest: #78909c; /* Example color */
 }
 
 /* testing class with red order */
@@ -72,6 +93,17 @@ h6 {
   width: 50%; /* Two paragraphs in a row, each taking 50% width */
   box-sizing: border-box; /* Include padding and border in the width */
   padding: 10px; /* Add some padding for spacing */
+}
+
+.tooltip-box {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 100;
 }
 
 .liabilities-button {

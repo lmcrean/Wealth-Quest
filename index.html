@@ -32,6 +32,8 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+
+    <script src="https://kit.fontawesome.com/c7515a9d31.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <div class="container">
@@ -40,18 +42,49 @@
           <h1 class="text-center">Budget game</h1>
         </div>
       </div>
+
       <div class="row">
-        <!-- profession Card -->
+        <!-- profession Card with tooltip for what is a profession? -->
         <div class="col col-lg-6">
           <div class="row">
             <div class="col">
-              <h2 id="profession-card-name" class="text-center">Police officer</h2>
+              <h2 id="profession-card-name" class="text-center">Profession: Police officer</h2>
             </div>
+          </div>
+
+          <!-- Financial Statement Heading with Tooltip -->
+          <h2>
+            Financial Statement
+            <span
+              class="question-mark"
+              onmouseover="showTooltip(event, 'financialStatementTooltip')"
+              onmouseout="hideTooltip('financialStatementTooltip')"
+              ><i class="fa-regular fa-circle-question"></i
+            ></span>
+          </h2>
+          <!-- Tooltip for Financial Statement -->
+          <div id="financialStatementTooltip" class="tooltip-box">
+            What is a Financial Statement? <br />
+            A financial statement is a formal record of the financial activities and position of a business, person, or
+            other entity.
           </div>
           <!-- Income tab -->
           <div class="row border">
             <div class="col-7">
-              <h3 class="text-center">Income</h3>
+              <h2>
+                Income
+                <span
+                  class="question-mark"
+                  onmouseover="showTooltip(event, 'incomeTooltip')"
+                  onmouseout="hideTooltip('incomeTooltip')"
+                  ><i class="fa-regular fa-circle-question"></i
+                ></span>
+              </h2>
+              <div id="incomeTooltip" class="tooltip-box">
+                What is Income? <br />
+                Income is money that an individual or business receives in exchange for providing a good or service or
+                through investing capital.
+              </div>
               <div class="d-flex justify-content-between">
                 <p>Salary:</p>
                 <p id="profession-card-salary">0</p>
@@ -68,11 +101,29 @@
             <!-- income totals -->
             <div class="col-5">
               <div class="d-flex justify-content-between">
-                <p>Passive Income:</p>
+                <!-- Passive Income Heading with Tooltip -->
+                <p>
+                  Passive Income
+                  <span
+                    class="question-mark"
+                    onmouseover="showTooltip(event, 'passiveIncomeTooltip')"
+                    onmouseout="hideTooltip('passiveIncomeTooltip')"
+                    ><i class="fa-regular fa-circle-question"></i
+                  ></span>
+                </p>
+                <!-- Tooltip for Passive Income -->
+                <div id="passiveIncomeTooltip" class="tooltip-box">
+                  What is Passive Income? <br />
+                  Passive income is earnings derived from a rental property, limited partnership, or other enterprise in
+                  which a person is not actively involved.
+                </div>
+
                 <p id="profession-card-pasive-income">0</p>
               </div>
               <div>
-                <p><small>(Cashflow from Interes/Dividents + realestate/Business)</small></p>
+                <p>
+                  <small>(Cashflow from Interes/Dividents + realestate/Business)</small>
+                </p>
               </div>
               <div class="d-flex justify-content-between">
                 <p>Total income:</p>
@@ -85,7 +136,21 @@
           <div class="row border">
             <div class="col-7">
               <div>
-                <h3 class="text-center">Expenses</h3>
+                <h2>
+                  Expenses
+                  <span
+                    class="question-mark"
+                    onmouseover="showTooltip(event, 'expensesTooltip')"
+                    onmouseout="hideTooltip('expensesTooltip')"
+                    ><i class="fa-regular fa-circle-question"></i
+                  ></span>
+                </h2>
+                <!-- Tooltip for Expenses -->
+                <div id="expensesTooltip" class="tooltip-box">
+                  What are Expenses? <br />
+                  Expenses are the costs incurred in the process of generating revenue; in other words, the costs of
+                  doing business.
+                </div>
               </div>
               <div class="d-flex justify-content-between">
                 <p>Taxes:</p>
@@ -149,7 +214,22 @@
           <div class="row border">
             <div class="col-7">
               <div>
-                <h3 class="text-center">Assets</h3>
+                <!-- Assets Heading with Tooltip -->
+                <h2>
+                  Assets
+                  <span
+                    class="question-mark"
+                    onmouseover="showTooltip(event, 'assetsTooltip')"
+                    onmouseout="hideTooltip('assetsTooltip')"
+                    ><i class="fa-regular fa-circle-question"></i
+                  ></span>
+                </h2>
+                <!-- Tooltip for Assets -->
+                <div id="assetsTooltip" class="tooltip-box">
+                  What are Assets? <br />
+                  Assets are resources with economic value that an individual or company owns or controls with the
+                  expectation that it will provide future benefit.
+                </div>
               </div>
               <div class="d-flex justify-content-between">
                 <p>Savings:</p>
@@ -161,7 +241,21 @@
 
             <div class="col-5">
               <div>
-                <h3 class="text-center">Liabilities</h3>
+                <!-- Liabilities Heading with Tooltip -->
+                <h2>
+                  Liabilities
+                  <span
+                    class="question-mark"
+                    onmouseover="showTooltip(event, 'liabilitiesTooltip')"
+                    onmouseout="hideTooltip('liabilitiesTooltip')"
+                    ><i class="fa-regular fa-circle-question"></i
+                  ></span>
+                </h2>
+                <!-- Tooltip for Liabilities -->
+                <div id="liabilitiesTooltip" class="tooltip-box">
+                  What are Liabilities? <br />
+                  Liabilities are the debts or obligations of a company that are owed to creditors.
+                </div>
               </div>
               <div class="d-flex justify-content-between">
                 <button class="liabilities-button" onclick="">
@@ -227,7 +321,10 @@
             <div class="col-12 border">
               <div id="bank-container">
                 <form id="numberForm">
-                  <p>Barrowing money from bank add <span id="bank-rate">10</span>% liability</p>
+                  <p>
+                    Barrowing money from bank add
+                    <span id="bank-rate">10</span>% liability
+                  </p>
                   <label for="numberInput">Barrow from bank:</label>
                   <input type="number" id="bankInput" step="100" min="100" value="100" />
                   <button type="button" onclick="barrowFromBank()">Barrow</button>
@@ -286,10 +383,232 @@
       </div>
     </div>
 
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#gameInstructionsModal">
+      How to Play
+    </button>
+
+    <!-- Game Instructions Modal -->
+    <div
+      class="modal fade"
+      id="gameInstructionsModal"
+      tabindex="-1"
+      aria-labelledby="gameInstructionsModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="gameInstructionsModalLabel">How to Play CASHFLOW Classic</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div id="stepContent">
+              <div class="progress" style="height: 20px">
+                <div
+                  class="progress-bar"
+                  role="progressbar"
+                  style="width: 0%"
+                  id="progressBar"
+                  aria-valuenow="0"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              <!-- Content for Step 1 -->
+              <div id="step1" class="step">
+                <h3>Step 1: Choose Your Dream</h3>
+                <p>Start by defining your financial dream which will motivate you to escape the Rat Race.</p>
+              </div>
+            </div>
+            <!-- Step 2 -->
+            <div id="step2" class="step" style="display: none">
+              <h3>Step 2: Pick a Deal</h3>
+              <p>Roll the dice and choose between Small or Big Deals to grow your passive income.</p>
+            </div>
+
+            <!-- Step 3 -->
+            <div id="step3" class="step" style="display: none">
+              <h3>Step 3: Monitor Your Income</h3>
+              <p>Keep track of your earnings and manage your expenses to maximize your cash flow.</p>
+            </div>
+
+            <!-- Step 4 -->
+            <div id="step4" class="step" style="display: none">
+              <h3>Step 4: Give to Charity</h3>
+              <p>
+                Consider donating a portion of your income to charity, which may provide opportunities for bigger gains.
+              </p>
+            </div>
+
+            <!-- Step 5 -->
+            <div id="step5" class="step" style="display: none">
+              <h3>Step 5: Seize Opportunities</h3>
+              <p>Use the market to your advantage, buying low and selling high, or invest in lucrative deals.</p>
+            </div>
+
+            <!-- Step 6 -->
+            <div id="step6" class="step" style="display: none">
+              <h3>Step 6: Reach the Fast Track</h3>
+              <p>Once your passive income exceeds your expenses, you enter the Fast Track to pursue your dream.</p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button id="prevStep" type="button" class="btn btn-secondary" onclick="changeStep(-1)">Previous</button>
+            <button id="nextStep" type="button" class="btn btn-primary" onclick="changeStep(1)">Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--CATEGORIES: 3 cards-->
+    <!-- Buttons to trigger modals -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#paydayModal">
+      It's Payday!
+    </button>
+    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#dealModal">
+      You've got a Deal!
+    </button>
+    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#lifeHappenedModal">
+      Life Happened! (Positive Outcome)
+    </button>
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#negativeOutcomeModal">
+      Life Happened! (Negative Outcome)
+    </button>
+
+    <!-- Payday Modal -->
+    <div class="modal fade" id="paydayModal" tabindex="-1" aria-labelledby="paydayModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <h1>
+              It's Payday
+              <span
+                class="question-mark"
+                onmouseover="showTooltip(event, 'paydayTooltip')"
+                onmouseout="hideTooltip('paydayTooltip')"
+                ><i class="fa-regular fa-circle-question"></i
+              ></span>
+            </h1>
+            <!-- Tooltip for Payday -->
+            <div id="paydayTooltip" class="tooltip-box">
+              What is Payday? <br />
+              Payday is the day you receive your salary and see an increase in your cash flow.
+            </div>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Continue</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Deal Modal -->
+    <div class="modal fade" id="dealModal" tabindex="-1" aria-labelledby="dealModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <h1>You've got a Deal!</h1>
+            <!-- Deal Heading with Tooltip -->
+            <h2>
+              Deal Card
+              <span
+                class="question-mark"
+                onmouseover="showTooltip(event, 'dealTooltip')"
+                onmouseout="hideTooltip('dealTooltip')"
+                ><i class="fa-regular fa-circle-question"></i
+              ></span>
+            </h2>
+            <!-- Tooltip for Deal -->
+            <div id="dealTooltip" class="tooltip-box">
+              What is a Deal? <br />
+              A deal represents a financial opportunity where you can invest and potentially increase your passive
+              income.
+            </div>
+            <p>Your Friends tell you about a chance encounter they had with Elon Musk...</p>
+            <p>Risky Tesla Shares</p>
+            <p>ROI: 24% Cost: 2500</p>
+            <button type="button" class="btn btn-success" data-bs-dismiss="modal">Accept</button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Reject</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Life Happened Modal -->
+    <div
+      class="modal fade"
+      id="lifeHappenedModal"
+      tabindex="-1"
+      aria-labelledby="lifeHappenedModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <h1>Life Happened!</h1>
+            <!-- Life Happening Heading with Tooltip -->
+            <h2>
+              Life Happening Card
+              <span
+                class="question-mark"
+                onmouseover="showTooltip(event, 'lifeHappeningTooltip')"
+                onmouseout="hideTooltip('lifeHappeningTooltip')"
+                ><i class="fa-regular fa-circle-question"></i
+              ></span>
+            </h2>
+            <!-- Tooltip for Life Happening -->
+            <div id="lifeHappeningTooltip" class="tooltip-box">
+              What does Life Happening mean? <br />
+              Life Happening events are unexpected occurrences that can affect your finances positively or negatively.
+            </div>
+
+            <p>Look's like you won the lottery ticket! well done!</p>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Continue</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Life Happened Modal (Negative Outcome) -->
+    <div
+      class="modal fade"
+      id="negativeOutcomeModal"
+      tabindex="-1"
+      aria-labelledby="negativeOutcomeModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <h1>Life Happened!</h1>
+            <!-- Life Happening Heading with Tooltip -->
+            <h2>
+              Life Happening Card
+              <span
+                class="question-mark"
+                onmouseover="showTooltip(event, 'lifeHappeningTooltip2')"
+                onmouseout="hideTooltip('lifeHappeningTooltip2')"
+                ><i class="fa-regular fa-circle-question"></i
+              ></span>
+            </h2>
+            <!-- Tooltip for Life Happening -->
+            <div id="lifeHappeningTooltip2" class="tooltip-box">
+              What does Life Happening mean? <br />
+              Life Happening events are unexpected occurrences that can affect your finances positively or negatively.
+            </div>
+
+            <p>Unexpected expenses arose from your car breaking down. Time to tighten the budget.</p>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Continue</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Main script -->
     <script defer src="static/js/initial_script.js"></script>
     <script defer src="static/js/calculator_functions.js"></script>
     <script defer src="static/js/card_updates.js"></script>
+    <script defer src="static/js/how_to_play.js"></script>
+    <script defer src="static/js/tooltips.js"></script>
 
     <!-- Bootstrap -->
     <script
@@ -305,5 +624,6 @@
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/be71380b34.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/e9c73d7092.js" crossorigin="anonymous"></script>
   </body>
 </html>
