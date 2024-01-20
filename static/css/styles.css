@@ -73,3 +73,9 @@ h6 {
   box-sizing: border-box; /* Include padding and border in the width */
   padding: 10px; /* Add some padding for spacing */
 }
+
+.liabilities-button {
+  width: 20px;
+  background-color: var(--text);
+  color: var(--background);
+}

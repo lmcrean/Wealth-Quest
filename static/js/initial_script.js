@@ -84,6 +84,7 @@ fetch("static/game_data/professions.json")
   .then((json) => {
     professions = json;
     createProfessionCarousel();
+    console.log(professions);
   });
 
 let deals;
@@ -91,6 +92,7 @@ fetch("static/game_data/deals.json")
   .then((response) => response.json())
   .then((json) => {
     deals = json;
+    console.log(deals);
   });
 
 let lifeEvents;
@@ -98,6 +100,7 @@ fetch("static/game_data/life_events.json")
   .then((response) => response.json())
   .then((json) => {
     lifeEvents = json;
+    console.log(lifeEvents);
   });
 
 let childEvents;
@@ -105,6 +108,7 @@ fetch("static/game_data/child_events.json")
   .then((response) => response.json())
   .then((json) => {
     childEvents = json;
+    console.log(childEvents);
   });
 
 function createProfessionCarousel() {
