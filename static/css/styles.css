@@ -105,3 +105,9 @@ h6 {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   z-index: 100;
 }
+
+.liabilities-button {
+  width: 20px;
+  background-color: var(--text);
+  color: var(--background);
+}
