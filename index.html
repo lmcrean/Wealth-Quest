@@ -47,6 +47,46 @@
         </div>
       </div>
 
+      <!-- Welcome Modal -->
+      <div
+        class="modal fade"
+        id="welcomeModal"
+        tabindex="-1"
+        aria-labelledby="welcomeModalLabel"
+        aria-hidden="true"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body text-center">
+              <h5 class="modal-title" id="welcomeModalLabel">
+                Welcome to Our Board Game
+              </h5>
+              <i class="fas fa-gamepad fa-3x my-3"></i>
+              <!-- Font Awesome Icon -->
+              <div>
+                <button
+                  type="button"
+                  class="btn btn-primary me-2"
+                  id="startGameButton"
+                >
+                  Start Game
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#gameInstructionsModal"
+                >
+                  Instructions
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="row">
         <!-- profession Card with tooltip for what is a profession? -->
         <div class="col col-lg-6">
@@ -1328,6 +1368,7 @@
     <script defer src="static/js/card_updates.js"></script>
     <script defer src="static/js/how_to_play.js"></script>
     <script defer src="static/js/tooltips.js"></script>
+    <script defer src="static/js/welcome_modal.js"></script>
 
     <!-- Bootstrap -->
     <script
