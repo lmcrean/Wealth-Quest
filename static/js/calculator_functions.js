@@ -108,9 +108,9 @@ function lifeEvent() {
   } else {
     profession.assets.saving += deal.ammount_change;
     cardTitleValue = deal.description;
-    cardDescriptionValue = `You ${deal.ammount_change < 0 ? "lost" : "gain"} £${Math.abs(
-      deal.ammount_change
-    )} from your savings, your new total savings is ${profession.assets.saving}`;
+    cardDescriptionValue = `You ${deal.ammount_change < 0 ? "lost" : "gain"} £${Math.abs(deal.ammount_change)} ${
+      deal.ammount_change < 0 ? "from" : "towards"
+    } your savings, your new total savings is ${profession.assets.saving}`;
   }
 
   cardTitle.textContent = cardTitleValue;

@@ -19,11 +19,12 @@ const professionCard = {
   retailExpenses: document.getElementById("profession-card-retail-expenses"),
   otherExpenses: document.getElementById("profession-card-other-expenses:"),
   childExpenses: document.getElementById("profession-card-child-expenses:"),
+  bankLoanPayment: document.getElementById("profession-card-bank-loan-payment"),
 
   childrenCount: document.getElementById("profession-card-children-count"),
   perChildExpense: document.getElementById("profession-card-per-child-expense"),
   totalExpenses: document.getElementById("profession-card-total-expenses"),
-  monthlyCashFlow: document.getElementById("profession-card-monthly Cashflow"),
+  monthlyCashFlow: document.getElementById("profession-card-monthly-cashflow"),
 
   // Assets and Liabilities
   savings: document.getElementById("profession-savings"),
@@ -33,6 +34,7 @@ const professionCard = {
   carLoanLiabilities: document.getElementById("profession-card-car-loan-liabilities"),
   creditCardLiabilities: document.getElementById("profession-card-credit-card-liabilities"),
   retailLiabilities: document.getElementById("profession-card-retail-liabilities"),
+  bankLiabilities: document.getElementById("profession-card-bank-loan"),
 };
 
 const gameDataHTML = {
@@ -47,14 +49,13 @@ const carouselInner = document.querySelector(".carousel-inner");
 // variable taken from json to have list of all professions
 let professions;
 
-const bakLoanProcentage = 0.05; // 5%
-
 // Game variables with initial values
 let gameData = {
   currentMonth: 1,
   passiveIncome: 0,
   totalExpenses: 0,
   progressBarPerecentage: 0,
+  bankLoanProcentage: 10, // 5% of the loan is added to the loan as a fee
 
   chances: [
     {
@@ -119,4 +120,29 @@ function createProfessionCarousel() {
         `;
     carouselInner.innerHTML += carouselItem;
   });
+}
+
+// Sets up initial bank rate for display
+function setInitialBankRate() {
+  document.getElementById("bank-rate").textContent = gameData.bankLoanProcentage;
+}
+
+setInitialBankRate();
+
+function barrowFromBank() {
+  const inputValue = document.getElementById("bankInput").value;
+  const bankLoan = parseInt(inputValue);
+
+  // Check if the input is a valid number and a multiple of 10
+  if (bankLoan % 100 === 0) {
+    const bankLoanLiability = (bankLoan * gameData.bankLoanProcentage) / 100;
+    profession.expenses.bankLoanPayment += bankLoan;
+    profession.liabilities.bankLoan += bankLoanLiability;
+    profession.assets.saving += bankLoan;
+
+    finishTurn();
+    alert(`You have barrowed from bank ${bankLoan}.`);
+  } else {
+    alert("Please enter a valid multiple of 100.");
+  }
 }

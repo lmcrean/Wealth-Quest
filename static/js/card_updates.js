@@ -9,6 +9,9 @@ function selectProfession() {
 
   // INITIAL VALUES
   profession.childrenCount = 0;
+  profession.expenses.bankLoanPayment = 0;
+  profession.liabilities.bankLoan = 0;
+
   profession.expenses.child = profession.perChildExpense * profession.childrenCount;
   profession.passiveIncome = calculatePassiveIncome(profession);
   profession.totalIncome = calculateTotalIncome(profession);
@@ -57,6 +60,8 @@ function updateProfession() {
   professionCard.retailExpenses.innerText = profession.expenses.retail;
   professionCard.otherExpenses.innerText = profession.expenses.other;
   professionCard.childExpenses.innerText = profession.expenses.child;
+  console.log(professionCard.bankLoanPayment);
+  professionCard.bankLoanPayment.innerText = profession.expenses.bankLoanPayment;
 
   //  Totals
   professionCard.childrenCount.innerText = profession.childrenCount;
@@ -71,6 +76,7 @@ function updateProfession() {
   professionCard.carLoanLiabilities.innerText = profession.liabilities.carLoans;
   professionCard.creditCardLiabilities.innerText = profession.liabilities.creditCards;
   professionCard.retailLiabilities.innerText = profession.liabilities.retailDebt;
+  professionCard.bankLiabilities.innerText = profession.liabilities.bankLoan;
 }
 
 // updates game data HTML with new values
