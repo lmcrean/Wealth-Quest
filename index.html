@@ -61,26 +61,60 @@
         <!-- Income tab -->
         <div class="row border">
           <div class="col-7">
+            <!-- Income Heading with Tooltip -->
             <h2>
               Income
               <span class="question-mark" onmouseover="showTooltip(event, 'incomeTooltip')"
                 onmouseout="hideTooltip('incomeTooltip')"><i class="fa-regular fa-circle-question"></i></span>
             </h2>
+            <!-- Tooltip for Income -->
             <div id="incomeTooltip" class="tooltip-box">
-              What is Income? <br />
-              Income is money that an individual or business receives in exchange for providing a good or service or
-              through investing capital.
+              Income is money that comes into your bank account on payday.
             </div>
+            <!-- salary -->
             <div class="d-flex justify-content-between">
-              <p>Salary:</p>
+              <!-- Salary Income Heading with Tooltip -->
+              <p>
+                Salary:
+                <span class="question-mark" onmouseover="showTooltip(event, 'salaryTooltip')"
+                  onmouseout="hideTooltip('salaryTooltip')"><i class="fa-regular fa-circle-question"></i></span>
+              </p>
+              <!-- Tooltip for Salary Income -->
+              <div id="salaryTooltip" class="tooltip-box">
+                Salary is the income you get from your profession.
+              </div>
               <p id="profession-card-salary">0</p>
             </div>
+            <!-- interest -->
             <div class="d-flex justify-content-between">
-              <p>Interest/Dividends:</p>
+              <!-- Interest Income Heading with Tooltip -->
+              <p>
+                Interest:
+                <span class="question-mark" onmouseover="showTooltip(event, 'interestTooltip')"
+                  onmouseout="hideTooltip('interestTooltip')"><i class="fa-regular fa-circle-question"></i></span>
+              </p>
+              <!-- Tooltip for Interest Income -->
+              <div id="interestTooltip" class="tooltip-box">
+                Your current balance is held in a bank account at X interest rate. Your bank pays you this rate on your
+                current balance every payday; this value is described as 'interest'. Increase your interest by
+                increasing your bank balance.
+              </div>
               <p id="profession-card-interest">0</p>
             </div>
+            <!-- investment -->
             <div class="d-flex justify-content-between">
-              <p>Real Estate/Business:</p>
+              <!-- Investments Income Heading with Tooltip -->
+              <p>
+                Investments:
+                <span class="question-mark" onmouseover="showTooltip(event, 'investmentTooltip')"
+                  onmouseout="hideTooltip('investmentTooltip')"><i class="fa-regular fa-circle-question"></i></span>
+              </p>
+              <!-- Tooltip for Investment Income -->
+              <div id="investmentTooltip" class="tooltip-box">
+                This is a sum of the income you get from assets which provide a passive income. Buy assets with a higher
+                passive income to increase this value. Take a look at the 'Assets' section of your financial statement;
+                these are directly linked.
+              </div>
               <p id="profession-card-real-estate">0</p>
             </div>
           </div>
@@ -95,20 +129,22 @@
               </p>
               <!-- Tooltip for Passive Income -->
               <div id="passiveIncomeTooltip" class="tooltip-box">
-                What is Passive Income? <br />
-                Passive income is earnings derived from a rental property, limited partnership, or other enterprise in
-                which a person is not actively involved.
+                Passive income is money earned from an asset which requires little or no ongoing effort. Here, it is a
+                sum of 'interest' and 'investments'. Increase passive income by increasing these two values.
               </div>
-
               <p id="profession-card-pasive-income">0</p>
             </div>
-            <div>
-              <p>
-                <small>(Cashflow from Interes/Dividents + realestate/Business)</small>
-              </p>
-            </div>
             <div class="d-flex justify-content-between">
-              <p>Total income:</p>
+              <!-- Total Income Heading with Tooltip -->
+              <p>
+                Total income:
+                <span class="question-mark" onmouseover="showTooltip(event, 'totalIncomeTooltip')"
+                  onmouseout="hideTooltip('totalIncomeTooltip')"><i class="fa-regular fa-circle-question"></i></span>
+              </p>
+              <!-- Tooltip for Total Income -->
+              <div id="totalIncomeTooltip" class="tooltip-box">
+                The sum of all income. Essentially, this is your passive income plus your salary.
+              </div>
               <p id="profession-card-total-income">0</p>
             </div>
           </div>
@@ -118,6 +154,7 @@
         <div class="row border">
           <div class="col-7">
             <div>
+              <!-- Haading for Expenses -->
               <h2>
                 Expenses
                 <span class="question-mark" onmouseover="showTooltip(event, 'expensesTooltip')"
@@ -125,30 +162,71 @@
               </h2>
               <!-- Tooltip for Expenses -->
               <div id="expensesTooltip" class="tooltip-box">
-                What are Expenses? <br />
-                Expenses are the costs incurred in the process of generating revenue; in other words, the costs of
-                doing business.
+                Expenses incure throughout life. They are outgoings every payday and directly link to your liabilities.
+                Check your liabilities to see how they affect different items in your expenses.
               </div>
             </div>
             <div class="d-flex justify-content-between">
-              <p>Taxes:</p>
+              <!-- Heading for Taxes -->
+              <p>
+                Taxes:
+                <span class="question-mark" onmouseover="showTooltip(event, 'taxesTooltip')"
+                  onmouseout="hideTooltip('taxesTooltip')"><i class="fa-regular fa-circle-question"></i></span>
+              </p>
+              <!-- Tooltip for Taxes -->
+              <div id="taxesTooltip" class="tooltip-box">
+                Tax is an unchangable figure based on your salary.
+              </div>
               <p id="profession-card-taxes">0</p>
             </div>
             <div class="d-flex justify-content-between">
-              <p>Home Mortgage Payment:</p>
+              <!-- Heading for mortgages -->
+              <p>House Mortgage Payment:</p>
+              <span class="question-mark" onmouseover="showTooltip(event, 'motgageTooltip')"
+                onmouseout="hideTooltip('motgageTooltip')"><i class="fa-regular fa-circle-question"></i></span>
+              <!-- Tooltip for mortgages -->
+              <div id="motgageTooltip" class="tooltip-box">
+                You can gradually pay off your house mortgage with these smaller payments. See what's left to pay on
+                your house mortgage by loooking at this item in the 'Liabilities' section of the financial statement.
+              </div>
               <p id="profession-card-home-mortgage">0</p>
             </div>
             <div class="d-flex justify-content-between">
-              <p>School Loan Payment:</p>
+              <!-- Heading for School Loans -->
+              <p>
+                School Loan Payment:
+                <span class="question-mark" onmouseover="showTooltip(event, 'schoolLoansTooltip')"
+                  onmouseout="hideTooltip('schoolLoansTooltip')"><i class="fa-regular fa-circle-question"></i></span>
+              </p>
               <p id="profession-card-school-loan">0</p>
+              <!-- Tooltip for School Loans Payment-->
+              <div id="schoolLoansTooltip" class="tooltip-box">
+                If you have a child, expenses incure, these include school costs.
+              </div>
             </div>
             <div class="d-flex justify-content-between">
-              <p>Car Loan Payment:</p>
+              <!-- Heading for Car Loan Payment -->
+              <p>
+                Car Loan Payment:
+                <span class="question-mark" onmouseover="showTooltip(event, 'carLoansTooltip')"
+                  onmouseout="hideTooltip('carLoansTooltip')"><i class="fa-regular fa-circle-question"></i></span>
+              </p>
               <p id="profession-card-car-loan">0</p>
+              <div id="carLoansTooltip" class="tooltip-box">
+                If you have bought a car but couldn't pay for it upfront, you may have a car loan (check in your
+                'liabilities'). You can pay it back in small payments here.
+              </div>
             </div>
             <div class="d-flex justify-content-between">
+              <!-- Heading for Credit Card Payment -->
               <p>Credit Card Payment:</p>
+              <span class="question-mark" onmouseover="showTooltip(event, 'creditCardPaymentsTooltip')"
+                onmouseout="hideTooltip('creditCardPaymentsTooltip')"><i
+                  class="fa-regular fa-circle-question"></i></span>
               <p id="profession-card-credit-card">0</p>
+              <div id="creditCardPaymentsTooltip" class="tooltip-box">
+                description
+              </div>
             </div>
             <div class="d-flex justify-content-between">
               <p>Retail Payment:</p>
