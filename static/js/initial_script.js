@@ -47,6 +47,8 @@ const carouselInner = document.querySelector(".carousel-inner");
 // variable taken from json to have list of all professions
 let professions;
 
+const bakLoanProcentage = 0.05; // 5%
+
 // Game variables with initial values
 let gameData = {
   currentMonth: 1,
@@ -68,21 +70,40 @@ let gameData = {
     {
       id: 3,
       name: "Deal",
-      chance: 5,
+      chance: 10,
     },
   ],
 };
 
 // variable that is selected by player chosing his profession within selectProfession() function
+
 let profession;
-
-const bakLoanProcentage = 0.05; // 5%
-
 fetch("/static/game_data/professions.json")
   .then((response) => response.json())
   .then((json) => {
     professions = json;
     createProfessionCarousel();
+  });
+
+let deals;
+fetch("/static/game_data/deals.json")
+  .then((response) => response.json())
+  .then((json) => {
+    deals = json;
+  });
+
+let lifeEvents;
+fetch("/static/game_data/life_events.json")
+  .then((response) => response.json())
+  .then((json) => {
+    lifeEvents = json;
+  });
+
+let childEvents;
+fetch("/static/game_data/child_events.json")
+  .then((response) => response.json())
+  .then((json) => {
+    childEvents = json;
   });
 
 function createProfessionCarousel() {

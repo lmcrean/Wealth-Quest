@@ -29,7 +29,7 @@ function selectRandomEvent() {
       payday();
       break;
     case 2:
-      moneyLoss();
+      lifeEvent();
       break;
     case 3:
       deal();
@@ -85,6 +85,7 @@ function updateGameData() {
 }
 
 function finishTurn() {
+  profession.expenses.child = profession.perChildExpense * profession.childrenCount;
   profession.passiveIncome = calculatePassiveIncome(profession);
   profession.totalIncome = calculateTotalIncome(profession);
   profession.totalExpenses = calculateTotalExpenses(profession);

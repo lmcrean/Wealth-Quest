@@ -1,0 +1,368 @@
+[
+  {
+    "id": 0,
+    "description": "New Child is born",
+    "ammount_change": 0,
+    "chance": 40
+  },
+  {
+    "id": 1,
+    "description": "Car Breakdown",
+    "ammount_change": -800,
+    "chance": 5
+  },
+  {
+    "id": 2,
+    "description": "Medical Emergency",
+    "ammount_change": -1000,
+    "chance": 5
+  },
+  {
+    "id": 3,
+    "description": "Home Appliance Failure",
+    "ammount_change": -500,
+    "chance": 5
+  },
+  {
+    "id": 4,
+    "description": "Unexpected Taxes",
+    "ammount_change": -700,
+    "chance": 5
+  },
+  {
+    "id": 5,
+    "description": "Parking Ticket",
+    "ammount_change": -50,
+    "chance": 5
+  },
+  {
+    "id": 6,
+    "description": "Job Loss",
+    "ammount_change": -1200,
+    "chance": 5
+  },
+  {
+    "id": 7,
+    "description": "Home Repair",
+    "ammount_change": -1000,
+    "chance": 5
+  },
+  {
+    "id": 8,
+    "description": "Identity Theft",
+    "ammount_change": -300,
+    "chance": 5
+  },
+  {
+    "id": 9,
+    "description": "School Expenses",
+    "ammount_change": -600,
+    "chance": 5
+  },
+  {
+    "id": 10,
+    "description": "Legal Fees",
+    "ammount_change": -800,
+    "chance": 5
+  },
+  {
+    "id": 11,
+    "description": "Pet Vet Bill",
+    "ammount_change": -200,
+    "chance": 5
+  },
+  {
+    "id": 12,
+    "description": "Laptop/Phone Repair",
+    "ammount_change": -300,
+    "chance": 5
+  },
+  {
+    "id": 13,
+    "description": "Burst Water Pipe",
+    "ammount_change": -500,
+    "chance": 5
+  },
+  {
+    "id": 14,
+    "description": "Gym Membership Renewal",
+    "ammount_change": -100,
+    "chance": 5
+  },
+  {
+    "id": 15,
+    "description": "Speeding Ticket",
+    "ammount_change": -150,
+    "chance": 5
+  },
+  {
+    "id": 16,
+    "description": "Emergency Plumbing",
+    "ammount_change": -400,
+    "chance": 5
+  },
+  {
+    "id": 17,
+    "description": "Broken Glasses",
+    "ammount_change": -100,
+    "chance": 5
+  },
+  {
+    "id": 18,
+    "description": "Home Burglary",
+    "ammount_change": -800,
+    "chance": 5
+  },
+  {
+    "id": 19,
+    "description": "Professional Licensing",
+    "ammount_change": -500,
+    "chance": 5
+  },
+  {
+    "id": 20,
+    "description": "Credit Card Fraud",
+    "ammount_change": -300,
+    "chance": 5
+  },
+  {
+    "id": 21,
+    "description": "Birthday Gift",
+    "ammount_change": 100,
+    "chance": 5
+  },
+  {
+    "id": 22,
+    "description": "Tax Refund",
+    "ammount_change": 200,
+    "chance": 5
+  },
+  {
+    "id": 23,
+    "description": "Side Job Payment",
+    "ammount_change": 300,
+    "chance": 5
+  },
+  {
+    "id": 24,
+    "description": "Lottery Win",
+    "ammount_change": 150,
+    "chance": 5
+  },
+  {
+    "id": 25,
+    "description": "Bonus at Work",
+    "ammount_change": 250,
+    "chance": 5
+  },
+  {
+    "id": 26,
+    "description": "Successful Investment",
+    "ammount_change": 300,
+    "chance": 5
+  },
+  {
+    "id": 27,
+    "description": "Garage Sale",
+    "ammount_change": 50,
+    "chance": 5
+  },
+  {
+    "id": 28,
+    "description": "Freelance Work Opportunity",
+    "ammount_change": 200,
+    "chance": 5
+  },
+  {
+    "id": 29,
+    "description": "Inheritance",
+    "ammount_change": 300,
+    "chance": 5
+  },
+  {
+    "id": 30,
+    "description": "Coupon Savings",
+    "ammount_change": 50,
+    "chance": 5
+  },
+  {
+    "id": 31,
+    "description": "Hobby Sale",
+    "ammount_change": 100,
+    "chance": 5
+  },
+  {
+    "id": 32,
+    "description": "Successful Negotiation",
+    "ammount_change": 150,
+    "chance": 5
+  },
+  {
+    "id": 33,
+    "description": "Found Money",
+    "ammount_change": 50,
+    "chance": 5
+  },
+  {
+    "id": 34,
+    "description": "Rent Rebate",
+    "ammount_change": 100,
+    "chance": 5
+  },
+  {
+    "id": 35,
+    "description": "Cashback Rewards",
+    "ammount_change": 30,
+    "chance": 5
+  },
+  {
+    "id": 36,
+    "description": "Online Survey Payout",
+    "ammount_change": 20,
+    "chance": 5
+  },
+  {
+    "id": 37,
+    "description": "Refund for Overpayment",
+    "ammount_change": 75,
+    "chance": 5
+  },
+  {
+    "id": 38,
+    "description": "Gift Card Prize",
+    "ammount_change": 50,
+    "chance": 5
+  },
+  {
+    "id": 39,
+    "description": "Electric Bill Overpayment",
+    "ammount_change": 40,
+    "chance": 5
+  },
+  {
+    "id": 40,
+    "description": "Unexpected Overtime",
+    "ammount_change": 200,
+    "chance": 5
+  },
+  {
+    "id": 41,
+    "description": "Car Accident",
+    "ammount_change": -1200,
+    "chance": 5
+  },
+  {
+    "id": 42,
+    "description": "Medical Procedure",
+    "ammount_change": -1500,
+    "chance": 5
+  },
+  {
+    "id": 43,
+    "description": "Home Fire",
+    "ammount_change": -2000,
+    "chance": 5
+  },
+  {
+    "id": 44,
+    "description": "Unexpected Job Relocation",
+    "ammount_change": -1000,
+    "chance": 5
+  },
+  {
+    "id": 45,
+    "description": "Electronics Theft",
+    "ammount_change": -600,
+    "chance": 5
+  },
+  {
+    "id": 46,
+    "description": "Failed Business Venture",
+    "ammount_change": -1500,
+    "chance": 5
+  },
+  {
+    "id": 47,
+    "description": "Natural Disaster (Property)",
+    "ammount_change": -2500,
+    "chance": 5
+  },
+  {
+    "id": 48,
+    "description": "Legal Settlement",
+    "ammount_change": -1200,
+    "chance": 5
+  },
+  {
+    "id": 49,
+    "description": "Child's School Trip Expense",
+    "ammount_change": -300,
+    "chance": 5
+  },
+  {
+    "id": 50,
+    "description": "Late Mortgage Payment Fee",
+    "ammount_change": -200,
+    "chance": 5
+  },
+  {
+    "id": 51,
+    "description": "Public Transportation Delays",
+    "ammount_change": -50,
+    "chance": 5
+  },
+  {
+    "id": 52,
+    "description": "Student Loan Interest Spike",
+    "ammount_change": -300,
+    "chance": 5
+  },
+  {
+    "id": 53,
+    "description": "Homeowners Association Fine",
+    "ammount_change": -100,
+    "chance": 5
+  },
+  {
+    "id": 54,
+    "description": "Impulse Shopping Spree",
+    "ammount_change": -400,
+    "chance": 5
+  },
+  {
+    "id": 55,
+    "description": "Emergency Pet Surgery",
+    "ammount_change": -500,
+    "chance": 5
+  },
+  {
+    "id": 56,
+    "description": "Sudden Home Rent Increase",
+    "ammount_change": -300,
+    "chance": 5
+  },
+  {
+    "id": 57,
+    "description": "Major Car Repairs",
+    "ammount_change": -1000,
+    "chance": 5
+  },
+  {
+    "id": 58,
+    "description": "Unplanned Travel Expenses",
+    "ammount_change": -700,
+    "chance": 5
+  },
+  {
+    "id": 59,
+    "description": "Credit Score Drop (Fees)",
+    "ammount_change": -150,
+    "chance": 5
+  },
+  {
+    "id": 60,
+    "description": "Bad Investment Decision",
+    "ammount_change": -800,
+    "chance": 5
+  }
+]
