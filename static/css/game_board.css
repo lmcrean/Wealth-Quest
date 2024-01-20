@@ -41,7 +41,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-image: url("../svg/toggle.svg");
+  background-image: url("https://raw.githubusercontent.com/HuiyuLiz/vue-lucky-wheel/1fb3780f35a3008fc215ca6e07e8b9f869bae69b/svg/toggle.svg");
   background-position: center;
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -193,7 +193,7 @@ button:focus {
   content: "";
   width: 540px;
   height: 549px;
-  background-image: url("../svg/wheel-outside.svg");
+  background-image: url("https://raw.githubusercontent.com/HuiyuLiz/vue-lucky-wheel/1fb3780f35a3008fc215ca6e07e8b9f869bae69b/svg/wheel-outside.svg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -252,7 +252,7 @@ button:focus {
   width: 128px;
   height: 208px;
   display: block;
-  background-image: url("../svg/hand.svg");
+  background-image: url("https://raw.githubusercontent.com/HuiyuLiz/vue-lucky-wheel/1fb3780f35a3008fc215ca6e07e8b9f869bae69b/svg/hand.svg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

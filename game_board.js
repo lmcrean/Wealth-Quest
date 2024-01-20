@@ -1,4 +1,7 @@
 // https://github.com/HuiyuLiz/vue-lucky-wheel
+// main.js or entry point of your application
+
+
 
 (function () {
   let app = new Vue({
