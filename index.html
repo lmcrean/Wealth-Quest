@@ -119,6 +119,10 @@
                 <p>Child Expenses:</p>
                 <p id="profession-card-child-expenses:">0</p>
               </div>
+              <div class="d-flex justify-content-between">
+                <p>Bank loan payment:</p>
+                <p id="profession-card-bank-loan-payment">0</p>
+              </div>
             </div>
 
             <div class="col-5">
@@ -136,7 +140,7 @@
               </div>
               <div class="d-flex justify-content-between">
                 <p>Monthly Cash Flow</p>
-                <p id="profession-card-monthly Cashflow">0</p>
+                <p id="profession-card-monthly-cashflow">0</p>
               </div>
             </div>
           </div>
@@ -179,6 +183,10 @@
                 <p>Retail debt:</p>
                 <p id="profession-card-retail-liabilities">0</p>
               </div>
+              <div class="d-flex justify-content-between">
+                <p>Bank Loan:</p>
+                <p id="profession-card-bank-loan">0</p>
+              </div>
             </div>
           </div>
 
@@ -212,6 +220,16 @@
 
             <div class="col-12 border">
               <div id="event-card"></div>
+            </div>
+            <div class="col-12 border">
+              <div id="bank-container">
+                <form id="numberForm">
+                  <p>Barrowing money from bank add <span id="bank-rate">10</span>% liability</p>
+                  <label for="numberInput">Barrow from bank:</label>
+                  <input type="number" id="bankInput" step="100" min="100" value="100" />
+                  <button type="button" onclick="barrowFromBank()">Barrow</button>
+                </form>
+              </div>
             </div>
           </div>
         </div>

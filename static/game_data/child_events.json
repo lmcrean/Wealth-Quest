@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "description": "Child broke neighbor's window",
+    "amount_loss": -200,
+    "chance": 10
+  },
+  {
+    "id": 2,
+    "description": "Child spilled paint on the carpet",
+    "amount_loss": -100,
+    "chance": 10
+  },
+  {
+    "id": 3,
+    "description": "Child's school fees",
+    "amount_loss": -500,
+    "chance": 10
+  },
+  {
+    "id": 4,
+    "description": "Child's extravagant birthday party",
+    "amount_loss": -1000,
+    "chance": 10
+  },
+  {
+    "id": 5,
+    "description": "Child's cat needs surgery",
+    "amount_loss": -300,
+    "chance": 10
+  },
+  {
+    "id": 6,
+    "description": "You bought your child a ps5",
+    "amount_loss": -400,
+    "chance": 10
+  },
+  {
+    "id": 7,
+    "description": "Your child decided to become a programer and you paid for the Code Institute course",
+    "amount_loss": -5000,
+    "chance": 1
+  },
+  {
+    "id": 8,
+    "description": "Child's educational materials",
+    "amount_loss": -250,
+    "chance": 10
+  },
+  {
+    "id": 9,
+    "description": "Child's fundraising expenses",
+    "amount_loss": -50,
+    "chance": 10
+  }
+]
