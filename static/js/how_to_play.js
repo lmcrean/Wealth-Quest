@@ -1,5 +1,5 @@
 var currentStep = 1;
-var totalSteps = 6; // Total number of steps
+var totalSteps = 10; // Total number of steps
 
 function changeStep(step) {
   // Hide current step
