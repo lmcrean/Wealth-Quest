@@ -399,14 +399,17 @@
               </h2>
               <!-- Tooltip for Liabilities -->
               <div id="liabilitiesTooltip" class="tooltip-box">
-                Liabilities are the debts or obligations that come with your investments and other life choices. You can
-                pay these off at any time but be careful not to go bankrupt.
+                Liabilities are the debts or obligations that come with your investments and other life choices. /These
+                are paid off in small payments at payday but you can choose to
+                pay these off at any time. Be careful not to go bankrupt if you do pay them off early.
               </div>
             </div>
-            <div class="d-flex justify-content-between">
+            <div id="house-mortgage-container" class="d-flex justify-content-between">
               <!-- Home Mortgage Pay-off button -->
-              <button class="liabilities-button" onclick="liabilityPayOff(house)">
-                <i class="fa-solid fa-money-bill-trend-up"></i>
+              <button class="liabilities-button" onclick="liabilityPayOff(bank)"
+                onmouseover="showTooltip(event, 'payOffTooltip')" onmouseout="hideTooltip('payOffTooltip')"
+                onclick="liabilityPayOff(house)">
+                <i class="fa-solid fa-credit-card"></i>
               </button>
               <!-- Home Mortgage Heading -->
               <p>
@@ -420,10 +423,12 @@
               </div>
               <p id="profession-card-home-mortgage-liabilities">0</p>
             </div>
-            <div class="d-flex justify-content-between">
+            <div id="student-loan-container" class="d-flex justify-content-between">
               <!-- Student Loan Pay-off button -->
-              <button class="liabilities-button" onclick="liabilityPayOff(student)">
-                <i class="fa-solid fa-money-bill-trend-up"></i>
+              <button class="liabilities-button" onclick="liabilityPayOff(bank)"
+                onmouseover="showTooltip(event, 'payOffTooltip')" onmouseout="hideTooltip('payOffTooltip')"
+                onclick="liabilityPayOff(student)">
+                <i class="fa-solid fa-credit-card"></i>
               </button>
               <!-- Student Loan Heading -->
               <p>
@@ -438,10 +443,12 @@
               </div>
               <p id="profession-card-school-loan-liabilities">0</p>
             </div>
-            <div class="d-flex justify-content-between">
+            <div id="car-loan-container" class="d-flex justify-content-between">
               <!-- Car Loan Pay-off button -->
-              <button class="liabilities-button" onclick="liabilityPayOff(car)">
-                <i class="fa-solid fa-money-bill-trend-up"></i>
+              <button class="liabilities-button" onclick="liabilityPayOff(bank)"
+                onmouseover="showTooltip(event, 'payOffTooltip')" onmouseout="hideTooltip('payOffTooltip')"
+                onclick="liabilityPayOff(car)">
+                <i class="fa-solid fa-credit-card"></i>
               </button>
               <!-- Car Loan Heading -->
               <p>
@@ -455,10 +462,12 @@
               </div>
               <p id="profession-card-car-loan-liabilities">0</p>
             </div>
-            <div class="d-flex justify-content-between">
+            <div id="credit-card-container" class="d-flex justify-content-between">
               <!-- Credit Card Pay-off button -->
-              <button class="liabilities-button" onclick="liabilityPayOff(creditCard)">
-                <i class="fa-solid fa-money-bill-trend-up"></i>
+              <button class="liabilities-button" onclick="liabilityPayOff(bank)"
+                onmouseover="showTooltip(event, 'payOffTooltip')" onmouseout="hideTooltip('payOffTooltip')"
+                onclick="liabilityPayOff(creditCard)">
+                <i class="fa-solid fa-credit-card"></i>
               </button>
               <!-- Credit Card Heading -->
               <p>
@@ -473,10 +482,12 @@
               </div>
               <p id="profession-card-credit-card-liabilities">0</p>
             </div>
-            <div class="d-flex justify-content-between">
+            <div id="retail-debt-container" class="d-flex justify-content-between">
               <!-- Retail Debt Pay-off button -->
-              <button class="liabilities-button" onclick="liabilityPayOff(retail)">
-                <i class="fa-solid fa-money-bill-trend-up"></i>
+              <button class="liabilities-button" onclick="liabilityPayOff(bank)"
+                onmouseover="showTooltip(event, 'payOffTooltip')" onmouseout="hideTooltip('payOffTooltip')"
+                onclick="liabilityPayOff(retail)">
+                <i class="fa-solid fa-credit-card"></i>
               </button>
               <!-- Retail Debt Heading -->
               <p>
@@ -491,10 +502,11 @@
               </div>
               <p id="profession-card-retail-liabilities">0</p>
             </div>
-            <div class="d-flex justify-content-between">
+            <div id="bank-loan-container" class="d-flex justify-content-between">
               <!-- Bank Loan Pay-off button -->
-              <button class="liabilities-button" onclick="liabilityPayOff(bank)">
-                <i class="fa-solid fa-money-bill-trend-up"></i>
+              <button class="liabilities-button" onclick="liabilityPayOff(bank)"
+                onmouseover="showTooltip(event, 'payOffTooltip')" onmouseout="hideTooltip('payOffTooltip')">
+                <i class="fa-solid fa-credit-card"></i>
               </button>
               <!-- Bank Loan Heading -->
               <p>
@@ -510,6 +522,9 @@
               <p id="profession-card-bank-loan">0</p>
             </div>
           </div>
+        </div>
+        <div id="payOffTooltip" class="tooltip-box">
+          Pay off this liability in full.
         </div>
 
         <!-- progress Bar -->
