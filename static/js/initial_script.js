@@ -28,24 +28,12 @@ const professionCard = {
 
   // Assets and Liabilities
   savings: document.getElementById("profession-savings"),
-  additionalAssets: document.getElementById(
-    "profession-card-additional-assets"
-  ),
-  homeMortgageLiabilities: document.getElementById(
-    "profession-card-home-mortgage-liabilities"
-  ),
-  schoolLoanLiabilities: document.getElementById(
-    "profession-card-school-loan-liabilities"
-  ),
-  carLoanLiabilities: document.getElementById(
-    "profession-card-car-loan-liabilities"
-  ),
-  creditCardLiabilities: document.getElementById(
-    "profession-card-credit-card-liabilities"
-  ),
-  retailLiabilities: document.getElementById(
-    "profession-card-retail-liabilities"
-  ),
+  additionalAssets: document.getElementById("profession-card-additional-assets"),
+  homeMortgageLiabilities: document.getElementById("profession-card-home-mortgage-liabilities"),
+  schoolLoanLiabilities: document.getElementById("profession-card-school-loan-liabilities"),
+  carLoanLiabilities: document.getElementById("profession-card-car-loan-liabilities"),
+  creditCardLiabilities: document.getElementById("profession-card-credit-card-liabilities"),
+  retailLiabilities: document.getElementById("profession-card-retail-liabilities"),
   bankLiabilities: document.getElementById("profession-card-bank-loan"),
 };
 
@@ -57,9 +45,6 @@ const gameDataHTML = {
 
 // Profession card modal carousel
 const carouselInner = document.querySelector(".carousel-inner");
-
-// variable taken from json to have list of all professions
-let professions;
 
 // Game variables with initial values
 let gameData = {
@@ -88,15 +73,17 @@ let gameData = {
   ],
 };
 
-// variable that is selected by player chosing his profession within selectProfession() function
+// variable taken from json to have list of all professions
+let professions;
 
+// variable that is selected by player chosing his profession within selectProfession() function
 let profession;
+
 fetch("static/game_data/professions.json")
   .then((response) => response.json())
   .then((json) => {
     professions = json;
     createProfessionCarousel();
-    console.log(professions);
   });
 
 let deals;
@@ -105,7 +92,6 @@ fetch("static/game_data/deals.json")
   .then((response) => response.json())
   .then((json) => {
     deals = json;
-    console.log(deals);
   });
 
 let lifeEvents;
@@ -113,7 +99,6 @@ fetch("static/game_data/life_events.json")
   .then((response) => response.json())
   .then((json) => {
     lifeEvents = json;
-    console.log(lifeEvents);
   });
 
 let childEvents;
@@ -121,16 +106,13 @@ fetch("static/game_data/child_events.json")
   .then((response) => response.json())
   .then((json) => {
     childEvents = json;
-    console.log(childEvents);
   });
 
 function createProfessionCarousel() {
   professions.forEach((profession, index) => {
     const isActive = index === 0 ? "active" : "";
     const carouselItem = `
-          <div class="carousel-item ${isActive}" data-profession-id="${
-      profession.id
-    }">
+          <div class="carousel-item ${isActive}" data-profession-id="${profession.id}">
             <h5>${profession.profession}</h5>
             <p>Salary: $${profession.incomes.salary}</p>
             <p>Total Expenses: $${calculateTotalExpenses(profession)}</p>
@@ -143,8 +125,7 @@ function createProfessionCarousel() {
 
 // Sets up initial bank rate for display
 function setInitialBankRate() {
-  document.getElementById("bank-rate").textContent =
-    gameData.bankLoanProcentage;
+  document.getElementById("bank-rate").textContent = gameData.bankLoanProcentage;
 }
 
 setInitialBankRate();
@@ -156,8 +137,8 @@ function barrowFromBank() {
   // Check if the input is a valid number and a multiple of 10
   if (bankLoan % 100 === 0) {
     const bankLoanLiability = (bankLoan * gameData.bankLoanProcentage) / 100;
-    profession.expenses.bankLoanPayment += bankLoan;
-    profession.liabilities.bankLoan += bankLoanLiability;
+    profession.expenses.bankLoanPayment += bankLoanLiability;
+    profession.liabilities.bankLoan += bankLoan;
     profession.assets.saving += bankLoan;
 
     finishTurn();

@@ -4,7 +4,6 @@ function selectProfession() {
 
   profession = professions.find((profession) => profession.id === parseInt(id));
 
-  console.log(profession);
   professionCard.name.innerText = profession.profession;
 
   // INITIAL VALUES
@@ -19,14 +18,13 @@ function selectProfession() {
   profession.finalCashFlow = profession.totalIncome - profession.totalExpenses;
   childrenCountChange(0);
 
-  updateProfession();
+  updateProfessionHTML();
   updateGameData();
 }
 
 // called when spin the weal button is clicked
 function selectRandomEvent() {
   const event = choseRandomEvent(gameData.chances).id;
-  console.log(event);
   switch (event) {
     case 1:
       payday();
@@ -43,7 +41,7 @@ function selectRandomEvent() {
 }
 
 // updates profestion card HTML with new values
-function updateProfession() {
+function updateProfessionHTML() {
   // Income tab
   professionCard.salary.innerText = profession.incomes.salary;
   professionCard.interest.innerText = profession.incomes.interest;
@@ -60,7 +58,6 @@ function updateProfession() {
   professionCard.retailExpenses.innerText = profession.expenses.retail;
   professionCard.otherExpenses.innerText = profession.expenses.other;
   professionCard.childExpenses.innerText = profession.expenses.child;
-  console.log(professionCard.bankLoanPayment);
   professionCard.bankLoanPayment.innerText = profession.expenses.bankLoanPayment;
 
   //  Totals
@@ -86,7 +83,6 @@ function updateGameData() {
   calculateProgressBar();
   gameDataHTML.progressBarContainer.setAttribute("aria-valuemax", gameData.totalExpenses);
   gameDataHTML.progressBar.style.width = `${gameData.progressBarPerecentage}%`;
-  console.log(gameData.progressBarPerecentage);
   gameDataHTML.progressBar.innerText = `${gameData.passiveIncome} / ${gameData.totalExpenses}`;
 }
 
@@ -96,7 +92,7 @@ function finishTurn() {
   profession.totalIncome = calculateTotalIncome(profession);
   profession.totalExpenses = calculateTotalExpenses(profession);
   profession.finalCashFlow = profession.totalIncome - profession.totalExpenses;
-  updateProfession();
+  updateProfessionHTML();
   updateGameData();
 
   // add logic that check if saving is less than 0 and monthly cash flow is less than 0
