@@ -79,7 +79,7 @@ let gameData = {
 // variable that is selected by player chosing his profession within selectProfession() function
 
 let profession;
-fetch("/static/game_data/professions.json")
+fetch("static/game_data/professions.json")
   .then((response) => response.json())
   .then((json) => {
     professions = json;
@@ -87,21 +87,21 @@ fetch("/static/game_data/professions.json")
   });
 
 let deals;
-fetch("/static/game_data/deals.json")
+fetch("static/game_data/deals.json")
   .then((response) => response.json())
   .then((json) => {
     deals = json;
   });
 
 let lifeEvents;
-fetch("/static/game_data/life_events.json")
+fetch("static/game_data/life_events.json")
   .then((response) => response.json())
   .then((json) => {
     lifeEvents = json;
   });
 
 let childEvents;
-fetch("/static/game_data/child_events.json")
+fetch("static/game_data/child_events.json")
   .then((response) => response.json())
   .then((json) => {
     childEvents = json;
