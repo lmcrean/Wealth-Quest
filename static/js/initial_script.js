@@ -28,12 +28,24 @@ const professionCard = {
 
   // Assets and Liabilities
   savings: document.getElementById("profession-savings"),
-  additionalAssets: document.getElementById("profession-card-additional-assets"),
-  homeMortgageLiabilities: document.getElementById("profession-card-home-mortgage-liabilities"),
-  schoolLoanLiabilities: document.getElementById("profession-card-school-loan-liabilities"),
-  carLoanLiabilities: document.getElementById("profession-card-car-loan-liabilities"),
-  creditCardLiabilities: document.getElementById("profession-card-credit-card-liabilities"),
-  retailLiabilities: document.getElementById("profession-card-retail-liabilities"),
+  additionalAssets: document.getElementById(
+    "profession-card-additional-assets"
+  ),
+  homeMortgageLiabilities: document.getElementById(
+    "profession-card-home-mortgage-liabilities"
+  ),
+  schoolLoanLiabilities: document.getElementById(
+    "profession-card-school-loan-liabilities"
+  ),
+  carLoanLiabilities: document.getElementById(
+    "profession-card-car-loan-liabilities"
+  ),
+  creditCardLiabilities: document.getElementById(
+    "profession-card-credit-card-liabilities"
+  ),
+  retailLiabilities: document.getElementById(
+    "profession-card-retail-liabilities"
+  ),
   bankLiabilities: document.getElementById("profession-card-bank-loan"),
 };
 
@@ -87,6 +99,7 @@ fetch("static/game_data/professions.json")
   });
 
 let deals;
+
 fetch("static/game_data/deals.json")
   .then((response) => response.json())
   .then((json) => {
@@ -111,7 +124,9 @@ function createProfessionCarousel() {
   professions.forEach((profession, index) => {
     const isActive = index === 0 ? "active" : "";
     const carouselItem = `
-          <div class="carousel-item ${isActive}" data-profession-id="${profession.id}">
+          <div class="carousel-item ${isActive}" data-profession-id="${
+      profession.id
+    }">
             <h5>${profession.profession}</h5>
             <p>Salary: $${profession.incomes.salary}</p>
             <p>Total Expenses: $${calculateTotalExpenses(profession)}</p>
@@ -124,7 +139,8 @@ function createProfessionCarousel() {
 
 // Sets up initial bank rate for display
 function setInitialBankRate() {
-  document.getElementById("bank-rate").textContent = gameData.bankLoanProcentage;
+  document.getElementById("bank-rate").textContent =
+    gameData.bankLoanProcentage;
 }
 
 setInitialBankRate();
