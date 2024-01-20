@@ -163,7 +163,67 @@
               <!-- Tooltip for Expenses -->
               <div id="expensesTooltip" class="tooltip-box">
                 Expenses incure throughout life. They are outgoings every payday and directly link to your liabilities.
-                Check your liabilities to see how they affect different items in your expenses.
+                Check your liabilities to see how they affect different items in your expenses.       
+              </div?
+            </div>
+          </div>
+          <!-- Assets and Liabilities -->
+          <div class="row border">
+            <div class="col-7">
+              <div>
+                <!-- Assets Heading with Tooltip -->
+                <h2>
+                  Assets
+                  <span
+                    class="question-mark"
+                    onmouseover="showTooltip(event, 'assetsTooltip')"
+                    onmouseout="hideTooltip('assetsTooltip')"
+                    ><i class="fa-regular fa-circle-question"></i
+                  ></span>
+                </h2>
+                <!-- Tooltip for Assets -->
+                <div id="assetsTooltip" class="tooltip-box">
+                  What are Assets? <br />
+                  Assets are resources with economic value that an individual or company owns or controls with the
+                  expectation that it will provide future benefit.
+                </div>
+              </div>
+              <div class="d-flex justify-content-between">
+                <p>Savings:</p>
+                <p id="profession-savings">0</p>
+              </div>
+              <!-- javascript renderet addditional assets -->
+              <div id="profession-card-additional-assets"></div>
+            </div>
+
+            <div class="col-5">
+              <div>
+                <!-- Liabilities Heading with Tooltip -->
+                <h2>
+                  Liabilities
+                  <span
+                    class="question-mark"
+                    onmouseover="showTooltip(event, 'liabilitiesTooltip')"
+                    onmouseout="hideTooltip('liabilitiesTooltip')"
+                    ><i class="fa-regular fa-circle-question"></i
+                  ></span>
+                </h2>
+                <!-- Tooltip for Liabilities -->
+                <div id="liabilitiesTooltip" class="tooltip-box">
+                  What are Liabilities? <br />
+                  Liabilities are the debts or obligations of a company that are owed to creditors.
+                </div>
+              </div>
+              <div class="d-flex justify-content-between">
+                <button class="liabilities-button" onclick="liabilityPayOff(home)">
+                  <i class="fa-solid fa-money-bill-trend-up"></i>
+                </button>
+                <p>Home Mortgage:</p>
+                <p id="profession-card-home-mortgage-liabilities">0</p>
+              </div>
+              <div class="d-flex justify-content-between">
+                <p>School Loan:</p>
+                <p id="profession-card-school-loan-liabilities">0</p>
               </div>
             </div>
             <div class="d-flex justify-content-between">
