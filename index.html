@@ -399,7 +399,7 @@
               </h2>
               <!-- Tooltip for Liabilities -->
               <div id="liabilitiesTooltip" class="tooltip-box">
-                Liabilities are the debts or obligations that come with your investments and other life choices. /These
+                Liabilities are the debts or obligations that come with your investments and other life choices. These
                 are paid off in small payments at payday but you can choose to
                 pay these off at any time. Be careful not to go bankrupt if you do pay them off early.
               </div>
@@ -595,6 +595,26 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           <button type="button" class="btn btn-primary" onclick="selectProfession()">Select Profession</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Game end modal -->
+  <div class="modal fade" id="gameEndModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="gameEndModalLabel">CONGRATULATIONS OR UNLUCKY AUTOFILL</h5>
+        </div>
+        <div class="modal-body" id="gameEndModalContent">
+          AUTOFILLED
+        </div>
+        <div class="modal-footer">
+          <!-- Option to change profession and try again -->
+          <button id="tryAgain" type="button" class="btn btn-secondary" onclick="">Try again!</button>
+          <!-- End Game -->
+          <button id="exit" type="button" class="btn btn-primary" onclick="endGame()">Exit</button>
         </div>
       </div>
     </div>
