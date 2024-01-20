@@ -19,7 +19,7 @@ function selectProfession() {
   profession.finalCashFlow = profession.totalIncome - profession.totalExpenses;
   childrenCountChange(0);
 
-  updateProfession();
+  updateProfessionHTML();
   updateGameData();
 }
 
@@ -43,7 +43,7 @@ function selectRandomEvent() {
 }
 
 // updates profestion card HTML with new values
-function updateProfession() {
+function updateProfessionHTML() {
   // Income tab
   professionCard.salary.innerText = profession.incomes.salary;
   professionCard.interest.innerText = profession.incomes.interest;
@@ -96,9 +96,10 @@ function finishTurn() {
   profession.totalIncome = calculateTotalIncome(profession);
   profession.totalExpenses = calculateTotalExpenses(profession);
   profession.finalCashFlow = profession.totalIncome - profession.totalExpenses;
-  updateProfession();
+  updateProfessionHTML();
   updateGameData();
 
   // add logic that check if saving is less than 0 and monthly cash flow is less than 0
   // if true then game over
+  console.log(profession);
 }
