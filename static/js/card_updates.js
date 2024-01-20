@@ -4,7 +4,6 @@ function selectProfession() {
 
   profession = professions.find((profession) => profession.id === parseInt(id));
 
-  console.log(profession);
   professionCard.name.innerText = profession.profession;
 
   // INITIAL VALUES
@@ -26,7 +25,6 @@ function selectProfession() {
 // called when spin the weal button is clicked
 function selectRandomEvent() {
   const event = choseRandomEvent(gameData.chances).id;
-  console.log(event);
   switch (event) {
     case 1:
       payday();
@@ -60,7 +58,6 @@ function updateProfessionHTML() {
   professionCard.retailExpenses.innerText = profession.expenses.retail;
   professionCard.otherExpenses.innerText = profession.expenses.other;
   professionCard.childExpenses.innerText = profession.expenses.child;
-  console.log(professionCard.bankLoanPayment);
   professionCard.bankLoanPayment.innerText = profession.expenses.bankLoanPayment;
 
   //  Totals
@@ -86,7 +83,6 @@ function updateGameData() {
   calculateProgressBar();
   gameDataHTML.progressBarContainer.setAttribute("aria-valuemax", gameData.totalExpenses);
   gameDataHTML.progressBar.style.width = `${gameData.progressBarPerecentage}%`;
-  console.log(gameData.progressBarPerecentage);
   gameDataHTML.progressBar.innerText = `${gameData.passiveIncome} / ${gameData.totalExpenses}`;
 }
 
@@ -101,5 +97,4 @@ function finishTurn() {
 
   // add logic that check if saving is less than 0 and monthly cash flow is less than 0
   // if true then game over
-  console.log(profession);
 }

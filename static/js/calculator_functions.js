@@ -157,8 +157,6 @@ function deal() {
       break;
   }
 
-  console.log(cardDetails);
-
   cardTitle.innerText = cardDetails[0];
   cardDescription.innerText = `${cardDetails[1]} \n ${cardDetails[2]} \n ${cardDetails[3]}`;
 
@@ -175,6 +173,17 @@ function deal() {
   cardNumbers.appendChild(cardDownpay);
   cardNumbers.appendChild(cardMortgage);
   cardNumbers.appendChild(passiveIncome);
+
+  // Create button elements
+  let buttons;
+
+  if (dealType === "stocks") {
+    buttons = createButtonElements(true);
+  } else {
+    buttons = createButtonElements(false);
+  }
+
+  cardNumbers.appendChild(buttons);
 
   card.appendChild(cardNumbers);
 
@@ -261,4 +270,45 @@ function getRandomLargeNumber(min, max) {
 
   // Generate a random number within the adjusted range
   return Math.floor(Math.random() * ((max - min + 1) / 100)) * 100 + min;
+}
+
+// Function to create an element with attributes
+function createElement(tag, attributes, text) {
+  const element = document.createElement(tag);
+  for (const key in attributes) {
+    element.setAttribute(key, attributes[key]);
+  }
+  if (text) {
+    element.appendChild(document.createTextNode(text));
+  }
+  return element;
+}
+
+// Function to create button elements
+function createButtonElements(isStocks) {
+  const buttons = document.createElement("div");
+  buttons.className = "deal-buttons";
+
+  const buyButton = createElement("button", { class: "buy-button" }, "Buy");
+  const sellButton = createElement("button", { class: "sell-button" }, "Sell");
+
+  if (isStocks) {
+    const numberInput = document.createElement("input");
+
+    // Set attributes for the number input
+    numberInput.type = "number";
+    numberInput.id = "orderCountInput";
+    numberInput.min = "0"; // Set minimum value
+    numberInput.max = "100"; // Set maximum value
+    numberInput.step = "1"; // Set step value
+    numberInput.value = "0"; // Set default value
+
+    // Append the number input element to the body of the document
+    buttons.body.appendChild(numberInput);
+  }
+
+  buttons.appendChild(buyButton);
+  buttons.appendChild(sellButton);
+
+  return buttons;
 }
