@@ -236,6 +236,8 @@ button:focus {
   font-size: 2rem;
 }
 
+
+
 .pointer-container::after {
   display: block;
   content: "PRESS";
@@ -247,6 +249,8 @@ button:focus {
   text-align: center;
   font-weight: bold;
 }
+
+
 
 .pointer-container .pointer {
   width: 128px;
