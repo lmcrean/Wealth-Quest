@@ -10,6 +10,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="" />
     <link rel="icon" type="image/png" sizes="16x16" href="" />
     <link rel="manifest" href="" />
+   
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
     <meta name="description" content="" />
@@ -22,6 +23,7 @@
 
     <!-- Main CSS sheet -->
     <link rel="stylesheet" href="static/css/styles.css" />
+    <link rel="stylesheet" href="static/css/game_board.css" />
 
     <!-- Google Fonts -->
 
@@ -1549,7 +1551,28 @@
 
     <!-- Main script -->
     
-=======
+<div id="wrapper">
+            
+        <div id="wheel">
+            <div id="inner-wheel">
+                <div class="sec"><span class="fa fa-bell-o"></span></div>
+                <div class="sec"><span class="fa fa-comment-o"></span></div>
+                <div class="sec"><span class="fa fa-smile-o"></span></div>
+                <div class="sec"><span class="fa fa-heart-o"></span></div>
+                <div class="sec"><span class="fa fa-star-o"></span></div>
+                <div class="sec"><span class="fa fa-lightbulb-o"></span></div>
+            </div>       
+           
+            <div id="spin">
+                <div id="inner-spin"></div>
+            </div>
+            
+            <div id="shine"></div>
+        </div>
+        
+        
+        <div id="txt"></div>
+  </div>
     </main>
     <footer>
         footer
@@ -1564,6 +1587,7 @@
     <script defer src="static/js/card_updates.js"></script>
     <script defer src="static/js/how_to_play.js"></script>
     <script defer src="static/js/tooltips.js"></script>
+     <script defer src="static/js/game_board.js"></script>
 
     <script defer src="static/js/welcome_modal.js"></script>
 
