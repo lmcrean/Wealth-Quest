@@ -1,9 +1,9 @@
 # Wealth Quest
 
-![Mockup](Link here)
+![Mockup](static/docs/amiresponsive.png)
 
-#### By Hackathon Team 6 (Our team names are in the acknowledgements)
-[Click here to view the live web application](Live link here)
+#### By Hackathon Team 6
+[Click here to view the live web application](https://lmcrean.github.io/Wealth-Quest/)
 
 #### HELLO EVERYONE!
 
@@ -197,6 +197,7 @@ The site was deployed to GitHub pages. The steps to deploy are as follows:
 3. From the source select Branch: main.
 4. Click 'Save'.
 5. A live link will be displayed when published successfully. 
+[Live link here](https://lmcrean.github.io/Wealth-Quest/)
 
 ### Forking the GitHub Repository
 
