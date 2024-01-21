@@ -118,3 +118,21 @@ _iPad Wireframes_
 _Phone Wireframes_
 
 </details>
+
+#### Design and Colour
+
+This site was designed using a mobile-first approach, because after conducting some research (using sites like [Adobe](https://xd.adobe.com/ideas/process/ui-design/what-is-mobile-first-design/)), it appears that most users use their mobile devices over desktop or iPad screens, especially when partaking in quizzes. 
+
+- The design includes eye-catching colours and a spinning wheel to create a boardgame feel
+- A different colour palette was used for the progress bar to differentiate it from the rest of the game elements.
+- The game is setup on one screen with numerous modals being shown and hidden as the game progresses
+- The colours applied to the buttons, headings and font are all consistent throughout
+
+<details><summary>Screenshots</summary>
+
+<img src="">
+
+_Colour Palette for entire website_
+
+</details>
+
