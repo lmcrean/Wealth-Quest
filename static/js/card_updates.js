@@ -16,6 +16,7 @@ function selectProfession() {
   profession.totalIncome = calculateTotalIncome(profession);
   profession.totalExpenses = calculateTotalExpenses(profession);
   profession.finalCashFlow = profession.totalIncome - profession.totalExpenses;
+  profession.additionalAssets = [];
   childrenCountChange(0);
 
   updateProfessionHTML();
@@ -44,7 +45,6 @@ function selectRandomEvent() {
 function updateProfessionHTML() {
   // Income tab
   professionCard.salary.innerText = profession.incomes.salary;
-  professionCard.interest.innerText = profession.incomes.interest;
   professionCard.realEstate.innerText = profession.incomes.realEstate;
   professionCard.passiveIncome.innerText = profession.passiveIncome;
   professionCard.totalIncome.innerText = profession.totalIncome;
@@ -66,14 +66,19 @@ function updateProfessionHTML() {
   professionCard.totalExpenses.innerText = profession.totalExpenses;
   professionCard.monthlyCashFlow.innerText = profession.finalCashFlow;
 
-  // Assets and Liabilities
+  // Assets
   professionCard.savings.innerText = profession.assets.saving;
+  fillAdditionalAssets();
+
+  // Liabilities
   professionCard.homeMortgageLiabilities.innerText = profession.liabilities.homeMortages;
   professionCard.schoolLoanLiabilities.innerText = profession.liabilities.schoolLoans;
   professionCard.carLoanLiabilities.innerText = profession.liabilities.carLoans;
   professionCard.creditCardLiabilities.innerText = profession.liabilities.creditCards;
   professionCard.retailLiabilities.innerText = profession.liabilities.retailDebt;
   professionCard.bankLiabilities.innerText = profession.liabilities.bankLoan;
+
+  console.log(profession);
 }
 
 // updates game data HTML with new values
@@ -97,4 +102,30 @@ function finishTurn() {
 
   // add logic that check if saving is less than 0 and monthly cash flow is less than 0
   // if true then game over
+}
+
+// fill additional assets function
+function fillAdditionalAssets() {
+  professionCard.additionalAssets.innerText = "";
+  let additionalAssetsHTML = "";
+
+  profession.additionalAssets.forEach((asset) => {
+    additionalAssetsHTML += `<div class="d-flex justify-content-between">
+                <p>
+                  ${asset.title}(x${asset.additionalAmount}):
+                  <span
+                    class="question-mark"
+                    onmouseover="showTooltip(event, 'asset${asset.id}Tooltip')"
+                    onmouseout="hideTooltip('asset${asset.id}Tooltip')"
+                    ><i class="fa-regular fa-circle-question"></i
+                  ></span>
+                </p>
+                <!-- Tooltip for Bank Balance -->
+                <div id="asset${asset.id}Tooltip" class="tooltip-box">
+                  This asset provides you with ${asset.passive_income} passive income per month
+                </div>
+                <p id="profession-savings">${asset.initial_cost}</p>
+              </div>`;
+  });
+  professionCard.additionalAssets.innerHTML = additionalAssetsHTML;
 }
