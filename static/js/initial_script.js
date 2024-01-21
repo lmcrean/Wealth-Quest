@@ -28,14 +28,26 @@ const professionCard = {
   // Assets
   savings: document.getElementById("profession-savings"),
 
-  additionalAssets: document.getElementById("profession-card-additional-assets"),
+  additionalAssets: document.getElementById(
+    "profession-card-additional-assets"
+  ),
 
   // Liabilities
-  homeMortgageLiabilities: document.getElementById("profession-card-home-mortgage-liabilities"),
-  schoolLoanLiabilities: document.getElementById("profession-card-school-loan-liabilities"),
-  carLoanLiabilities: document.getElementById("profession-card-car-loan-liabilities"),
-  creditCardLiabilities: document.getElementById("profession-card-credit-card-liabilities"),
-  retailLiabilities: document.getElementById("profession-card-retail-liabilities"),
+  homeMortgageLiabilities: document.getElementById(
+    "profession-card-home-mortgage-liabilities"
+  ),
+  schoolLoanLiabilities: document.getElementById(
+    "profession-card-school-loan-liabilities"
+  ),
+  carLoanLiabilities: document.getElementById(
+    "profession-card-car-loan-liabilities"
+  ),
+  creditCardLiabilities: document.getElementById(
+    "profession-card-credit-card-liabilities"
+  ),
+  retailLiabilities: document.getElementById(
+    "profession-card-retail-liabilities"
+  ),
 
   bankLiabilities: document.getElementById("profession-card-bank-loan"),
 };
@@ -168,7 +180,9 @@ function createProfessionCarousel() {
     console.log(profession.id);
     const isActive = index === 0 ? "active" : "";
     const carouselItem = `
-          <div class="carousel-item ${isActive}" data-profession-id="${profession.id}">
+          <div class="carousel-item ${isActive}" data-profession-id="${
+      profession.id
+    }">
             <h5>${profession.profession}</h5>
             <p>Salary: £${profession.incomes.salary}</p>
             <p>Total Expenses: £${calculateTotalExpenses(profession)}</p>
@@ -186,7 +200,8 @@ function createProfessionCarousel() {
 
 // Sets up initial bank rate for display
 function setInitialBankRate() {
-  document.getElementById("bank-rate").textContent = gameData.bankLoanProcentage;
+  document.getElementById("bank-rate").textContent =
+    gameData.bankLoanProcentage;
 }
 
 setInitialBankRate();
@@ -210,7 +225,7 @@ function barrowFromBank() {
   }
 }
 
-// Check for game end functionality
+// Check for game end
 function checkForGameEnd() {
   // Win = passive income > expenses
   if (profession.passiveIncome >= profession.totalExpenses) {
@@ -222,6 +237,7 @@ function checkForGameEnd() {
 }
 
 function win() {
+
   updateProfessionsLS();
   // Get the modal element
   const gameEndModal = new bootstrap.Modal(document.getElementById("gameEndModal"));
@@ -231,24 +247,21 @@ function win() {
   document.getElementById("gameEndModalContent").innerText =
     "You have successfully achieved the goal of having a higher passive income than expenses! Which means you could quit your job and your bank balance won't go down. \n Hooray. Hopefully, you have learnt a lot from playing and might have an idea of how you could apply this to real life.";
 
-  // Show the modal
-  gameEndModal.show();
+  // show game end modal
+  $("#gameEndModal").modal("show");
 
   // End game and reset variables
   endGame();
 }
 
 function lose() {
-  // Get the modal element
-  const gameEndModal = new bootstrap.Modal(document.getElementById("gameEndModal"));
-
   // Change the modal title and content
   document.getElementById("gameEndModalLabel").innerText = "Unlucky!";
   document.getElementById("gameEndModalContent").innerText =
     "It looks like you've gone bankrupt. Good thing it's just a game! Maybe try again with a different profession and new tactics";
 
-  // Show the modal
-  gameEndModal.show();
+  // show game end modal
+  $("#gameEndModal").modal("show");
 
   // End game and reset variables
   endGame();
