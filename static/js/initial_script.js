@@ -44,10 +44,17 @@ const gameDataHTML = {
   progressBar: document.getElementById("progress-bar"),
   progressBarContainer: document.getElementById("progress-bar-container"),
   eventCard: document.getElementById("event-card"),
+  paydayCard: document.getElementById("payday-card"),
 };
 
 // Profession card modal carousel
 const carouselInner = document.querySelector(".carousel-inner");
+
+const rollDiceBtn = document.getElementById("roll-dice-btn");
+const orderInputSpan = document.getElementById("order-input-span");
+const orderCountInput = document.getElementById("orderCountInput");
+const acceptOfferBtn = document.getElementById("accept-offer-btn");
+const rejectOfferBtn = document.getElementById("reject-offer-btn");
 
 // Game variables with initial values
 let gameData = {
@@ -56,7 +63,9 @@ let gameData = {
   totalExpenses: 0,
   progressBarPerecentage: 0,
   bankLoanProcentage: 10, // 5% of the loan is added to the loan as a fee
+  offerId: 0,
 
+  // Adjust chances to increse or decrese occurance of events
   chances: [
     {
       id: 1,
@@ -71,9 +80,15 @@ let gameData = {
     {
       id: 3,
       name: "Deal",
-      chance: 10,
+      chance: 5,
+    },
+    {
+      id: 4,
+      name: "opportunity",
+      chance: 0,
     },
   ],
+  opportunityChance: 1,
 };
 
 // variable taken from json to have list of all professions
@@ -110,13 +125,18 @@ fetch("static/game_data/child_events.json")
     childEvents = json;
   });
 
+let buttonTitles;
+fetch("static/game_data/buttons.json")
+  .then((response) => response.json())
+  .then((json) => {
+    buttonTitles = json;
+  });
+
 function createProfessionCarousel() {
   professions.forEach((profession, index) => {
     const isActive = index === 0 ? "active" : "";
     const carouselItem = `
-          <div class="carousel-item ${isActive}" data-profession-id="${
-      profession.id
-    }">
+          <div class="carousel-item ${isActive}" data-profession-id="${profession.id}">
             <h5>${profession.profession}</h5>
             <p>Salary: $${profession.incomes.salary}</p>
             <p>Total Expenses: $${calculateTotalExpenses(profession)}</p>
@@ -129,8 +149,7 @@ function createProfessionCarousel() {
 
 // Sets up initial bank rate for display
 function setInitialBankRate() {
-  document.getElementById("bank-rate").textContent =
-    gameData.bankLoanProcentage;
+  document.getElementById("bank-rate").textContent = gameData.bankLoanProcentage;
 }
 
 setInitialBankRate();
@@ -146,6 +165,7 @@ function barrowFromBank() {
     profession.liabilities.bankLoan += bankLoan;
     profession.assets.saving += bankLoan;
 
+    console.log(profession);
     finishTurn();
     alert(`You have barrowed from bank ${bankLoan}.`);
   } else {
@@ -166,9 +186,7 @@ function checkForGameEnd() {
 
 function win() {
   // Get the modal element
-  var gameEndModal = new bootstrap.Modal(
-    document.getElementById("gameEndModal")
-  );
+  const gameEndModal = new bootstrap.Modal(document.getElementById("gameEndModal"));
 
   // Change the modal title and content
   document.getElementById("gameEndModalLabel").innerText = "Congratulations!";
@@ -184,9 +202,7 @@ function win() {
 
 function lose() {
   // Get the modal element
-  var gameEndModal = new bootstrap.Modal(
-    document.getElementById("gameEndModal")
-  );
+  const gameEndModal = new bootstrap.Modal(document.getElementById("gameEndModal"));
 
   // Change the modal title and content
   document.getElementById("gameEndModalLabel").innerText = "Unlucky!";
@@ -201,6 +217,25 @@ function lose() {
 }
 
 function endGame() {
+  // resset buttons
+  rollDiceBtnOff(false);
+  acceptBtnOff(true);
+  rejectBtnOff(true);
+  orderInputOff(true);
   // Reset variables
+
+  fetch("static/game_data/deals.json")
+    .then((response) => response.json())
+    .then((json) => {
+      deals = json;
+    });
+
+  (gameData.currentMonth = 1),
+    (gameData.passiveIncome = 0),
+    (gameData.totalExpenses = 0),
+    (gameData.progressBarPerecentage = 0),
+    (gameData.bankLoanProcentage = 10),
+    (gameData.offerId = 0),
+    (profession = null);
   // Return user to welcome page?
 }
