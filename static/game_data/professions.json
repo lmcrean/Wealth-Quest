@@ -27,7 +27,8 @@
       "carLoans": 5000,
       "creditCards": 2000,
       "retailDebt": 1000
-    }
+    },
+    "victory": 0
   },
   {
     "id": 1,
@@ -57,7 +58,8 @@
       "carLoans": 4000,
       "creditCards": 2000,
       "retailDebt": 1000
-    }
+    },
+    "victory": 0
   },
   {
     "id": 2,
@@ -87,7 +89,8 @@
       "carLoans": 4000,
       "creditCards": 2000,
       "retailDebt": 1000
-    }
+    },
+    "victory": 0
   },
   {
     "id": 3,
@@ -117,7 +120,8 @@
       "carLoans": 5000,
       "creditCards": 3000,
       "retailDebt": 1000
-    }
+    },
+    "victory": 0
   },
   {
     "id": 4,
@@ -147,7 +151,8 @@
       "carLoans": 19000,
       "creditCards": 9000,
       "retailDebt": 1000
-    }
+    },
+    "victory": 0
   },
   {
     "id": 5,
@@ -177,7 +182,8 @@
       "carLoans": 6000,
       "creditCards": 3000,
       "retailDebt": 1000
-    }
+    },
+    "victory": 0
   },
   {
     "id": 6,
@@ -207,7 +213,8 @@
       "carLoans": 11000,
       "creditCards": 6000,
       "retailDebt": 1000
-    }
+    },
+    "victory": 0
   },
   {
     "id": 7,
@@ -237,7 +244,8 @@
       "carLoans": 15000,
       "creditCards": 22000,
       "retailDebt": 1000
-    }
+    },
+    "victory": 0
   },
   {
     "id": 8,
@@ -267,7 +275,8 @@
       "carLoans": 3000,
       "creditCards": 2000,
       "retailDebt": 1000
-    }
+    },
+    "victory": 0
   },
   {
     "id": 9,
@@ -297,7 +306,8 @@
       "carLoans": 7000,
       "creditCards": 4000,
       "retailDebt": 1000
-    }
+    },
+    "victory": 0
   },
   {
     "id": 10,
@@ -327,7 +337,8 @@
       "carLoans": 5000,
       "creditCards": 3000,
       "retailDebt": 1000
-    }
+    },
+    "victory": 0
   },
   {
     "id": 11,
@@ -357,7 +368,8 @@
       "carLoans": 4000,
       "creditCards": 2000,
       "retailDebt": 1000
-    }
+    },
+    "victory": 0
   },
   {
     "id": 12,
@@ -387,6 +399,7 @@
       "carLoans": 3000,
       "creditCards": 2500,
       "retailDebt": 1000
-    }
+    },
+    "victory": 0
   }
 ]

@@ -74,7 +74,7 @@
     "max_resell": 100000,
     "initial_cost": 180000,
     "down_pay": 30000,
-    "passive_income": 220,
+    "passive_income": 900,
     "chance": 5
   },
   {
@@ -87,7 +87,7 @@
     "max_resell": 100000,
     "initial_cost": 180000,
     "down_pay": 30000,
-    "passive_income": 220,
+    "passive_income": 900,
     "chance": 5
   },
   {
@@ -524,10 +524,10 @@
     "type": "business",
     "title": "Yoga Studio in Hammersmith",
     "description": " The owner is selling to focus on a wellness podcast and online courses.",
-    "resell_roi": 17,
-    "min_resell": 5000,
-    "max_resell": 9000,
-    "initial_cost": 6000,
+    "resell_roi": 35,
+    "min_resell": 45000,
+    "max_resell": 90000,
+    "initial_cost": 50000,
     "down_pay": 14000,
     "passive_income": 800,
     "chance": 5
