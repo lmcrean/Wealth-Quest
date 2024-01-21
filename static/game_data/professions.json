@@ -5,7 +5,7 @@
     "incomes": {
       "salary": 3000,
       "interest": 0,
-      "realEstate": 300
+      "realEstate": 0
     },
     "expenses": {
       "taxes": 580,
@@ -35,7 +35,7 @@
     "incomes": {
       "salary": 2500,
       "interest": 0,
-      "realEstate": 300
+      "realEstate": 0
     },
     "expenses": {
       "taxes": 460,
@@ -65,7 +65,7 @@
     "incomes": {
       "salary": 1600,
       "interest": 0,
-      "realEstate": 1000
+      "realEstate": 0
     },
     "expenses": {
       "taxes": 280,
@@ -95,7 +95,7 @@
     "incomes": {
       "salary": 3300,
       "interest": 0,
-      "realEstate": 1000
+      "realEstate": 0
     },
     "expenses": {
       "taxes": 630,
@@ -352,10 +352,40 @@
       "saving": 710
     },
     "liabilities": {
-      "homeMortages": 400,
+      "homeMortages": 40000,
       "schoolLoans": 0,
       "carLoans": 4000,
       "creditCards": 2000,
+      "retailDebt": 1000
+    }
+  },
+  {
+    "id": 12,
+    "profession": "Software Developer",
+    "incomes": {
+      "salary": 5000,
+      "interest": 0,
+      "realEstate": 0
+    },
+    "expenses": {
+      "taxes": 320,
+      "homeMortgage": 650,
+      "schoolLoan": 90,
+      "carLoan": 60,
+      "creditCard": 70,
+      "retail": 50,
+      "other": 600,
+      "child": 0
+    },
+    "perChildExpense": 220,
+    "assets": {
+      "saving": 500
+    },
+    "liabilities": {
+      "homeMortages": 90000,
+      "schoolLoans": 1500,
+      "carLoans": 3000,
+      "creditCards": 2500,
       "retailDebt": 1000
     }
   }

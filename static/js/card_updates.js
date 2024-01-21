@@ -25,20 +25,33 @@ function selectProfession() {
 
 // called when spin the weal button is clicked
 function selectRandomEvent() {
+  checkForGameEnd();
+  acceptBtnOff(true);
+  rejectBtnOff(true);
+  orderInputOff(true);
   const event = choseRandomEvent(gameData.chances).id;
   switch (event) {
     case 1:
+      gameData.chances[0].chance = 5;
       payday();
       break;
     case 2:
+      gameData.chances[0].chance += 1;
       lifeEvent();
       break;
     case 3:
+      gameData.chances[0].chance += 1;
       deal();
+      break;
+    case 4:
+      gameData.chances[0].chance += 1;
+      opportunity();
       break;
     default:
       break;
   }
+  createButtonName();
+  finishTurn();
 }
 
 // updates profestion card HTML with new values
@@ -77,8 +90,6 @@ function updateProfessionHTML() {
   professionCard.creditCardLiabilities.innerText = profession.liabilities.creditCards;
   professionCard.retailLiabilities.innerText = profession.liabilities.retailDebt;
   professionCard.bankLiabilities.innerText = profession.liabilities.bankLoan;
-
-  console.log(profession);
 }
 
 // updates game data HTML with new values
@@ -89,6 +100,8 @@ function updateGameData() {
   gameDataHTML.progressBarContainer.setAttribute("aria-valuemax", gameData.totalExpenses);
   gameDataHTML.progressBar.style.width = `${gameData.progressBarPerecentage}%`;
   gameDataHTML.progressBar.innerText = `${gameData.passiveIncome} / ${gameData.totalExpenses}`;
+
+  gameDataHTML.paydayCard.innerText = `Month: ${gameData.currentMonth}`;
 }
 
 function finishTurn() {
@@ -99,9 +112,6 @@ function finishTurn() {
   profession.finalCashFlow = profession.totalIncome - profession.totalExpenses;
   updateProfessionHTML();
   updateGameData();
-
-  // add logic that check if saving is less than 0 and monthly cash flow is less than 0
-  // if true then game over
 }
 
 // fill additional assets function
@@ -128,4 +138,130 @@ function fillAdditionalAssets() {
               </div>`;
   });
   professionCard.additionalAssets.innerHTML = additionalAssetsHTML;
+}
+
+function liabilityPayOff(liability) {
+  switch (liability) {
+    case "house":
+      if (profession.liabilities.homeMortages === 0) {
+        alert("You don't have any home mortgage debt");
+      } else if (profession.assets.saving >= profession.liabilities.homeMortages) {
+        profession.assets.saving -= profession.liabilities.homeMortages;
+        profession.liabilities.homeMortages = 0;
+        profession.expenses.homeMortgage = 0;
+      } else {
+        alert("You don't have enough money to pay off your home mortgage");
+      }
+      break;
+    case "student":
+      if (profession.liabilities.schoolLoans === 0) {
+        alert("You don't have any student loan debt");
+      } else if (profession.assets.saving >= profession.liabilities.schoolLoans) {
+        profession.assets.saving -= profession.liabilities.schoolLoans;
+        profession.liabilities.schoolLoans = 0;
+        profession.expenses.schoolLoan = 0;
+      } else {
+        alert("You don't have enough money to pay off your student loan");
+      }
+      break;
+    case "car":
+      if (profession.liabilities.carLoans === 0) {
+        alert("You don't have any car loan debt");
+      } else if (profession.assets.saving >= profession.liabilities.carLoans) {
+        profession.assets.saving -= profession.liabilities.carLoans;
+        profession.liabilities.carLoans = 0;
+        profession.expenses.carLoan = 0;
+      } else {
+        alert("You don't have enough money to pay off your car loan");
+      }
+      break;
+    case "creditCard":
+      if (profession.liabilities.creditCards === 0) {
+        alert("You don't have any credit card debt");
+      } else if (profession.assets.saving >= profession.liabilities.creditCards) {
+        profession.assets.saving -= profession.liabilities.creditCards;
+        profession.liabilities.creditCards = 0;
+        profession.expenses.creditCard = 0;
+      } else {
+        alert("You don't have enough money to pay off your credit card");
+      }
+      break;
+    case "retail":
+      if (profession.liabilities.retailDebt === 0) {
+        alert("You don't have any retail debt");
+      } else if (profession.assets.saving >= profession.liabilities.retailDebt) {
+        profession.assets.saving -= profession.liabilities.retailDebt;
+        profession.liabilities.retailDebt = 0;
+        profession.expenses.retail = 0;
+      } else {
+        alert("You don't have enough money to pay off your retail debt");
+      }
+      break;
+    case "bank":
+      if (profession.liabilities.bankLoan === 0) {
+        alert("You don't have any bank loan debt");
+      } else if (profession.assets.saving >= profession.liabilities.bankLoan) {
+        profession.assets.saving -= profession.liabilities.bankLoan;
+        profession.liabilities.bankLoan = 0;
+        profession.expenses.bankLoanPayment = 0;
+      } else {
+        alert("You don't have enough money to pay off your bank loan");
+      }
+      break;
+    default:
+      break;
+  }
+  finishTurn();
+}
+
+// create button name function
+function createButtonName() {
+  const button = choseRandomEvent(buttonTitles);
+  rollDiceBtn.innerText = button.title;
+}
+
+function rollDiceBtnOff(status) {
+  if (status) {
+    rollDiceBtn.style.display = `none`;
+  } else {
+    rollDiceBtn.style.display = "inline-block";
+  }
+}
+
+// value input off and initial set up
+function orderInputOff(status) {
+  if (status) {
+    orderCountInput.style.display = `none`;
+    orderInputSpan.style.display = `none`;
+  } else {
+    orderCountInput.style.display = "inline-block";
+    orderInputSpan.style.display = "inline-block";
+  }
+}
+orderInputOff(true);
+
+// accept button turn off and initial set up
+function acceptBtnOff(status) {
+  if (status) {
+    acceptOfferBtn.style.display = `none`;
+  } else {
+    acceptOfferBtn.style.display = "inline-block";
+  }
+}
+acceptBtnOff(true);
+
+// accept button turn off and initial set up
+function rejectBtnOff(status) {
+  if (status) {
+    rejectOfferBtn.style.display = `none`;
+  } else {
+    rejectOfferBtn.style.display = "inline-block";
+  }
+}
+rejectBtnOff(true);
+
+// Resset button roll dice
+function resetRollDiceBtn() {
+  rollDiceBtnOff(false);
+  rejectBtnOff(true);
 }

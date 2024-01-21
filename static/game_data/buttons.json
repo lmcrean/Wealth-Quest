@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Let's move on",
+    "chance": 10
+  },
+  {
+    "title": "Continue with life",
+    "chance": 10
+  },
+  {
+    "title": "Let's go",
+    "chance": 10
+  },
+  {
+    "title": "Live another day",
+    "chance": 10
+  },
+  {
+    "title": "Aaand back to work",
+    "chance": 10
+  },
+  {
+    "title": "Comon move!",
+    "chance": 10
+  },
+  {
+    "title": "Spend more time at work",
+    "chance": 10
+  },
+  {
+    "title": "Maybe you will get a promotion",
+    "chance": 10
+  },
+  {
+    "title": "Hope next one is lucky",
+    "chance": 10
+  },
+  {
+    "title": "Just a litle bit more",
+    "chance": 10
+  },
+  {
+    "title": "Holiday is near",
+    "chance": 10
+  },
+  {
+    "title": "You are almost there",
+    "chance": 10
+  }
+]
