@@ -1,11 +1,13 @@
 /* header */
 @import url("https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap");
+@import url("https://fonts.cdnfonts.com/css/halant");
+@import url("https://fonts.cdnfonts.com/css/nunito-sans");
 
 :root {
   /* fonts */
-  --title: "Lato", sans-serif;
-  --main-font: "Playfair Display", serif;
-  --navigation-font: "Roboto", sans-serif;
+  --title: "Halant", sans-serif;
+  --heading-font: "Playfair Display", serif;
+  --body-font: "Roboto Condensed", sans-serif;
 
   /* Colours */
   --text: #000000;
@@ -20,26 +22,12 @@
   --boxshadow: 0 0 1rem rgba(0, 0, 0, 0.2);
   --border: 2px 2px 2px 2px;
 
-  /* Primary Color Variations - color not yet decided */
-  --primary-color-lightest: #e0f7fa; /* Example color */
-  --primary-color-light: #b2ebf2; /* Example color */
-  --primary-color-medium: #80deea; /* Example color */
-  --primary-color-dark: #4dd0e1; /* Example color */
-  --primary-color-darkest: #26c6da; /* Example color */
-
-  /* Secondary Color Variations - color not yet decided */
-  --secondary-color-lightest: #f8bbd0; /* Example color */
-  --secondary-color-light: #f48fb1; /* Example color */
-  --secondary-color-medium: #f06292; /* Example color */
-  --secondary-color-dark: #ec407a; /* Example color */
-  --secondary-color-darkest: #e91e63; /* Example color */
-
-  /* Monochrome Color Variations - color not yet decided */
-  --mono-lightest: #eceff1; /* Example color */
-  --mono-light: #cfd8dc; /* Example color */
-  --mono-medium: #b0bec5; /* Example color */
-  --mono-dark: #90a4ae; /* Example color */
-  --mono-darkest: #78909c; /* Example color */
+  /* Color Variations */
+  --text-color: #eef5f0; /* Example color */
+  --background: #8f5b9b; /* Example color */
+  --primary-color: #eab747; /* Example color */
+  --secondary-color: #692a7c; /* Example color */
+  --accent-color: #bf4278; /* Example color */
 }
 
 /* testing class with red order */
@@ -51,7 +39,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: var(--main-font);
 }
 
 html,
@@ -60,11 +47,14 @@ body {
   flex-direction: column;
   min-height: 100vh;
   overflow-x: hidden;
+  background-color: var(--background) !important;
 }
 
 p {
   letter-spacing: 1.5px;
   margin-bottom: 0 !important;
+  color: var(--text-color) !important;
+  font-family: var(--body-font) !;
 }
 
 h1,
@@ -75,6 +65,25 @@ h5,
 h6 {
   font-family: var(--title);
   letter-spacing: 2px;
+  color: var(--primary-color) !important;
+}
+
+.modal-body {
+  background-color: var(--secondary-color) !important;
+}
+.modal-header,
+.modal-footer {
+  background-color: var(--secondary-color) !important;
+  color: var(--text-color) !important;
+}
+.btn {
+  background-color: #343baa !important;
+  color: var(--text-color) !important;
+}
+
+/* hide close button on modal */
+button.btn-close {
+  display: none !important;
 }
 
 /* profesion carousel */
