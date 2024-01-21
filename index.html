@@ -1392,8 +1392,20 @@
         <!-- pointer -->
         <div class="pointer" ref="pointer" id="pointer" :style="{'transform':rotate_deg,'transition': prize_transition}"
           @click="rotateHandler(num)">
+          <div>
+                <button
+                  type="button"
+                  class="btn btn-success m-2"
+                  onclick="selectRandomEvent()"
+                  id="roll-dice-btn"
+                >
+                  Start your Jorney
+                </button>
+              </div>
         </div>
+        
       </div>
+      
       <!-- lucky wheel -->
       <div :class="containerClass">
         <div v-for="(item,index) in prizes" :key="item.name" ref="item" :class="itemClass">
