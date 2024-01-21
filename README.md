@@ -68,7 +68,7 @@ Our website was built as a part of the January 2024 Budget-Buster-themed hackath
 
 #### Target Audience
 
-- This quiz is designed for users of any background or age, but will most likely gain more interest from those interested in budgeting, saving and investing
+- This game is designed for users of any background or age, but will most likely gain more interest from those interested in budgeting, saving and investing
 - It is also likely to draw in users who want to play around with different incomes and learn how to generate passive income 
 - The simplicity of the game makes it easy for adults, teenagers and even children to take, and retake, the game as many times as they want, until they win
 
@@ -101,7 +101,7 @@ These user stories gave us a clear scope for the game and enabled us to stay on 
 
 #### Wireframes
 
-I used [Figma](https://figma.com/) in the initial design phase, before the coding process. This enabled me to develop the game's structure, skeleton, layout and overall look and style. We created designs for desktop, tablet and mobile screens to ensure that responsiveness was at the forefront of the application from the beginning.
+We used [Figma](https://figma.com/) in the initial design phase, before the coding process. This enabled us to develop the game's structure, skeleton, layout and overall look and style. We created designs for desktop, tablet and mobile screens to ensure that responsiveness was at the forefront of the application from the beginning.
 
 <details><summary>Screenshots</summary>
 
