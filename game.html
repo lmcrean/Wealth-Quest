@@ -65,10 +65,10 @@
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#gameEndModal">
       Game End Modal for styling
     </button>
-    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#randomCardModal">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#randomCardModal">
       Random Card for styling
     </button>
-    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#borrowFromTheBankModal">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#borrowFromTheBankModal">
       Borrow from the bank
     </button>
 
@@ -799,12 +799,6 @@
             <div class="col col-lg-6 border" id="game-collumn">
               <!-- modal buttons -->
               <div id="button-container">
-                <!-- Button trigger modal -->
-                <div>
-                  <button class="buy-button btn btn-info m-2" id="accept-offer-btn" onclick="acceptOffer()">
-                    Accept offer
-                  </button>
-                </div>
                 <div class="deal-buttons">
                   <div>
                     <span id="order-input-span">How many shares you would like to buy:</span>
@@ -813,6 +807,9 @@
                   <div>
                     <button type="button" class="btn btn-danger m-2" id="reject-offer-btn" onclick="resetRollDiceBtn()">
                       Reject offer
+                    </button>
+                    <button class="buy-button btn btn-info m-2" id="accept-offer-btn" onclick="acceptOffer()">
+                      Accept offer
                     </button>
                   </div>
                 </div>
