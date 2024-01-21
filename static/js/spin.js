@@ -1,5 +1,5 @@
 // Set default degree (360 * 5)
-let initialDegree = 3600;
+let initialDegree = 360;
 // Number of clicks = 10
 let totalClicks = 1;
 
