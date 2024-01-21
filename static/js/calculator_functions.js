@@ -50,6 +50,7 @@ function calculateProgressBar() {
 }
 
 function choseRandomEvent(eventArray) {
+  console.log(professions);
   let totalChance = 0;
   for (const event of eventArray) {
     totalChance += event.chance;

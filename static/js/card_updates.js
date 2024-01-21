@@ -2,7 +2,7 @@
 function selectProfession() {
   let id = document.querySelector(".carousel-item.active").getAttribute("data-profession-id");
 
-  profession = professions.find((profession) => profession.id === parseInt(id));
+  profession = { ...professions.find((profession) => profession.id === parseInt(id)) };
 
   professionCard.name.innerText = profession.profession;
 

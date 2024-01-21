@@ -91,46 +91,37 @@ let gameData = {
   opportunityChance: 1,
 };
 
-// variable taken from json to have list of all professions
-let professions;
-
 // variable that is selected by player chosing his profession within selectProfession() function
 let profession;
 
-// Functions for local storage operations
-function setLocalStorage(data) {
-  localStorage.setItem(`professions`, JSON.stringify(data));
+let storedProfessions;
+
+function setLocalStorage() {
+  localStorage.setItem(`storedProfessions`, JSON.stringify(storedProfessions));
 }
 
+// used when game is loaded
 function getLocalStorage() {
-  const data = localStorage.getItem(`professions`);
-  return data ? JSON.parse(data) : null;
+  const storedData = JSON.parse(localStorage.getItem(`storedProfessions`));
+
+  if (!storedData) return;
+
+  return storedData;
 }
 
-// Function to fetch initial data
-function fetchInitialData() {
-  return fetch("static/game_data/professions.json").then((response) => {
-    if (!response.ok) {
-      throw new Error(`Failed to fetch data: ${response.status}`);
-    }
-    return response.json();
-  });
-}
-// Check local storage for saved game
-const storedProfessions = getLocalStorage();
-
-if (storedProfessions) {
-  // Use stored data if available
-  professions = storedProfessions;
-  createProfessionCarousel();
-} else {
-  // Fetch initial data if not found in local storage
-  fetchInitialData().then((json) => {
-    // Process and use fetched data
+// variable taken from json to have list of all professions
+let professions;
+fetch("static/game_data/professions.json")
+  .then((response) => response.json())
+  .then((json) => {
     professions = json;
+    if (!getLocalStorage()) {
+      storedProfessions = professions.map(({ id, victory }) => ({ id, victory }));
+    } else {
+      storedProfessions = getLocalStorage();
+    }
     createProfessionCarousel();
   });
-}
 
 // Collects deals from database
 let deals;
@@ -162,10 +153,8 @@ fetch("static/game_data/buttons.json")
   });
 
 function createProfessionCarousel() {
-  console.log(professions);
   professions.forEach((profession, index) => {
-    console.log(profession);
-    console.log(profession.id);
+    console.log(storedProfessions[index]);
     const isActive = index === 0 ? "active" : "";
     const carouselItem = `
           <div class="carousel-item ${isActive}" data-profession-id="${profession.id}">
@@ -174,9 +163,9 @@ function createProfessionCarousel() {
             <p>Total Expenses: £${calculateTotalExpenses(profession)}</p>
             <p>Savings: £${profession.assets.saving}</p>
             ${
-              profession.victory === 0
+              storedProfessions[index].victory === 0
                 ? "<p>You have not won the game as this profesion</p>"
-                : `<p>Fastest financial Freedom in ${profession.victory} months</p>`
+                : `<p>Fastest financial Freedom in ${storedProfessions[index].victory} months</p>`
             }
           </div>
         `;
@@ -202,7 +191,6 @@ function barrowFromBank() {
     profession.liabilities.bankLoan += bankLoan;
     profession.assets.saving += bankLoan;
 
-    console.log(profession);
     finishTurn();
     alert(`You have barrowed from bank ${bankLoan}.`);
   } else {
@@ -279,11 +267,15 @@ function endGame() {
 }
 
 function updateProfessionsLS() {
-  const index = professions.findIndex((profession) => profession.id === profession.id);
-  if (professions[index].victory === 0) {
-    professions[index].victory = gameData.currentMonth;
-  } else if (professions[index].victory > gameData.currentMonth) {
-    professions[index].victory = gameData.currentMonth;
+  if (storedProfessions) {
+    const index = storedProfessions.findIndex((person) => person.id === profession.id);
+    if (storedProfessions[index].victory === 0) {
+      storedProfessions[index].victory = gameData.currentMonth;
+    } else if (storedProfessions[index].victory > gameData.currentMonth) {
+      storedProfessions[index].victory = gameData.currentMonth;
+    }
+    setLocalStorage();
+  } else {
+    console.error("No professions found in local storage");
   }
-  setLocalStorage(professions);
 }
