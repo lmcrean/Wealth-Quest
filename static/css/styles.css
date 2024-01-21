@@ -43,6 +43,8 @@
 
 html,
 body {
+  margin: 0 !important;
+  padding: 0 !important;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
