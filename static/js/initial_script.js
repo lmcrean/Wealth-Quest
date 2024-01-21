@@ -74,7 +74,7 @@ let gameData = {
     },
     {
       id: 2,
-      name: "Money Loss",
+      name: "Money Loss", // Life events
       chance: 5,
     },
     {
@@ -138,9 +138,9 @@ function createProfessionCarousel() {
     const carouselItem = `
           <div class="carousel-item ${isActive}" data-profession-id="${profession.id}">
             <h5>${profession.profession}</h5>
-            <p>Salary: $${profession.incomes.salary}</p>
-            <p>Total Expenses: $${calculateTotalExpenses(profession)}</p>
-            <p>Savings: $${profession.assets.saving}</p>
+            <p>Salary: £${profession.incomes.salary}</p>
+            <p>Total Expenses: £${calculateTotalExpenses(profession)}</p>
+            <p>Savings: £${profession.assets.saving}</p>
           </div>
         `;
     carouselInner.innerHTML += carouselItem;
