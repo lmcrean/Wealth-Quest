@@ -82,7 +82,7 @@ function payday() {
 
   // Add information to the card
   const cardDescription = document.createElement("p");
-  cardDescription.textContent = `${profession.finalCashFlow} was added to your savings, your new total savings is ${profession.assets.saving}`;
+  cardDescription.textContent = `£${profession.finalCashFlow} was added to your savings, your new total savings is £${profession.assets.saving}`;
   card.appendChild(cardDescription);
 
   // Append the card to the card container
@@ -107,7 +107,7 @@ function lifeEvent() {
     const event = choseRandomEvent(childEvents);
     profession.assets.saving += event.amount_loss;
     cardTitleValue = event.description;
-    cardDescriptionValue = `You lost ${Math.abs(event.amount_loss)} from your savings, your new total savings is ${
+    cardDescriptionValue = `You lost ${Math.abs(event.amount_loss)} from your savings, your new total savings is £${
       profession.assets.saving
     }`;
   } else {
@@ -115,7 +115,7 @@ function lifeEvent() {
     cardTitleValue = deal.description;
     cardDescriptionValue = `You ${deal.ammount_change < 0 ? "lost" : "gain"} £${Math.abs(deal.ammount_change)} ${
       deal.ammount_change < 0 ? "from" : "towards"
-    } your savings, your new total savings is ${profession.assets.saving}`;
+    } your savings, your new total savings is £${profession.assets.saving}`;
   }
 
   cardTitle.textContent = cardTitleValue;
@@ -240,7 +240,7 @@ function businessDeal(deal) {
 
 function stocksDeal(deal) {
   orderInputOff(false);
-  orderInputSpan.innerText = `How many shares you would like to buy:`;
+  orderInputSpan.innerText = `How many shares you would like to buy:£`;
   const cardTitleValue = deal.title;
   const cardDescription1 = deal.description;
   const cardDescription2 = `Invest in to stocks and hope the price to go up`;
@@ -394,7 +394,7 @@ function businessOpportunity(deal, dealChangedCost) {
 
 function stocksOpportunity(deal, dealChangedCost) {
   orderInputOff(false);
-  orderInputSpan.innerText = `How many shares you would like to sell:`;
+  orderInputSpan.innerText = `How many shares you would like to sell:£`;
   setMinMaxValues(deal.additionalAmount);
   deal.newPrice = dealChangedCost;
   const dealchange = dealChangedCost - deal.initial_cost;
