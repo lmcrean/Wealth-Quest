@@ -1,6 +1,5 @@
 // Call this function when any expense changes
 function calculateTotalExpenses(profession) {
-  console.log("test");
   let totalExpenses = 0;
   for (const expense in profession.expenses) {
     if (profession.expenses.hasOwnProperty(expense)) {
@@ -50,7 +49,6 @@ function calculateProgressBar() {
 }
 
 function choseRandomEvent(eventArray) {
-  console.log(professions);
   let totalChance = 0;
   for (const event of eventArray) {
     totalChance += event.chance;
@@ -136,7 +134,6 @@ function deal() {
   gameData.dealorOpportunity = "deal";
   const dealType = deal.type;
 
-  rollDiceBtnOff(true);
   acceptBtnOff(false);
   rejectBtnOff(false);
 
@@ -285,7 +282,6 @@ function opportunity() {
   gameData.dealorOpportunity = "opportunity";
   const dealType = deal.type;
 
-  rollDiceBtnOff(true);
   acceptBtnOff(false);
   rejectBtnOff(false);
 
@@ -474,7 +470,7 @@ function acceptDeal() {
     if (deal.type != "stocks") {
       removeDealById(deals, deal.id);
     }
-    rollDiceBtnOff(false);
+
     rejectBtnOff(true);
     acceptBtnOff(true);
   }
@@ -516,7 +512,7 @@ function acceptOpportunity() {
     if (profession.additionalAssets.length == 0) {
       gameData.chances[3].chance = 0;
     }
-    rollDiceBtnOff(false);
+
     rejectBtnOff(true);
     acceptBtnOff(true);
   }
