@@ -52,6 +52,11 @@ body {
   background-color: var(--background) !important;
 }
 
+hr {
+  color: #ffffff !important;
+  opacity: 0.5 !important;
+}
+
 p {
   letter-spacing: 1.5px;
   margin-bottom: 0 !important;
@@ -186,4 +191,19 @@ button.btn-close {
 #numberForm > p,
 #numberForm > div {
   display: inline;
+}
+
+#payday-card {
+  color: var(--text-color);
+}
+
+.step h3 {
+  margin-top: 1rem;
+}
+
+.event-card-body {
+  margin: 1rem;
+}
+#order-input-span {
+  color: var(--text-color);
 }
