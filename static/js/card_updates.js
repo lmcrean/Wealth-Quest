@@ -1,6 +1,8 @@
 // called when the carusel choise is made
 function selectProfession() {
-  let id = document.querySelector(".carousel-item.active").getAttribute("data-profession-id");
+  let id = document
+    .querySelector(".carousel-item.active")
+    .getAttribute("data-profession-id");
 
   profession = professions.find((profession) => profession.id === parseInt(id));
 
@@ -11,7 +13,8 @@ function selectProfession() {
   profession.expenses.bankLoanPayment = 0;
   profession.liabilities.bankLoan = 0;
 
-  profession.expenses.child = profession.perChildExpense * profession.childrenCount;
+  profession.expenses.child =
+    profession.perChildExpense * profession.childrenCount;
   profession.passiveIncome = calculatePassiveIncome(profession);
   profession.totalIncome = calculateTotalIncome(profession);
   profession.totalExpenses = calculateTotalExpenses(profession);
@@ -71,7 +74,8 @@ function updateProfessionHTML() {
   professionCard.retailExpenses.innerText = profession.expenses.retail;
   professionCard.otherExpenses.innerText = profession.expenses.other;
   professionCard.childExpenses.innerText = profession.expenses.child;
-  professionCard.bankLoanPayment.innerText = profession.expenses.bankLoanPayment;
+  professionCard.bankLoanPayment.innerText =
+    profession.expenses.bankLoanPayment;
 
   //  Totals
   professionCard.childrenCount.innerText = profession.childrenCount;
@@ -84,11 +88,15 @@ function updateProfessionHTML() {
   fillAdditionalAssets();
 
   // Liabilities
-  professionCard.homeMortgageLiabilities.innerText = profession.liabilities.homeMortages;
-  professionCard.schoolLoanLiabilities.innerText = profession.liabilities.schoolLoans;
+  professionCard.homeMortgageLiabilities.innerText =
+    profession.liabilities.homeMortages;
+  professionCard.schoolLoanLiabilities.innerText =
+    profession.liabilities.schoolLoans;
   professionCard.carLoanLiabilities.innerText = profession.liabilities.carLoans;
-  professionCard.creditCardLiabilities.innerText = profession.liabilities.creditCards;
-  professionCard.retailLiabilities.innerText = profession.liabilities.retailDebt;
+  professionCard.creditCardLiabilities.innerText =
+    profession.liabilities.creditCards;
+  professionCard.retailLiabilities.innerText =
+    profession.liabilities.retailDebt;
   professionCard.bankLiabilities.innerText = profession.liabilities.bankLoan;
 }
 
@@ -97,7 +105,10 @@ function updateGameData() {
   gameData.totalExpenses = profession.totalExpenses;
   gameData.passiveIncome = profession.passiveIncome;
   calculateProgressBar();
-  gameDataHTML.progressBarContainer.setAttribute("aria-valuemax", gameData.totalExpenses);
+  gameDataHTML.progressBarContainer.setAttribute(
+    "aria-valuemax",
+    gameData.totalExpenses
+  );
   gameDataHTML.progressBar.style.width = `${gameData.progressBarPerecentage}%`;
   gameDataHTML.progressBar.innerText = `${gameData.passiveIncome} / ${gameData.totalExpenses}`;
 
@@ -105,13 +116,15 @@ function updateGameData() {
 }
 
 function finishTurn() {
-  profession.expenses.child = profession.perChildExpense * profession.childrenCount;
+  profession.expenses.child =
+    profession.perChildExpense * profession.childrenCount;
   profession.passiveIncome = calculatePassiveIncome(profession);
   profession.totalIncome = calculateTotalIncome(profession);
   profession.totalExpenses = calculateTotalExpenses(profession);
   profession.finalCashFlow = profession.totalIncome - profession.totalExpenses;
   updateProfessionHTML();
   updateGameData();
+  checkForGameEnd();
 }
 
 // fill additional assets function
@@ -145,7 +158,9 @@ function liabilityPayOff(liability) {
     case "house":
       if (profession.liabilities.homeMortages === 0) {
         alert("You don't have any home mortgage debt");
-      } else if (profession.assets.saving >= profession.liabilities.homeMortages) {
+      } else if (
+        profession.assets.saving >= profession.liabilities.homeMortages
+      ) {
         profession.assets.saving -= profession.liabilities.homeMortages;
         profession.liabilities.homeMortages = 0;
         profession.expenses.homeMortgage = 0;
@@ -156,7 +171,9 @@ function liabilityPayOff(liability) {
     case "student":
       if (profession.liabilities.schoolLoans === 0) {
         alert("You don't have any student loan debt");
-      } else if (profession.assets.saving >= profession.liabilities.schoolLoans) {
+      } else if (
+        profession.assets.saving >= profession.liabilities.schoolLoans
+      ) {
         profession.assets.saving -= profession.liabilities.schoolLoans;
         profession.liabilities.schoolLoans = 0;
         profession.expenses.schoolLoan = 0;
@@ -178,7 +195,9 @@ function liabilityPayOff(liability) {
     case "creditCard":
       if (profession.liabilities.creditCards === 0) {
         alert("You don't have any credit card debt");
-      } else if (profession.assets.saving >= profession.liabilities.creditCards) {
+      } else if (
+        profession.assets.saving >= profession.liabilities.creditCards
+      ) {
         profession.assets.saving -= profession.liabilities.creditCards;
         profession.liabilities.creditCards = 0;
         profession.expenses.creditCard = 0;
@@ -189,7 +208,9 @@ function liabilityPayOff(liability) {
     case "retail":
       if (profession.liabilities.retailDebt === 0) {
         alert("You don't have any retail debt");
-      } else if (profession.assets.saving >= profession.liabilities.retailDebt) {
+      } else if (
+        profession.assets.saving >= profession.liabilities.retailDebt
+      ) {
         profession.assets.saving -= profession.liabilities.retailDebt;
         profession.liabilities.retailDebt = 0;
         profession.expenses.retail = 0;
