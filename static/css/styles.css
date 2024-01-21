@@ -106,6 +106,25 @@ h6 {
   z-index: 100;
 }
 
+.tooltip-box-modal {
+  display: none;
+  position: fixed;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 100;
+  width: 300px;
+  left: 100%; /* Position to the right of the question mark */
+  top: 50%;
+  transform: translate(0, -50%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.question-mark:hover + .tooltip-box-modal {
+  display: block;
+}
+
 .liabilities-button {
   width: 30px;
   background-color: var(--text);
