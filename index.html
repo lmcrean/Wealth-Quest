@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,29 +10,22 @@
     <link rel="icon" type="image/png" sizes="32x32" href="" />
     <link rel="icon" type="image/png" sizes="16x16" href="" />
     <link rel="manifest" href="" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
     <meta name="description" content="" />
 
     <meta name="keywords" content="" />
 
     <!-- bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 
     <!-- Main CSS sheet -->
     <link rel="stylesheet" href="static/css/styles.css" />
 
     <!-- Google Fonts -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
+
+  
 
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -898,15 +892,20 @@
               <div id="step1" class="step">
                 <h3>Purpose:</h3>
                 <p>
-                  The purpose of #game name# is to create a passive income that
-                  is greater than your total expenses.
+                  The purpose of #game name# is to create a passive income that is greater than your
+                                    total
+                                    expenses.
                   <br />
                   <strong>Goal = passive income > total expenses</strong> <br />
-                  You can get an idea of how far you are from achieving this by
-                  looking at your goal tracker, displayed in your financial
-                  statement and on the main screen. It’s not that simple though…
-                  the goal will change depending on your total expenses. So to
-                  win you will have to keep your expenses down and your passive
+                  You can get an idea of how far you are from achieving this by looking at your goal
+                                    tracker,
+                                    displayed
+                                    in your financial statement and on the main screen. It’s not that simple though… the
+                                    goal
+                                    will change
+                                    depending on your total expenses. So to win you will have to keep your expenses down
+                                    and
+                                    your passive
                   income flowing in!
                 </p>
               </div>
@@ -990,10 +989,7 @@
                 life!
               </h3>
               <p>
-                Make sure to keep checking your financial statement to stay on
-                top of your finances. Who knows what the wheel of life will
-                throw at you?... a payday?... a deal to buy assets? … or some
-                other random life occurrence that could make or break the bank?
+              
               </p>
             </div>
             <!-- Step 3 -->
@@ -1369,81 +1365,30 @@
 
 
 <!-- Game Board-->  
-<div id="app" v-cloak>
-    <!-- status buttons-->
-    <div class="game-status">
-      <div class="toggle" @click="isToggle = !isToggle"></div>
-      <transition name="slide-fade">
-        <div class="status-container" v-if="isToggle">
-          <div class="times">CHANCE <span>{{time_remaining}}</span></div>
-          <div class="buttons">
-            <button class="btn btn-primary" :class="{'active':current_year===2017}"
-              @click="setCurrentYear(2017)">2017</button>
-            <button class="btn btn-primary" :class="{'active':current_year===2018}"
-              @click="setCurrentYear(2018)">2018</button>
-            <button class="btn btn-secondary" @click="restart">Restart</button>
-          </div>
-        </div>
-      </transition>
-    </div>
-
-    <div class="lucky-wheel">
-      <div class="pointer-container">
-        <!-- pointer -->
-        <div class="pointer" ref="pointer" id="pointer" :style="{'transform':rotate_deg,'transition': prize_transition}"
-          @click="rotateHandler(num)">
-          <div>
-                <button
-                  type="button"
-                  class="btn btn-success m-2"
-                  onclick="selectRandomEvent()"
-                  id="roll-dice-btn"
-                >
-                  Start your Jorney
-                </button>
-              </div>
+<div id="wrapper">
+            
+        <div id="wheel">
+            <div id="inner-wheel">
+                <div class="sec"><span class="fa fa-bell-o"></span></div>
+                <div class="sec"><span class="fa fa-comment-o"></span></div>
+                <div class="sec"><span class="fa fa-smile-o"></span></div>
+                <div class="sec"><span class="fa fa-heart-o"></span></div>
+                <div class="sec"><span class="fa fa-star-o"></span></div>
+                <div class="sec"><span class="fa fa-lightbulb-o"></span></div>
+            </div>       
+           
+            <div id="spin">
+                <div id="inner-spin"></div>
+            </div>
+            
+            <div id="shine"></div>
         </div>
         
-      </div>
-      
-      <!-- lucky wheel -->
-      <div :class="containerClass">
-        <div v-for="(item,index) in prizes" :key="item.name" ref="item" :class="itemClass">
-          <div :class="contentClass">
-            <i class="material-icons">
-              {{item.icon}}
-            </i>
-            <span>{{item.name}}
-              <span :class="countClass">{{item.count}}</span>
-            </span>
-          </div>
-        </div>
-      </div>
-
-      <!-- display results -->
-      <transition name="slide-fade">
-        <div class="prize" v-if="isShow==isClicked">
-          <div class="prize-container">
-            <div class="prize-title">WELL</br> DONE!</div>
-            <div class="prize-title">YOU GET A FREE...</br>
-              <span class="prize-item">{{prize_name}}</span>
-            </div>
-            <div class="prize-background">
-              <template v-for="(prizeIcon,index) in 9">
-                <i class="material-icons">
-                  {{prize_icon}}
-                </i>
-              </template>
-            </div>
-          </div>
-        </div>
-      </transition>
-    </div>
-  </div>
+        
+        <div id="txt"></div>
   </div>
     <script type="module" src="game_board.js"></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.8/vue.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js'></script>
+
 
   <!-- Bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
