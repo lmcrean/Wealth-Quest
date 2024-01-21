@@ -16,12 +16,9 @@ This is the documentation for our website: A financial game inspired the origina
         - [Project Purpose](#project-purpose)
         - [Client Goals](#client-goals)
         - [Target Audience](#target-audience)
-        - [User Goals](#user-goals)
     - [Research](#research)
-        - [Market Review](#market-review)
         - [Key Takeaways](#key-takeaways-from-market-review)
     - [User Stories](#user-stories)
-    - [Content](#content)
     - [Design, Layout and Structure](#design-layout-and-structure)
         - [Wireframes](#wireframes)
         - [Structure and Layout](#structure-and-layout)
@@ -89,6 +86,13 @@ We reviewed other websites and games to get an idea of how we should implement o
 
 ### User Stories
 
-In a real-world application, this kind of quiz will mostly likely be used by a visitor once, rather than repeatedly, as it would likely form part of a larger website e.g. a website about personality types and research. Therefore, all user stories relate to a first-time user. As a first-time user, I would like to:
+As a first-time user, I would like to:
 
 - take part in a fun, interesting game and learn more about financial planning
+- find out what the game is about and what to expect before starting
+- navigate easily through the game
+- be able to view my financial statement at any time in the game
+- be able to make choices in the game and see immediate results on my financial statement
+- access the game on any device
+
+These user stories gave us a clear scope for the game and enabled us to stay on track with the project, preventing issues like scope creep at a later stage after the coding process. 
