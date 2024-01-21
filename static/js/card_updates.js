@@ -30,21 +30,36 @@ function selectRandomEvent() {
   rejectBtnOff(true);
   orderInputOff(true);
   const event = choseRandomEvent(gameData.chances).id;
+
+  const randomAddedNumber = radnomInt(1, 2);
+
   switch (event) {
     case 1:
       gameData.chances[0].chance = 5;
+
+      if (randomAddedNumber === 1) spinWhell(1);
+      if (randomAddedNumber === 2) spinWhell(4);
+
       payday();
       break;
     case 2:
       gameData.chances[0].chance += 1;
+
+      if (randomAddedNumber === 1) spinWhell(3);
+      if (randomAddedNumber === 2) spinWhell(0);
+
       lifeEvent();
       break;
     case 3:
       gameData.chances[0].chance += 1;
+
+      spinWhell(5);
       deal();
       break;
     case 4:
       gameData.chances[0].chance += 1;
+
+      spinWhell(2);
       opportunity();
       break;
     default:

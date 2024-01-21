@@ -32,6 +32,8 @@
 
   <link rel="stylesheet" href="game_board.scss">
   <link rel="stylesheet" href="static/css/game_board.css">
+  <link rel="stylesheet" href="static/css/spin.css">
+  
 
   <script src="https://kit.fontawesome.com/c7515a9d31.js" crossorigin="anonymous"></script>
 </head>
@@ -858,7 +860,32 @@
       </div>
     </div>
 
+    <div id="wrapper">
+            
+        <div id="wheel">
+            <div id="inner-wheel">
+                <div class="sec"><i class="fa-sp fa-solid fa-handshake-simple"></i></div>
+                <div class="sec"><i class="fa-sp fa-solid fa-sack-dollar"></i></div>
+                <div class="sec"><i class="fa-sp fa-solid fa-arrows-spin"></i></div>
+                <div class="sec"><i class="fa-sp fa-solid fa-boxes-stacked"></i></div>
+                <div class="sec"><i class="fa-sp fa-solid fa-sack-dollar"></i></div>
+                <div class="sec"><i class="fa-sp fa-solid fa-arrows-spin"></i></div>
+            </div>       
+           
+            <div id="spin">
+                <button  class="inner-spin" id="roll-dice-btn" onclick="selectRandomEvent()"></button>
+            </div>
+            
+            <div id="shine"></div>
+        </div>
+        
+        
+        <div id="txt"></div>
+  </div>
+    
     <!-- Main script -->
+    
+    
 
     <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
@@ -868,7 +895,8 @@
     <script defer src="static/js/card_updates.js"></script>
     <script defer src="static/js/how_to_play.js"></script>
     <script defer src="static/js/tooltips.js"></script>
-
+    <script defer src="static/js/spin.js"></script>
+    
     <script defer src="static/js/welcome_modal.js"></script>
 
     <!-- Bootstrap -->
@@ -885,66 +913,6 @@
     <script src="https://kit.fontawesome.com/e9c73d7092.js" crossorigin="anonymous"></script>
 
 
-    <!-- Game Board-->
-    <div id="app" v-cloak>
-      <!-- status buttons-->
-      <div class="game-status">
-        <div class="toggle" @click="isToggle = !isToggle"></div>
-        <transition name="slide-fade">
-          <div class="status-container" v-if="isToggle">
-            <div class="times">CHANCE <span>{{time_remaining}}</span></div>
-            <div class="buttons">
-              <button class="btn btn-primary" :class="{'active':current_year===2017}"
-                @click="setCurrentYear(2017)">2017</button>
-              <button class="btn btn-primary" :class="{'active':current_year===2018}"
-                @click="setCurrentYear(2018)">2018</button>
-              <button class="btn btn-secondary" @click="restart">Restart</button>
-            </div>
-          </div>
-        </transition>
-      </div>
-
-      <div class="lucky-wheel">
-        <div class="pointer-container">
-          <!-- pointer -->
-          <div class="pointer" ref="pointer" id="pointer"
-            :style="{'transform':rotate_deg,'transition': prize_transition}" @click="rotateHandler(num)">
-          </div>
-        </div>
-        <!-- lucky wheel -->
-        <div :class="containerClass">
-          <div v-for="(item,index) in prizes" :key="item.name" ref="item" :class="itemClass">
-            <div :class="contentClass">
-              <i class="material-icons">
-                {{item.icon}}
-              </i>
-              <span>{{item.name}}
-                <span :class="countClass">{{item.count}}</span>
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <!-- display results -->
-        <transition name="slide-fade">
-          <div class="prize" v-if="isShow==isClicked">
-            <div class="prize-container">
-              <div class="prize-title">WELL</br> DONE!</div>
-              <div class="prize-title">YOU GET A FREE...</br>
-                <span class="prize-item">{{prize_name}}</span>
-              </div>
-              <div class="prize-background">
-                <template v-for="(prizeIcon,index) in 9">
-                  <i class="material-icons">
-                    {{prize_icon}}
-                  </i>
-                </template>
-              </div>
-            </div>
-          </div>
-        </transition>
-      </div>
-    </div>
   </div>
 
   <script type="module" src="game_board.js"></script>
