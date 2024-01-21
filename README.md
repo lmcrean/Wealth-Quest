@@ -2,7 +2,12 @@
 
 ![Mockup](static/docs/amiresponsive.png)
 
+#### By Hackathon Team 6 (Our team names are in the acknowledgements)
+
+[Click here to view the live web application](Live link here)
+
 #### By Hackathon Team 6
+
 [Click here to view the live web application](https://lmcrean.github.io/Wealth-Quest/)
 
 #### HELLO EVERYONE!
@@ -12,44 +17,50 @@ This is the documentation for our website: A financial game inspired the origina
 ## Table of Contents
 
 1. [Project Development and Planning](#project-development-and-planning)
-    - [Project Goals](#project-goals)
-        - [Project Purpose](#project-purpose)
-        - [Client Goals](#client-goals)
-        - [Target Audience](#target-audience)
-    - [Research](#research)
-        - [Key Takeaways](#key-takeaways-from-market-review)
-    - [User Stories](#user-stories)
-    - [Design, Layout and Structure](#design-layout-and-structure)
-        - [Wireframes](#wireframes)
-        - [Structure and Layout](#structure-and-layout)
-        - [Design and Colour](#design-and-colour)
-        - [Font](#font)
+   - [Project Goals](#project-goals)
+     - [Project Purpose](#project-purpose)
+     - [Client Goals](#client-goals)
+     - [Target Audience](#target-audience)
+   - [Research](#research)
+     - [Key Takeaways](#key-takeaways-from-market-review)
+   - [User Stories](#user-stories)
+   - [Design, Layout and Structure](#design-layout-and-structure)
+     - [Wireframes](#wireframes)
+     - [Structure and Layout](#structure-and-layout)
+     - [Design and Colour](#design-and-colour)
+     - [Font](#font)
 2. [Technologies Used](#technologies-used)
-    - [Languages](#languages)
-    - [Tools](#tools)
+   - [Languages](#languages)
+   - [Tools](#tools)
 3. [Features](#features)
-    - [Whole Site](#whole-site)
-        - [Favicon](#favicon)
-        - [Footer](#footer)
-    - [Other Pages](#other-pages)
-        - [404 page](#404-page)
-    - [Future Features](#future-features)
+   - [Whole Site](#whole-site)
+     - [Favicon](#favicon)
+     - [Footer](#footer)
+   - [Other Pages](#other-pages)
+     - [404 page](#404-page)
+   - [Future Features](#future-features)
 4. [Testing](#testing)
-    - [Manual Testing](#manual-testing)
-        - [Responsiveness / Device Testing](#responsiveness-/-device-testing)
-        - [Browser Compatibility](#browser-compatibility)
-        - [Solved Bugs](#solved-bugs)
-        - [Testing User Stories](#testing-user-stories)
+   - [Automated Testing](#automated-testing)
+     - [HTML Validator Testing](#html-validator-testing)
+     - [CSS Validator Testing](#css-validator-testing)
+     - [JS Validator Testing](#js-validator-testing)
+     - [Accessibility](#accessibility)
+     - [Performance](#performance)
+   - [Manual Testing](#manual-testing)
+     - [Responsiveness / Device Testing](#responsiveness-/-device-testing)
+     - [Browser Compatibility](#browser-compatibility)
+     - [Solved Bugs](#solved-bugs)
+     - [Testing User Stories](#testing-user-stories)
 5. [Deployment](#deployment)
 6. [Credits](#credits)
 
-## Project Development and Planning 
+## Project Development and Planning
 
-### Project Goals 
+### Project Goals
 
 #### Project Purpose
 
-This game was planned and developed using principles of User Experience (UX) design, which include the five planes of Strategy, Scope, Structure, Skeleton, and Surface. Using these principles, the aim was to create a fun, easy-to-use, responsive, and engaging game that entertains users who are interested in learning more about financial concepts. 
+This game was planned and developed using principles of User Experience (UX) design, which include the five planes of Strategy, Scope, Structure, Skeleton, and Surface. Using these principles, the aim was to create a fun, easy-to-use, responsive, and engaging game that entertains users who are interested in learning more about financial concepts.
 
 #### Client Goals
 
@@ -63,10 +74,10 @@ Our website was built as a part of the January 2024 Budget-Buster-themed hackath
 #### Target Audience
 
 - This game is designed for users of any background or age, but will most likely gain more interest from those interested in budgeting, saving and investing
-- It is also likely to draw in users who want to play around with different incomes and learn how to generate passive income 
+- It is also likely to draw in users who want to play around with different incomes and learn how to generate passive income
 - The simplicity of the game makes it easy for adults, teenagers and even children to take, and retake, the game as many times as they want, until they win
 
-### Research 
+### Research
 
 #### Key Takeaways
 
@@ -75,7 +86,7 @@ We reviewed other websites and games to get an idea of how we should implement o
 - The website should be eye-catching, to make users excited about playing the game
 - The Website should be clean, simple, and easy to navigate
 - The game should be fun and easy to navigate through
-- The game should be challenging but not too difficult 
+- The game should be challenging but not too difficult
 - The user should feel as if they are winning, but not too easily
 
 ### User Stories
@@ -89,9 +100,9 @@ As a first-time user, I would like to:
 - be able to make choices in the game and see immediate results on my financial statement
 - access the game on any device
 
-These user stories gave us a clear scope for the game and enabled us to stay on track with the project, preventing issues like scope creep at a later stage after the coding process. 
+These user stories gave us a clear scope for the game and enabled us to stay on track with the project, preventing issues like scope creep at a later stage after the coding process.
 
-### Design, Layout and Structure 
+### Design, Layout and Structure
 
 #### Wireframes
 
@@ -108,7 +119,7 @@ _Wireframes_
 
 #### Design and Colour
 
-This site was designed using a mobile-first approach, because after conducting some research (using sites like [Adobe](https://xd.adobe.com/ideas/process/ui-design/what-is-mobile-first-design/)), it appears that most users use their mobile devices over desktop or iPad screens, especially when partaking in quizzes. 
+This site was designed using a mobile-first approach, because after conducting some research (using sites like [Adobe](https://xd.adobe.com/ideas/process/ui-design/what-is-mobile-first-design/)), it appears that most users use their mobile devices over desktop or iPad screens, especially when partaking in quizzes.
 
 - The design includes eye-catching colours of purples and yellows, and a spinning wheel to create a boardgame feel
 - A different colour palette was used for the progress bar to differentiate it from the rest of the game elements
@@ -127,46 +138,50 @@ _Colour Palette for entire website_
 
 Our choice of font was [Roboto](https://fonts.google.com/specimen/Roboto). The light font was used for all paragraphs and and the bold font was used for all headings and buttons. This font choice was imported from [Google Fonts](https://fonts.google.com/) and had a backup font of Serif. We chose this font for my website because the style contributed to the financial game theme, whilst also providing a professional, legible finish.
 
-## Technologies Used 
+## Technologies Used
 
-This website used a combination of three different Front-End development languages, as well as some web tools for the initial planning. A list of those included in the project can be seen as follows: 
+This website used a combination of three different Front-End development languages, as well as some web tools for the initial planning. A list of those included in the project can be seen as follows:
 
-### Languages 
+### Languages
+
 - [HTML5](https://en.wikipedia.org/wiki/HTML5)
 - [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
 - [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 - [Bootstrap Framework](https://en.wikipedia.org/wiki/Bootstrap)
 - [Vue Framework](https://en.wikipedia.org/wiki/Vue)
 
-### Tools 
+### Tools
+
 - [Git](https://git-scm.com/)
-    - Git was used for version control via GitPod, by using the terminal to Git and Push to GitHub.
+  - Git was used for version control via GitPod, by using the terminal to Git and Push to GitHub.
 - [GitHub](https://github.com/)
-    - GitHub was used to store the project code after being created in GitPod/Git.
+  - GitHub was used to store the project code after being created in GitPod/Git.
 - [Gitpod](https://www.gitpod.io/)
-    - Gitpod was used to create, edit and preview the project's code.
+  - Gitpod was used to create, edit and preview the project's code.
 - [Figma](https://figma.com/)
-     - Figma was used to create wireframes during the initial design process.
+  - Figma was used to create wireframes during the initial design process.
 - [Google Fonts](https://fonts.google.com/)
-    - Google Fonts was used to select and import the fonts to the project (Libre Baskerville and Libre Baskerville Bold).
+  - Google Fonts was used to select and import the fonts to the project (Libre Baskerville and Libre Baskerville Bold).
 - [Font Awesome](https://fontawesome.com/)
-    - Font Awesome was used to add icons to the site to help with UX and to add more character to the project visually.
+  - Font Awesome was used to add icons to the site to help with UX and to add more character to the project visually.
 - [Adobe Illustrator](https://www.adobe.com/uk/products/illustrator.html) and [Adobe Color] (https://color.adobe.com/create/color-wheel)
-    - These were used to create the colour pallette as well as ideas for the initial design.
+  - These were used to create the colour pallette as well as ideas for the initial design.
 - [Favicon.io](https://favicon.io/favicon-converter/)
-    - Used to create and add the favicon to the browser tab.
+  - Used to create and add the favicon to the browser tab.
 
 ## Testing
 
 Due to the limited time frame of this hackathon (5 days), we decided to focus mainly on manual testing. If we had a longer time frame, we would have also undergone automated testing.
 
-### Manual Testing
+#### HTML Validator Testing
 
-#### Testing User Stories
+#### CSS Validator Testing
+
+#### JS Validator Testing
 
 #### Browser Compatibility
 
-The site was tested on the following browsers, with no browser-specific bugs detected. 
+The site was tested on the following browsers, with no browser-specific bugs detected.
 
 - Google Chrome
 - Mozilla Firefox
@@ -175,6 +190,7 @@ The site was tested on the following browsers, with no browser-specific bugs det
 #### Responsiveness/Device Testing
 
 The game was tested on the following devices:
+
 - HP Display 27-inch External Monitor
 - Apple Macbook Pro 13-inch
 - Galaxy S9+
@@ -191,23 +207,25 @@ The game functioned as expected on all devices.
 
 ### GitHub Pages
 
-The site was deployed to GitHub pages. The steps to deploy are as follows: 
+The site was deployed to GitHub pages. The steps to deploy are as follows:
+
 1. In the GitHub repository, navigate to the Settings tab.
 2. From the left hand menu select 'Pages'.
 3. From the source select Branch: main.
 4. Click 'Save'.
-5. A live link will be displayed when published successfully. 
-[Live link here](https://lmcrean.github.io/Wealth-Quest/)
+5. A live link will be displayed when published successfully.
 
 ### Forking the GitHub Repository
 
 You can fork the repository by following these steps:
+
 1. Go to the GitHub repository.
 1. Click on Fork button in upper right hand corner.
 
 ### Cloning the GitHub Repository
 
 You can clone the repository to use locally by following these steps:
+
 1. Navigate to the GitHub Repository you want to clone.
 2. Click on the code drop down button.
 3. Click on HTTPS.
@@ -232,11 +250,6 @@ The project will now be cloned locally for you to use.
 
 ### Acknowledgements
 
-- Our Hackathon Team:
-    - Laurie: Scrum Master, Frontend design, Testing
-    - Sian: Databases, Flowchart, Backend Functionality, Testing
-    - Lauren: Databases, Readme, Flowchart, Testing
-    - Erik: JavaScript Backend Functionality, Databases, Testing
-    - Renwar: Wireframes, Frontend design
-We had great fun making this project together and learnt a lot through the experience. 
+- Our Hackathon Team: - Laurie: Scrum Master, Frontend design, Testing - Sian: Databases, Flowchart, Backend Functionality, Testing - Lauren: Databases, Readme, Flowchart, Testing - Erik: JavaScript Backend Functionality, Databases, Testing - Renwar: Wireframes, Frontend design
+  We had great fun making this project together and learnt a lot through the experience.
 - The whole hackathon team at [Code Institute](https://codeinstitute.net/) for their teaching and support.
