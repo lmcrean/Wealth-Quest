@@ -1,4 +1,4 @@
-# Budget Busters Game (Working Title)
+# Wealth Quest
 
 ![Mockup](Link here)
 
@@ -35,12 +35,6 @@ This is the documentation for our website: A financial game inspired the origina
         - [404 page](#404-page)
     - [Future Features](#future-features)
 4. [Testing](#testing)
-    - [Automated Testing](#automated-testing)
-        - [HTML Validator Testing](#html-validator-testing)
-        - [CSS Validator Testing](#css-validator-testing)
-        - [JS Validator Testing](#js-validator-testing)
-        - [Accessibility](#accessibility)
-        - [Performance](#performance)
     - [Manual Testing](#manual-testing)
         - [Responsiveness / Device Testing](#responsiveness-/-device-testing)
         - [Browser Compatibility](#browser-compatibility)
@@ -105,17 +99,10 @@ We used [Figma](https://figma.com/) in the initial design phase, before the codi
 
 <details><summary>Screenshots</summary>
 
-<img src="">
+<img src="static/docs/wf_one.png">
+<img src="static/docs/wf_two.png">
 
-_Desktop Wireframes_
-
-<img src="">
-
-_iPad Wireframes_
-
-<img src="">
-
-_Phone Wireframes_
+_Wireframes_
 
 </details>
 
@@ -123,14 +110,14 @@ _Phone Wireframes_
 
 This site was designed using a mobile-first approach, because after conducting some research (using sites like [Adobe](https://xd.adobe.com/ideas/process/ui-design/what-is-mobile-first-design/)), it appears that most users use their mobile devices over desktop or iPad screens, especially when partaking in quizzes. 
 
-- The design includes eye-catching colours and a spinning wheel to create a boardgame feel
-- A different colour palette was used for the progress bar to differentiate it from the rest of the game elements.
+- The design includes eye-catching colours of purples and yellows, and a spinning wheel to create a boardgame feel
+- A different colour palette was used for the progress bar to differentiate it from the rest of the game elements
 - The game is setup on one screen with numerous modals being shown and hidden as the game progresses
 - The colours applied to the buttons, headings and font are all consistent throughout
 
 <details><summary>Screenshots</summary>
 
-<img src="">
+<img src="static/docs/color_palette.png">
 
 _Colour Palette for entire website_
 
@@ -138,7 +125,7 @@ _Colour Palette for entire website_
 
 #### Font
 
-Our choice of font was [](Link). The light font was used for all paragraphs and and the bold font was used for all headings and buttons. This font choice was imported from [Google Fonts](https://fonts.google.com/) and had a backup font of Serif. We chose this font for my website because the style contributed to the financial game theme, whilst also providing a professional, legible finish.
+Our choice of font was [Roboto](https://fonts.google.com/specimen/Roboto). The light font was used for all paragraphs and and the bold font was used for all headings and buttons. This font choice was imported from [Google Fonts](https://fonts.google.com/) and had a backup font of Serif. We chose this font for my website because the style contributed to the financial game theme, whilst also providing a professional, legible finish.
 
 ## Technologies Used 
 
@@ -171,13 +158,11 @@ This website used a combination of three different Front-End development languag
 
 ## Testing
 
-### Automated Testing
+Due to the limited time frame of this hackathon (5 days), we decided to focus mainly on manual testing. If we had a longer time frame, we would have also undergone automated testing.
 
-#### HTML Validator Testing 
+### Manual Testing
 
-#### CSS Validator Testing 
-
-#### JS Validator Testing 
+#### Testing User Stories
 
 #### Browser Compatibility
 
