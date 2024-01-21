@@ -5,9 +5,15 @@
 
 :root {
   /* fonts */
+<<<<<<< HEAD
   --title: "Lato", sans-serif;
   --heading-font: "Playfair Display", serif;
   --body-font: "Nunito Sans", sans-serif;
+=======
+  --title: "Halant", sans-serif;
+  --heading-font: "Playfair Display", serif;
+  --body-font: "Roboto Condensed", sans-serif;
+>>>>>>> a2d00d1a16181bfabd632ec4a93c37d6793e6655
 
   /* Colours */
   --text: #000000;
@@ -39,7 +45,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: var(--main-font);
 }
 
 html,
@@ -55,6 +60,10 @@ p {
   letter-spacing: 1.5px;
   margin-bottom: 0 !important;
   color: var(--text-color) !important;
+<<<<<<< HEAD
+=======
+  font-family: var(--body-font) !;
+>>>>>>> a2d00d1a16181bfabd632ec4a93c37d6793e6655
 }
 
 h1,
@@ -70,6 +79,23 @@ h6 {
 
 .modal-body {
   background-color: var(--secondary-color) !important;
+<<<<<<< HEAD
+=======
+}
+.modal-header,
+.modal-footer {
+  background-color: var(--secondary-color) !important;
+  color: var(--text-color) !important;
+}
+.btn {
+  background-color: #343baa !important;
+  color: var(--text-color) !important;
+}
+
+/* hide close button on modal */
+button.btn-close {
+  display: none !important;
+>>>>>>> a2d00d1a16181bfabd632ec4a93c37d6793e6655
 }
 
 /* profesion carousel */

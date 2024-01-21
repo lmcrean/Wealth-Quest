@@ -28,14 +28,26 @@ const professionCard = {
   // Assets
   savings: document.getElementById("profession-savings"),
 
-  additionalAssets: document.getElementById("profession-card-additional-assets"),
+  additionalAssets: document.getElementById(
+    "profession-card-additional-assets"
+  ),
 
   // Liabilities
-  homeMortgageLiabilities: document.getElementById("profession-card-home-mortgage-liabilities"),
-  schoolLoanLiabilities: document.getElementById("profession-card-school-loan-liabilities"),
-  carLoanLiabilities: document.getElementById("profession-card-car-loan-liabilities"),
-  creditCardLiabilities: document.getElementById("profession-card-credit-card-liabilities"),
-  retailLiabilities: document.getElementById("profession-card-retail-liabilities"),
+  homeMortgageLiabilities: document.getElementById(
+    "profession-card-home-mortgage-liabilities"
+  ),
+  schoolLoanLiabilities: document.getElementById(
+    "profession-card-school-loan-liabilities"
+  ),
+  carLoanLiabilities: document.getElementById(
+    "profession-card-car-loan-liabilities"
+  ),
+  creditCardLiabilities: document.getElementById(
+    "profession-card-credit-card-liabilities"
+  ),
+  retailLiabilities: document.getElementById(
+    "profession-card-retail-liabilities"
+  ),
 
   bankLiabilities: document.getElementById("profession-card-bank-loan"),
 };
@@ -97,13 +109,42 @@ let professions;
 // variable that is selected by player chosing his profession within selectProfession() function
 let profession;
 
-fetch("static/game_data/professions.json")
-  .then((response) => response.json())
-  .then((json) => {
+// Functions for local storage operations
+function setLocalStorage(data) {
+  localStorage.setItem(`professions`, JSON.stringify(data));
+}
+
+function getLocalStorage() {
+  const data = localStorage.getItem(`professions`);
+  return data ? JSON.parse(data) : null;
+}
+
+// Function to fetch initial data
+function fetchInitialData() {
+  return fetch("static/game_data/professions.json").then((response) => {
+    if (!response.ok) {
+      throw new Error(`Failed to fetch data: ${response.status}`);
+    }
+    return response.json();
+  });
+}
+// Check local storage for saved game
+const storedProfessions = getLocalStorage();
+
+if (storedProfessions) {
+  // Use stored data if available
+  professions = storedProfessions;
+  createProfessionCarousel();
+} else {
+  // Fetch initial data if not found in local storage
+  fetchInitialData().then((json) => {
+    // Process and use fetched data
     professions = json;
     createProfessionCarousel();
   });
+}
 
+// Collects deals from database
 let deals;
 fetch("static/game_data/deals.json")
   .then((response) => response.json())
@@ -133,14 +174,24 @@ fetch("static/game_data/buttons.json")
   });
 
 function createProfessionCarousel() {
+  console.log(professions);
   professions.forEach((profession, index) => {
+    console.log(profession);
+    console.log(profession.id);
     const isActive = index === 0 ? "active" : "";
     const carouselItem = `
-          <div class="carousel-item ${isActive}" data-profession-id="${profession.id}">
+          <div class="carousel-item ${isActive}" data-profession-id="${
+      profession.id
+    }">
             <h5>${profession.profession}</h5>
             <p>Salary: £${profession.incomes.salary}</p>
             <p>Total Expenses: £${calculateTotalExpenses(profession)}</p>
             <p>Savings: £${profession.assets.saving}</p>
+            ${
+              profession.victory === 0
+                ? "<p>You have not won the game as this profesion</p>"
+                : `<p>Fastest financial Freedom in ${profession.victory} months</p>`
+            }
           </div>
         `;
     carouselInner.innerHTML += carouselItem;
@@ -149,7 +200,8 @@ function createProfessionCarousel() {
 
 // Sets up initial bank rate for display
 function setInitialBankRate() {
-  document.getElementById("bank-rate").textContent = gameData.bankLoanProcentage;
+  document.getElementById("bank-rate").textContent =
+    gameData.bankLoanProcentage;
 }
 
 setInitialBankRate();
@@ -173,7 +225,7 @@ function barrowFromBank() {
   }
 }
 
-// Check for game end functionality
+// Check for game end
 function checkForGameEnd() {
   // Win = passive income > expenses
   if (profession.passiveIncome >= profession.totalExpenses) {
@@ -185,6 +237,8 @@ function checkForGameEnd() {
 }
 
 function win() {
+
+  updateProfessionsLS();
   // Get the modal element
   const gameEndModal = new bootstrap.Modal(document.getElementById("gameEndModal"));
 
@@ -193,24 +247,21 @@ function win() {
   document.getElementById("gameEndModalContent").innerText =
     "You have successfully achieved the goal of having a higher passive income than expenses! Which means you could quit your job and your bank balance won't go down. \n Hooray. Hopefully, you have learnt a lot from playing and might have an idea of how you could apply this to real life.";
 
-  // Show the modal
-  gameEndModal.show();
+  // show game end modal
+  $("#gameEndModal").modal("show");
 
   // End game and reset variables
   endGame();
 }
 
 function lose() {
-  // Get the modal element
-  const gameEndModal = new bootstrap.Modal(document.getElementById("gameEndModal"));
-
   // Change the modal title and content
   document.getElementById("gameEndModalLabel").innerText = "Unlucky!";
   document.getElementById("gameEndModalContent").innerText =
     "It looks like you've gone bankrupt. Good thing it's just a game! Maybe try again with a different profession and new tactics";
 
-  // Show the modal
-  gameEndModal.show();
+  // show game end modal
+  $("#gameEndModal").modal("show");
 
   // End game and reset variables
   endGame();
@@ -238,4 +289,14 @@ function endGame() {
     (gameData.offerId = 0),
     (profession = null);
   // Return user to welcome page?
+}
+
+function updateProfessionsLS() {
+  const index = professions.findIndex((profession) => profession.id === profession.id);
+  if (professions[index].victory === 0) {
+    professions[index].victory = gameData.currentMonth;
+  } else if (professions[index].victory > gameData.currentMonth) {
+    professions[index].victory = gameData.currentMonth;
+  }
+  setLocalStorage(professions);
 }
