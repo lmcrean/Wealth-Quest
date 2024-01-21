@@ -59,13 +59,13 @@
       How to Play
     </button>
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#gameEndModal">
-      Game End Modal for styling
+      Delete this later
     </button>
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#randomCardModal">
-      Random Card for styling
+      Latest event
     </button>
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#borrowFromTheBankModal">
-      Borrow from the bank
+      Bank <br>Loan
     </button>
 
     <!-- Game end modal -->
@@ -105,14 +105,13 @@
               other entity.
             </div>
             <div class="col">
-              <h5 id="profession-card-name" class="text-center">Profession: ???</h5>
+              <h3 id="profession-card-name" class="text-center">Profession: ???</h3>
+              <div class="text-center"> <p id="payday-card"></p></div>
             </div>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body" id="financialStatementModalContent">
-            <div>
-              <div id="payday-card"></div>
-            </div>
+      
             <!-- Income tab -->
             <div id="income-section-container" class="finance-section-container">
               <!-- Income Heading with Tooltip -->
@@ -175,6 +174,7 @@
 
               </div>
             </div>
+            <hr>
             <!-- Expenses tab -->
             <div id="expenses-section-container" class="finance-section-container">
               <!-- Expenses Heading with Tooltip -->
@@ -367,6 +367,7 @@
                     <p id="profession-card-per-child-expense">0</p>
                   </div>
                 </div>
+                <br>
                 <div class="finanice-section-divide-minor">
                   <p><strong>Totals:</strong></p>
                 </div>
@@ -398,6 +399,7 @@
                 </div>
               </div>
             </div>
+            <hr>
             <!-- Assets tab -->
             <div id="assets-section-container" class="finance-section-container">
               <!-- Assets Heading with Tooltip -->
@@ -414,6 +416,7 @@
                   happenings.
                 </div>
               </div>
+             
               <div id="assets-content-container">
                 <div id="assets-breakdown-container">
                   <div class="d-flex justify-content-between">
@@ -436,6 +439,7 @@
                 </div>
               </div>
             </div>
+             <hr>
             <!-- Liabilities tab -->
             <div id="liabilities-section-container" class="finance-section-container">
               <!-- Assets Heading with Tooltip -->
@@ -589,7 +593,7 @@
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="gameInstructionsModalLabel">How to Play ##GAME NAME##</h5>
+            <h5 class="modal-title" id="gameInstructionsModalLabel">How to Play Wealth Quest</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
