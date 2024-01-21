@@ -10,3 +10,7 @@ document
     // Close the modal when the button is clicked
     $("#welcomeModal").modal("hide");
   });
+
+document.getElementById("roll-dice-btn").addEventListener("click", function () {
+  $("#randomCardModal").modal("show");
+});
