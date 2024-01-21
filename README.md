@@ -96,3 +96,25 @@ As a first-time user, I would like to:
 - access the game on any device
 
 These user stories gave us a clear scope for the game and enabled us to stay on track with the project, preventing issues like scope creep at a later stage after the coding process. 
+
+### Design, Layout and Structure 
+
+#### Wireframes
+
+I used [Figma](https://figma.com/) in the initial design phase, before the coding process. This enabled me to develop the game's structure, skeleton, layout and overall look and style. We created designs for desktop, tablet and mobile screens to ensure that responsiveness was at the forefront of the application from the beginning.
+
+<details><summary>Screenshots</summary>
+
+<img src="">
+
+_Desktop Wireframes_
+
+<img src="">
+
+_iPad Wireframes_
+
+<img src="">
+
+_Phone Wireframes_
+
+</details>
