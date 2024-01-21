@@ -1,5 +1,6 @@
 // Call this function when any expense changes
 function calculateTotalExpenses(profession) {
+  console.log("test");
   let totalExpenses = 0;
   for (const expense in profession.expenses) {
     if (profession.expenses.hasOwnProperty(expense)) {

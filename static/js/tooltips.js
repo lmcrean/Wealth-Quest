@@ -22,6 +22,15 @@ document.querySelectorAll(".has-tooltip").forEach((element) => {
   });
 });
 
+// Attach event listeners to all tooltip triggers
+document.querySelectorAll(".has-tooltip").forEach((element) => {
+  element.addEventListener("click", function (event) {
+    // Prevent the document click handler from firing
+    event.stopPropagation();
+    toggleTooltip(event, this.dataset.tooltip);
+  });
+});
+
 // Hide tooltips on click anywhere in the document
 document.addEventListener("click", function (event) {
   document.querySelectorAll(".tooltip-box").forEach((tooltip) => {
