@@ -107,7 +107,51 @@ h6 {
 }
 
 .liabilities-button {
-  width: 20px;
+  width: 30px;
   background-color: var(--text);
   color: var(--background);
+}
+
+#game-collumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#total-expenses-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.game-board-components {
+  width: 100%;
+}
+
+#button-container > div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-numbers p {
+  text-wrap: wrap;
+}
+
+#bank-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#numberForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#numberForm > p,
+#numberForm > div {
+  display: inline;
 }

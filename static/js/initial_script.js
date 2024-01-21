@@ -5,7 +5,6 @@ const professionCard = {
 
   // Income tab
   salary: document.getElementById("profession-card-salary"),
-  interest: document.getElementById("profession-card-interest"),
   realEstate: document.getElementById("profession-card-real-estate"),
   passiveIncome: document.getElementById("profession-card-pasive-income"),
   totalIncome: document.getElementById("profession-card-total-income"),
@@ -26,14 +25,18 @@ const professionCard = {
   totalExpenses: document.getElementById("profession-card-total-expenses"),
   monthlyCashFlow: document.getElementById("profession-card-monthly-cashflow"),
 
-  // Assets and Liabilities
+  // Assets
   savings: document.getElementById("profession-savings"),
+
   additionalAssets: document.getElementById("profession-card-additional-assets"),
+
+  // Liabilities
   homeMortgageLiabilities: document.getElementById("profession-card-home-mortgage-liabilities"),
   schoolLoanLiabilities: document.getElementById("profession-card-school-loan-liabilities"),
   carLoanLiabilities: document.getElementById("profession-card-car-loan-liabilities"),
   creditCardLiabilities: document.getElementById("profession-card-credit-card-liabilities"),
   retailLiabilities: document.getElementById("profession-card-retail-liabilities"),
+
   bankLiabilities: document.getElementById("profession-card-bank-loan"),
 };
 
@@ -41,10 +44,17 @@ const gameDataHTML = {
   progressBar: document.getElementById("progress-bar"),
   progressBarContainer: document.getElementById("progress-bar-container"),
   eventCard: document.getElementById("event-card"),
+  paydayCard: document.getElementById("payday-card"),
 };
 
 // Profession card modal carousel
 const carouselInner = document.querySelector(".carousel-inner");
+
+const rollDiceBtn = document.getElementById("roll-dice-btn");
+const orderInputSpan = document.getElementById("order-input-span");
+const orderCountInput = document.getElementById("orderCountInput");
+const acceptOfferBtn = document.getElementById("accept-offer-btn");
+const rejectOfferBtn = document.getElementById("reject-offer-btn");
 
 // Game variables with initial values
 let gameData = {
@@ -53,7 +63,9 @@ let gameData = {
   totalExpenses: 0,
   progressBarPerecentage: 0,
   bankLoanProcentage: 10, // 5% of the loan is added to the loan as a fee
+  offerId: 0,
 
+  // Adjust chances to increse or decrese occurance of events
   chances: [
     {
       id: 1,
@@ -68,9 +80,15 @@ let gameData = {
     {
       id: 3,
       name: "Deal",
-      chance: 10,
+      chance: 5,
+    },
+    {
+      id: 4,
+      name: "opportunity",
+      chance: 0,
     },
   ],
+  opportunityChance: 1,
 };
 
 // variable taken from json to have list of all professions
@@ -87,7 +105,6 @@ fetch("static/game_data/professions.json")
   });
 
 let deals;
-
 fetch("static/game_data/deals.json")
   .then((response) => response.json())
   .then((json) => {
@@ -106,6 +123,13 @@ fetch("static/game_data/child_events.json")
   .then((response) => response.json())
   .then((json) => {
     childEvents = json;
+  });
+
+let buttonTitles;
+fetch("static/game_data/buttons.json")
+  .then((response) => response.json())
+  .then((json) => {
+    buttonTitles = json;
   });
 
 function createProfessionCarousel() {
@@ -141,9 +165,77 @@ function barrowFromBank() {
     profession.liabilities.bankLoan += bankLoan;
     profession.assets.saving += bankLoan;
 
+    console.log(profession);
     finishTurn();
     alert(`You have barrowed from bank ${bankLoan}.`);
   } else {
     alert("Please enter a valid multiple of 100.");
   }
+}
+
+// Check for game end functionality
+function checkForGameEnd() {
+  // Win = passive income > expenses
+  if (profession.passiveIncome >= profession.totalExpenses) {
+    win();
+    // Lose = bank balance & cash flow =< 0
+  } else if (profession.assets.saving <= 0 && profession.finalCashFlow <= 0) {
+    lose();
+  }
+}
+
+function win() {
+  // Get the modal element
+  const gameEndModal = new bootstrap.Modal(document.getElementById("gameEndModal"));
+
+  // Change the modal title and content
+  document.getElementById("gameEndModalLabel").innerText = "Congratulations!";
+  document.getElementById("gameEndModalContent").innerText =
+    "You have successfully achieved the goal of having a higher passive income than expenses! Which means you could quit your job and your bank balance won't go down. \n Hooray. Hopefully, you have learnt a lot from playing and might have an idea of how you could apply this to real life.";
+
+  // Show the modal
+  gameEndModal.show();
+
+  // End game and reset variables
+  endGame();
+}
+
+function lose() {
+  // Get the modal element
+  const gameEndModal = new bootstrap.Modal(document.getElementById("gameEndModal"));
+
+  // Change the modal title and content
+  document.getElementById("gameEndModalLabel").innerText = "Unlucky!";
+  document.getElementById("gameEndModalContent").innerText =
+    "It looks like you've gone bankrupt. Good thing it's just a game! Maybe try again with a different profession and new tactics";
+
+  // Show the modal
+  gameEndModal.show();
+
+  // End game and reset variables
+  endGame();
+}
+
+function endGame() {
+  // resset buttons
+  rollDiceBtnOff(false);
+  acceptBtnOff(true);
+  rejectBtnOff(true);
+  orderInputOff(true);
+  // Reset variables
+
+  fetch("static/game_data/deals.json")
+    .then((response) => response.json())
+    .then((json) => {
+      deals = json;
+    });
+
+  (gameData.currentMonth = 1),
+    (gameData.passiveIncome = 0),
+    (gameData.totalExpenses = 0),
+    (gameData.progressBarPerecentage = 0),
+    (gameData.bankLoanProcentage = 10),
+    (gameData.offerId = 0),
+    (profession = null);
+  // Return user to welcome page?
 }

@@ -22,7 +22,11 @@ function calculateTotalIncome(profession) {
 
 // call this function when player interest and real estate changes
 function calculatePassiveIncome(profession) {
-  let totalPasiveIncome = profession.incomes.interest + profession.incomes.realEstate;
+  if (profession.additionalAssets) {
+    const totalPassiveIncome = profession.additionalAssets.reduce((total, asset) => total + asset.passive_income, 0);
+    profession.incomes.realEstate = totalPassiveIncome;
+  }
+  let totalPasiveIncome = profession.incomes.realEstate;
   return totalPasiveIncome;
 }
 
@@ -64,6 +68,7 @@ function radnomInt(min, max) {
 
 // function called when player lando on a payday event
 function payday() {
+  gameData.currentMonth++;
   profession.assets.saving += profession.finalCashFlow;
   gameDataHTML.eventCard.innerHTML = "";
 
@@ -125,7 +130,13 @@ function lifeEvent() {
 
 function deal() {
   const deal = choseRandomEvent(deals);
+  gameData.offerId = deal.id;
+  gameData.dealorOpportunity = "deal";
   const dealType = deal.type;
+
+  rollDiceBtnOff(true);
+  acceptBtnOff(false);
+  rejectBtnOff(false);
 
   gameDataHTML.eventCard.innerHTML = "";
   const card = document.createElement("div");
@@ -174,17 +185,6 @@ function deal() {
   cardNumbers.appendChild(cardMortgage);
   cardNumbers.appendChild(passiveIncome);
 
-  // Create button elements
-  let buttons;
-
-  if (dealType === "stocks") {
-    buttons = createButtonElements(true);
-  } else {
-    buttons = createButtonElements(false);
-  }
-
-  cardNumbers.appendChild(buttons);
-
   card.appendChild(cardNumbers);
 
   gameDataHTML.eventCard.appendChild(card);
@@ -194,11 +194,11 @@ function realEstateDeal(deal) {
   const cardTitleValue = deal.title;
   const cardDescription1 = deal.description;
   const cardDescription2 = `Buy this property to get ${deal.passive_income} passive income or sell it later`;
-  const cardDescription3 = `ROI: ${deal.resell_roi}%, May sell for: £${deal.min_resell} to £${deal.max_resell}.`;
-  const cardInitialCost = `Cost: £${deal.initial_cost}`;
-  const cardDownpay = `Downpay: £${deal.down_pay}`;
-  const cardMortgage = `Mortgage: £${deal.initial_cost - deal.down_pay}`;
-  const passiveIncome = `Passive Income: +£${deal.passive_income}`;
+  const cardDescription3 = `ROI: ${deal.resell_roi}%, May sell later for: £${deal.min_resell} to £${deal.max_resell}.`;
+  const cardInitialCost = `Cost:\n£${deal.initial_cost}`;
+  const cardDownpay = `Downpay:\n£${deal.down_pay}`;
+  const cardMortgage = `Mortgage:\n£${deal.initial_cost - deal.down_pay}`;
+  const passiveIncome = `Passive Income:\n+£${deal.passive_income}`;
 
   const values = [
     cardTitleValue,
@@ -218,11 +218,11 @@ function businessDeal(deal) {
   const cardTitleValue = deal.title;
   const cardDescription1 = deal.description;
   const cardDescription2 = `Invest in this business to get ${deal.passive_income} passive income or sell it later`;
-  const cardDescription3 = `ROI: ${deal.resell_roi}%, May sell for: £${deal.min_resell} to £${deal.max_resell}.`;
-  const cardInitialCost = `Cost: £${deal.initial_cost}`;
-  const cardDownpay = `Downpay: £${deal.down_pay}`;
-  const cardMortgage = `Mortgage: £${deal.initial_cost - deal.down_pay}`;
-  const passiveIncome = `Passive Income: +£${deal.passive_income}`;
+  const cardDescription3 = `ROI: ${deal.resell_roi}%, May sell later for: £${deal.min_resell} to £${deal.max_resell}.`;
+  const cardInitialCost = `Cost:\n£${deal.initial_cost}`;
+  const cardDownpay = `Downpay:\n£${deal.down_pay}`;
+  const cardMortgage = `Mortgage:\n£${deal.initial_cost - deal.down_pay}`;
+  const passiveIncome = `Passive Income:\n+£${deal.passive_income}`;
 
   const values = [
     cardTitleValue,
@@ -239,14 +239,16 @@ function businessDeal(deal) {
 }
 
 function stocksDeal(deal) {
+  orderInputOff(false);
+  orderInputSpan.innerText = `How many shares you would like to buy:`;
   const cardTitleValue = deal.title;
   const cardDescription1 = deal.description;
   const cardDescription2 = `Invest in to stocks and hope the price to go up`;
-  const cardDescription3 = `ROI: ${deal.resell_roi}%, May sell for: £${deal.min_resell} to £${deal.max_resell}.`;
-  const cardInitialCost = `Todays Price: £${deal.initial_cost}`;
+  const cardDescription3 = `ROI: ${deal.resell_roi}%, May sell later for: £${deal.min_resell} to £${deal.max_resell}.`;
+  const cardInitialCost = `Todays Price:\n£${deal.initial_cost}`;
   const cardDownpay = ``;
   const cardMortgage = ``;
-  const passiveIncome = `Passive Income: +£${deal.passive_income}`;
+  const passiveIncome = `Passive Income:\n+£${deal.passive_income}`;
 
   const values = [
     cardTitleValue,
@@ -262,16 +264,6 @@ function stocksDeal(deal) {
   return values;
 }
 
-// Function called to get random large number for deals
-function getRandomLargeNumber(min, max) {
-  // Ensure min and max are multiples of 100
-  min = Math.ceil(min / 100) * 100;
-  max = Math.floor(max / 100) * 100;
-
-  // Generate a random number within the adjusted range
-  return Math.floor(Math.random() * ((max - min + 1) / 100)) * 100 + min;
-}
-
 // Function to create an element with attributes
 function createElement(tag, attributes, text) {
   const element = document.createElement(tag);
@@ -284,31 +276,265 @@ function createElement(tag, attributes, text) {
   return element;
 }
 
-// Function to create button elements
-function createButtonElements(isStocks) {
-  const buttons = document.createElement("div");
-  buttons.className = "deal-buttons";
+// Function to handle opportunity
+function opportunity() {
+  const deal = choseRandomEvent(profession.additionalAssets);
+  gameData.offerId = deal.id;
+  gameData.dealorOpportunity = "opportunity";
+  const dealType = deal.type;
 
-  const buyButton = createElement("button", { class: "buy-button" }, "Buy");
-  const sellButton = createElement("button", { class: "sell-button" }, "Sell");
+  rollDiceBtnOff(true);
+  acceptBtnOff(false);
+  rejectBtnOff(false);
 
-  if (isStocks) {
-    const numberInput = document.createElement("input");
+  gameDataHTML.eventCard.innerHTML = "";
+  const card = document.createElement("div");
+  const cardTitle = document.createElement("h2");
+  const cardDescription = document.createElement("p");
+  card.className = "event-card-body";
 
-    // Set attributes for the number input
-    numberInput.type = "number";
-    numberInput.id = "orderCountInput";
-    numberInput.min = "0"; // Set minimum value
-    numberInput.max = "100"; // Set maximum value
-    numberInput.step = "1"; // Set step value
-    numberInput.value = "0"; // Set default value
+  const cardNumbers = document.createElement("div");
+  cardNumbers.className = "card-numbers";
 
-    // Append the number input element to the body of the document
-    buttons.body.appendChild(numberInput);
+  const cardInitialCost = document.createElement("p");
+  const cardDownpay = document.createElement("p");
+  const cardMortgage = document.createElement("p");
+  const passiveIncome = document.createElement("p");
+
+  let cardDetails;
+
+  let dealChangedCost;
+
+  switch (dealType) {
+    case "property":
+      dealChangedCost = Math.round(radnomInt(deal.min_resell, deal.max_resell) / 100) * 100;
+      cardDetails = propertyOpportunity(deal, dealChangedCost);
+      break;
+    case "business":
+      dealChangedCost = Math.round(radnomInt(deal.min_resell, deal.max_resell) / 100) * 100;
+      cardDetails = businessOpportunity(deal, dealChangedCost);
+      break;
+    case "stocks":
+      dealChangedCost = radnomInt(deal.min_resell, deal.max_resell);
+      cardDetails = stocksOpportunity(deal, dealChangedCost);
+      break;
+    default:
+      break;
   }
 
-  buttons.appendChild(buyButton);
-  buttons.appendChild(sellButton);
+  cardTitle.innerText = cardDetails[0];
+  cardDescription.innerText = `${cardDetails[1]} \n ${cardDetails[2]}`;
 
-  return buttons;
+  card.appendChild(cardTitle);
+  card.appendChild(cardDescription);
+
+  // card numbers setup
+
+  cardInitialCost.innerText = cardDetails[3];
+  cardDownpay.innerText = cardDetails[4];
+  cardMortgage.innerText = cardDetails[5];
+  passiveIncome.innerText = cardDetails[6];
+  cardNumbers.appendChild(cardInitialCost);
+  cardNumbers.appendChild(cardDownpay);
+  cardNumbers.appendChild(cardMortgage);
+  cardNumbers.appendChild(passiveIncome);
+
+  card.appendChild(cardNumbers);
+
+  gameDataHTML.eventCard.appendChild(card);
+}
+
+function propertyOpportunity(deal, dealChangedCost) {
+  deal.newPrice = dealChangedCost;
+  const dealchange = dealChangedCost - deal.initial_cost;
+  const cardTitleValue = `${deal.title} - ${dealchange > 0 ? "Rising" : "Falling apart"}?`;
+  const cardDescription1 = `You can sell your property to for £${Math.abs(dealChangedCost)}`;
+  const cardDescription2 = `ROI: ${deal.resell_roi}%, May sell later for: £${deal.min_resell} to £${deal.max_resell}.`;
+  const cardInitialCost = `Bought for:\n£${deal.initial_cost}`;
+  const cardDownpay = `Downpay:\n£${deal.down_pay}`;
+  const cardMortgage = `Total Profit:\n£${dealChangedCost - (deal.initial_cost - deal.down_pay)}`;
+  const passiveIncome = `Passive Income loss:\n-£${deal.passive_income}`;
+
+  const values = [
+    cardTitleValue,
+    cardDescription1,
+    cardDescription2,
+    cardInitialCost,
+    cardDownpay,
+    cardMortgage,
+    passiveIncome,
+  ];
+
+  return values;
+}
+
+function businessOpportunity(deal, dealChangedCost) {
+  deal.newPrice = dealChangedCost;
+  const dealchange = dealChangedCost - deal.initial_cost;
+  const cardTitleValue = `${deal.title} - ${dealchange > 0 ? "Rising" : "Falling apart"}?`;
+  const cardDescription1 = `You can sell your business to for £${Math.abs(dealChangedCost)}`;
+  const cardDescription2 = `ROI: ${deal.resell_roi}%, May sell later for: £${deal.min_resell} to £${deal.max_resell}.`;
+  const cardInitialCost = `Bought for:\n£${deal.initial_cost}`;
+  const cardDownpay = `Downpay:\n£${deal.down_pay}`;
+  const cardMortgage = `Total Profit:\n£${dealChangedCost - (deal.initial_cost - deal.down_pay)}`;
+  const passiveIncome = `Passive Income loss:\n-£${deal.passive_income}`;
+
+  const values = [
+    cardTitleValue,
+    cardDescription1,
+    cardDescription2,
+    cardInitialCost,
+    cardDownpay,
+    cardMortgage,
+    passiveIncome,
+  ];
+
+  return values;
+}
+
+function stocksOpportunity(deal, dealChangedCost) {
+  orderInputOff(false);
+  orderInputSpan.innerText = `How many shares you would like to sell:`;
+  setMinMaxValues(deal.additionalAmount);
+  deal.newPrice = dealChangedCost;
+  const dealchange = dealChangedCost - deal.initial_cost;
+
+  const totalStocksValue = dealChangedCost * deal.additionalAmount;
+  const totalProfitValue = totalStocksValue - deal.initial_cost * deal.additionalAmount;
+
+  const cardTitleValue = `${deal.title} - ${dealchange > 0 ? "Rising" : "Falling apart"}?`;
+  const cardDescription1 = `You can sell your stocks to for £${Math.abs(dealChangedCost)} each`;
+  const cardDescription2 = `ROI: ${deal.resell_roi}%, May sell later for: £${deal.min_resell} to £${deal.max_resell} each.`;
+  const cardInitialCost = `Bought for:\n£${deal.initial_cost} each`;
+  const cardDownpay = `Total Stocks owned:\n${deal.additionalAmount}`;
+  const cardMortgage = `Total Profit:\n£${totalProfitValue}`;
+  const passiveIncome = ``;
+
+  const values = [
+    cardTitleValue,
+    cardDescription1,
+    cardDescription2,
+    cardInitialCost,
+    cardDownpay,
+    cardMortgage,
+    passiveIncome,
+  ];
+
+  return values;
+}
+
+// Function to accept the deal
+function acceptOffer() {
+  if (gameData.dealorOpportunity === "deal") {
+    acceptDeal();
+  } else if (gameData.dealorOpportunity === "opportunity") {
+    acceptOpportunity();
+  } else {
+    alert("Something went wrong");
+  }
+}
+
+function acceptDeal() {
+  const dealId = gameData.offerId;
+  const deal = deals.find((deal) => deal.id === dealId);
+
+  let acceptedValue;
+
+  deal.type === "stocks";
+
+  if (deal.type != "stocks") {
+    acceptedValue = 1;
+  } else if (parseInt(orderCountInput.value) === 0) {
+    acceptedValue = parseInt(orderCountInput.value);
+    alert(`You need to buy at least 1 stock.`);
+    return;
+  } else {
+    acceptedValue = parseInt(orderCountInput.value);
+  }
+
+  if (profession.assets.saving < deal.down_pay * acceptedValue) {
+    alert(`You do not have enough money to buy this deal.`);
+    return;
+  } else {
+    profession.assets.saving -= deal.down_pay * acceptedValue;
+
+    // check if deal is already in additional assets array
+    const originalDeal = profession.additionalAssets.find((original) => original.id === deal.id);
+    if (originalDeal) {
+      originalDeal.additionalAmount += acceptedValue;
+      return;
+    } else {
+      deal.additionalAmount = acceptedValue;
+      profession.additionalAssets.push(deal);
+    }
+
+    // remove deal from deals array
+    if (deal.type != "stocks") {
+      removeDealById(deals, deal.id);
+    }
+    rollDiceBtnOff(false);
+    rejectBtnOff(true);
+    acceptBtnOff(true);
+  }
+  gameData.chances[3].chance = gameData.opportunityChance;
+  finishTurn();
+}
+
+function acceptOpportunity() {
+  const dealId = gameData.offerId;
+  const deal = profession.additionalAssets.find((deal) => deal.id === dealId);
+
+  let acceptedValue;
+
+  if (deal.type != "stocks") {
+    acceptedValue = 1;
+  } else if (parseInt(orderCountInput.value) === 0) {
+    acceptedValue = parseInt(orderCountInput.value);
+    alert(`You need to sell at least 1 stock.`);
+    return;
+  } else {
+    acceptedValue = parseInt(orderCountInput.value);
+  }
+
+  if (deal.additionalAmount < acceptedValue) {
+    alert(`You do not have enough stocks to sell.`);
+    return;
+  } else {
+    deal.additionalAmount -= acceptedValue;
+    profession.assets.saving += deal.newPrice * acceptedValue;
+
+    // remove deal from deals array
+    if (deal.type != "stocks") {
+      deals.push(deal);
+      removeDealById(profession.additionalAssets, deal.id);
+    } else {
+      if (deal.additionalAmount === 0) removeDealById(profession.additionalAssets, deal.id);
+    }
+
+    if (profession.additionalAssets.length == 0) {
+      gameData.chances[3].chance = 0;
+    }
+    rollDiceBtnOff(false);
+    rejectBtnOff(true);
+    acceptBtnOff(true);
+  }
+  finishTurn();
+}
+
+// Function to remove a deal from the deals array
+function removeDealById(dealsArray, targetId) {
+  const index = dealsArray.findIndex((deal) => deal.id === targetId);
+
+  if (index !== -1) {
+    // Deal found, remove it and return the removed deal
+    return dealsArray.splice(index, 1)[0];
+  } else {
+    // Deal not found, return null or handle accordingly
+    return null;
+  }
+}
+
+function setMinMaxValues(max) {
+  orderCountInput.max = max;
+  orderCountInput.value = max;
 }
