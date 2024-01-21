@@ -136,3 +136,69 @@ _Colour Palette for entire website_
 
 </details>
 
+#### Font
+
+Our choice of font was [](Link). The light font was used for all paragraphs and and the bold font was used for all headings and buttons. This font choice was imported from [Google Fonts](https://fonts.google.com/) and had a backup font of Serif. We chose this font for my website because the style contributed to the financial game theme, whilst also providing a professional, legible finish.
+
+## Technologies Used 
+
+This website used a combination of three different Front-End development languages, as well as some web tools for the initial planning. A list of those included in the project can be seen as follows: 
+
+### Languages 
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
+- [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+- [Bootstrap Framework](https://en.wikipedia.org/wiki/Bootstrap)
+- [Vue Framework](https://en.wikipedia.org/wiki/Vue)
+
+### Tools 
+- [Git](https://git-scm.com/)
+    - Git was used for version control via GitPod, by using the terminal to Git and Push to GitHub.
+- [GitHub](https://github.com/)
+    - GitHub was used to store the project code after being created in GitPod/Git.
+- [Gitpod](https://www.gitpod.io/)
+    - Gitpod was used to create, edit and preview the project's code.
+- [Figma](https://figma.com/)
+     - Figma was used to create wireframes during the initial design process.
+- [Google Fonts](https://fonts.google.com/)
+    - Google Fonts was used to select and import the fonts to the project (Libre Baskerville and Libre Baskerville Bold).
+- [Font Awesome](https://fontawesome.com/)
+    - Font Awesome was used to add icons to the site to help with UX and to add more character to the project visually.
+- [Adobe Illustrator](https://www.adobe.com/uk/products/illustrator.html) and [Adobe Color] (https://color.adobe.com/create/color-wheel)
+    - These were used to create the colour pallette as well as ideas for the initial design.
+- [Favicon.io](https://favicon.io/favicon-converter/)
+    - Used to create and add the favicon to the browser tab.
+
+## Testing
+
+### Automated Testing
+
+#### HTML Validator Testing 
+
+#### CSS Validator Testing 
+
+#### JS Validator Testing 
+
+#### Browser Compatibility
+
+The site was tested on the following browsers, with no browser-specific bugs detected. 
+
+- Google Chrome
+- Mozilla Firefox
+- Apple Safari
+
+#### Responsiveness/Device Testing
+
+The game was tested on the following devices:
+- HP Display 27-inch External Monitor
+- Apple Macbook Pro 13-inch
+- Galaxy S9+
+- Apple iPhone 12 Pro
+- Apple iPhone SE
+- Apple iPad mini
+- Apple iPad
+- Galaxy Tablet
+- Google Chrome Developer Tools - using responsive testing for all screen sizes
+
+The game functioned as expected on all devices.
+
