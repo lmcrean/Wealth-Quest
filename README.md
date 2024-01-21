@@ -230,3 +230,27 @@ You can clone the repository to use locally by following these steps:
 6. Type git clone copied-git-url into the IDE terminal.
 
 The project will now be cloned locally for you to use.
+
+## Credits
+
+### Design and Planning
+
+- [Adobe Color](https://color.adobe.com/create/color-wheel) helped in developing the colour palette for the initial design phase of the website.
+
+### Code
+
+- [W3C Schools](https://www.w3schools.com/jsref/dom_obj_event.asp) helped in providing a list to all DOM elements and how to manipulate them.
+- [StackOverflow](https://stackoverflow.com/) helped with offering solutions on how to debug css and javascript code for certain functions.
+- [W3C Schools](https://www.w3schools.com/w3css/w3css_progressbar.asp) helped in initial structure and styling of progress bar.
+- [JS Docs](https://jsdoc.app/about-getting-started.html) helped in naming the variables correctly in the javascript files.
+
+### Acknowledgements
+
+- Our Hackathon Team:
+    - Laurie: Scrum Master, Frontend design, Testing
+    - Sian: Databases, Flowchart, Backend Functionality, Testing
+    - Lauren: Databases, Readme, Flowchart, Testing
+    - Erik: JavaScript Backend Functionality, Databases, Testing
+    - Renwar: Wireframes, Frontend design
+We had great fun making this project together and learnt a lot through the experience. 
+- The whole hackathon team at [Code Institute](https://codeinstitute.net/) for their teaching and support.
