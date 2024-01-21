@@ -33,9 +33,6 @@
   <div class="container">
     <div class="row">
       <div class="col">
-        <h2 id="profession-card-name" class="text-center">Profession: ???</h2>
-      </div>
-      <div class="col">
         <h1 class="text-center">Budget game</h1>
       </div>
     </div>
@@ -47,533 +44,87 @@
       </div>
     </div>
 
-    <div class="row">
-      <!-- profession Card with tooltip for what is a profession? -->
-      <div class="col col-lg-6 border">
-        <!-- Financial Statement Heading with Tooltip -->
-        <h2>
-          Financial Statement
-          <span class="question-mark" onmouseover="showTooltip(event, 'financialStatementTooltip')"
-            onmouseout="hideTooltip('financialStatementTooltip')"><i class="fa-regular fa-circle-question"></i></span>
-        </h2>
-        <!-- Tooltip for Financial Statement -->
-        <div id="financialStatementTooltip" class="tooltip-box">
-          What is a Financial Statement? <br />
-
-          A financial statement is a formal record of the financial activities and position of a business, person, or
-          other entity.
-        </div>
-
-        <div id="payday-card"></div>
-        <!-- Income tab -->
-        <div class="row border">
-          <div class="col-7">
-            <!-- Income Heading with Tooltip -->
-            <h2>
-              Income
-              <span class="question-mark" onmouseover="showTooltip(event, 'incomeTooltip')"
-                onmouseout="hideTooltip('incomeTooltip')"><i class="fa-regular fa-circle-question"></i></span>
-            </h2>
-            <!-- Tooltip for Income -->
-            <div id="incomeTooltip" class="tooltip-box">
-              Income is money that comes into your bank account on payday.
-            </div>
-            <!-- salary -->
-            <div class="d-flex justify-content-between">
-              <!-- Salary Income Heading with Tooltip -->
-              <p>
-                Salary:
-                <span class="question-mark" onmouseover="showTooltip(event, 'salaryTooltip')"
-                  onmouseout="hideTooltip('salaryTooltip')"><i class="fa-regular fa-circle-question"></i></span>
-              </p>
-              <!-- Tooltip for Salary Income -->
-
-              <div id="salaryTooltip" class="tooltip-box">Salary is the income you get from your profession.</div>
-              <p id="profession-card-salary">0</p>
-            </div>
-
-            <!-- investment -->
-            <div class="d-flex justify-content-between">
-              <!-- Investments Income Heading with Tooltip -->
-              <p>
-                Investments:
-                <span class="question-mark" onmouseover="showTooltip(event, 'investmentTooltip')"
-                  onmouseout="hideTooltip('investmentTooltip')"><i class="fa-regular fa-circle-question"></i></span>
-              </p>
-              <!-- Tooltip for Investment Income -->
-              <div id="investmentTooltip" class="tooltip-box">
-                This is a sum of the income you get from assets which provide a passive income. Buy assets with a
-                higher passive income to increase this value. Take a look at the 'Assets' section of your financial
-                statement; these are directly linked.
-              </div>
-              <p id="profession-card-real-estate">0</p>
-            </div>
+    <!-- Game column-->
+    <div class="col col-lg-6 border" id="game-collumn">
+      <!-- modal buttons -->
+      <div class="border game-board-components" id="button-container">
+        <div class="">
+          <!-- Button trigger modal -->
+          <div>
+            <button type="button" class="btn btn-success m-2" onclick="selectRandomEvent()" id="roll-dice-btn">
+              Start your Jorney
+            </button>
           </div>
-          <!-- income totals -->
-          <div class="col-5">
-            <div class="d-flex justify-content-between">
-              <!-- Passive Income Heading with Tooltip -->
-              <p>
-                Passive Income
-                <span class="question-mark" onmouseover="showTooltip(event, 'passiveIncomeTooltip')"
-                  onmouseout="hideTooltip('passiveIncomeTooltip')"><i class="fa-regular fa-circle-question"></i></span>
-              </p>
-              <!-- Tooltip for Passive Income -->
-              <div id="passiveIncomeTooltip" class="tooltip-box">
-                Passive income is money earned from an asset which requires little or no ongoing effort. Here, it is a
-                sum of 'interest' and 'investments'. Increase passive income by increasing these two values.
-              </div>
-              <p id="profession-card-pasive-income">0</p>
-            </div>
-
-            <div class="d-flex justify-content-between">
-              <!-- Total Income Heading with Tooltip -->
-              <p>
-                Total income:
-                <span class="question-mark" onmouseover="showTooltip(event, 'totalIncomeTooltip')"
-                  onmouseout="hideTooltip('totalIncomeTooltip')"><i class="fa-regular fa-circle-question"></i></span>
-              </p>
-              <!-- Tooltip for Total Income -->
-              <div id="totalIncomeTooltip" class="tooltip-box">
-                The sum of all income. Essentially, this is your passive income plus your salary.
-              </div>
-              <p id="profession-card-total-income">0</p>
-            </div>
+          <div>
+            <button class="buy-button btn btn-info m-2" id="accept-offer-btn" onclick="acceptOffer()">
+              Accept offer
+            </button>
           </div>
         </div>
-
-        <!-- Expenses tab -->
-        <div class="row border">
-          <div class="col-7">
-            <div>
-              <!-- Haading for Expenses -->
-              <h2>
-                Expenses
-                <span class="question-mark" onmouseover="showTooltip(event, 'expensesTooltip')"
-                  onmouseout="hideTooltip('expensesTooltip')"><i class="fa-regular fa-circle-question"></i></span>
-              </h2>
-              <!-- Tooltip for Expenses -->
-              <div id="expensesTooltip" class="tooltip-box">
-                Expenses incure throughout life. They are outgoings every payday and directly link to your
-                liabilities. Check your liabilities to see how they affect different items in your expenses.
-              </div>
-            </div>
-            <div class="d-flex justify-content-between">
-              <!-- Heading for Taxes -->
-              <p>
-                Taxes:
-                <span class="question-mark" onmouseover="showTooltip(event, 'taxesTooltip')"
-                  onmouseout="hideTooltip('taxesTooltip')"><i class="fa-regular fa-circle-question"></i></span>
-              </p>
-              <!-- Tooltip for Taxes -->
-
-              <div id="taxesTooltip" class="tooltip-box">Tax is an unchangable figure based on your salary.</div>
-
-              <p id="profession-card-taxes">0</p>
-            </div>
-            <div class="d-flex justify-content-between">
-              <!-- Heading for mortgages -->
-              <p>
-                House Mortgage Payment:
-                <span class="question-mark" onmouseover="showTooltip(event, 'motgageTooltip')"
-                  onmouseout="hideTooltip('motgageTooltip')"><i class="fa-regular fa-circle-question"></i></span>
-              </p>
-              <!-- Tooltip for mortgages -->
-              <div id="motgageTooltip" class="tooltip-box">
-                You can gradually pay off your house mortgage with these smaller payments. See what's left to pay on
-                your house mortgage by loooking at this item in the 'Liabilities' section of the financial statement.
-              </div>
-              <p id="profession-card-home-mortgage">0</p>
-            </div>
-            <div class="d-flex justify-content-between">
-              <!-- Heading for School Loans -->
-              <p>
-                Student Loan Payment:
-
-                <span class="question-mark" onmouseover="showTooltip(event, 'schoolLoansTooltip')"
-                  onmouseout="hideTooltip('schoolLoansTooltip')"><i class="fa-regular fa-circle-question"></i></span>
-              </p>
-              <p id="profession-card-school-loan">0</p>
-              <!-- Tooltip for School Loans Payment-->
-              <div id="schoolLoansTooltip" class="tooltip-box">
-                You can gradually pay off your student loans in small payments. See what's left to pay on your student
-                loans by loooking at this item in the 'Liabilities' section of the financial statement.
-              </div>
-            </div>
-            <div class="d-flex justify-content-between">
-              <!-- Heading for Car Loan Payment -->
-              <p>
-                Car Loan Payment:
-                <span class="question-mark" onmouseover="showTooltip(event, 'carLoansTooltip')"
-                  onmouseout="hideTooltip('carLoansTooltip')"><i class="fa-regular fa-circle-question"></i></span>
-              </p>
-              <p id="profession-card-car-loan">0</p>
-              <!-- Tooltip for Car Loan Payment -->
-              <div id="carLoansTooltip" class="tooltip-box">
-                If you a car you can gradually pay off your car loan in small payments. See what's left to pay on your
-                car loan by loooking at this item in the 'Liabilities' section of the financial statement.
-              </div>
-            </div>
-            <div class="d-flex justify-content-between">
-              <!-- Heading for Credit Card Payment -->
-              <p>
-                Credit Card Payment:
-                <span class="question-mark" onmouseover="showTooltip(event, 'creditCardPaymentsTooltip')"
-                  onmouseout="hideTooltip('creditCardPaymentsTooltip')"><i
-                    class="fa-regular fa-circle-question"></i></span>
-              </p>
-              <p id="profession-card-credit-card">0</p>
-              <!-- Tooltip for Credit Card Payment -->
-              <div id="creditCardPaymentsTooltip" class="tooltip-box">
-                You can pay off purchases made on your credit card debt in small payents. See what's left to pay on
-                your credit card by loooking at this item in the 'Liabilities' section of the financial statement.
-              </div>
-            </div>
-            <div class="d-flex justify-content-between">
-              <!-- Heading for Retail Payment -->
-              <p>
-                Retail Payment:
-                <span class="question-mark" onmouseover="showTooltip(event, 'retailPaymentsTooltip')"
-                  onmouseout="hideTooltip('retailPaymentsTooltip')"><i class="fa-regular fa-circle-question"></i></span>
-              </p>
-              <!-- Tooltip for Credit Card Payment -->
-              <div id="retailPaymentsTooltip" class="tooltip-box">
-                If you have any retail dept in the 'Liabilities' section of the financial statement you can pay it off
-                in small payments here.
-              </div>
-              <p id="profession-card-retail-expenses">0</p>
-            </div>
-            <div class="d-flex justify-content-between">
-              <!-- Heading for Other Expenses -->
-              <p>
-                Other Expenses:
-                <span class="question-mark" onmouseover="showTooltip(event, 'otherExpensesTooltip')"
-                  onmouseout="hideTooltip('otherExpensesTooltip')"><i class="fa-regular fa-circle-question"></i></span>
-              </p>
-              <!-- Tooltip for other expenses -->
-              <div id="otherExpensesTooltip" class="tooltip-box">
-                This is the basic cost of living. For example, weekly grocery shopping and paying bills. This figure
-                cannot be changed.
-              </div>
-              <p id="profession-card-other-expenses:">0</p>
-            </div>
-            <div class="d-flex justify-content-between">
-              <!-- Heading for Child Expenses -->
-              <p>
-                Child Expenses:
-                <span class="question-mark" onmouseover="showTooltip(event, 'childExpensesTooltip')"
-                  onmouseout="hideTooltip('childExpensesTooltip')"><i class="fa-regular fa-circle-question"></i></span>
-              </p>
-              <!-- Tooltip for Child Expenses -->
-              <div id="childExpensesTooltip" class="tooltip-box">
-                If you have children they may add liabilities to that section of the financial statement. This
-                excludes school costs.
-              </div>
-              <p id="profession-card-child-expenses:">0</p>
-            </div>
-            <div class="d-flex justify-content-between">
-              <!-- Heading for Bank loan payment -->
-              <p>
-                Bank loan payment:
-                <span class="question-mark" onmouseover="showTooltip(event, 'bankLoanPaymentTooltip')"
-                  onmouseout="hideTooltip('bankLoanPaymentTooltip')"><i
-                    class="fa-regular fa-circle-question"></i></span>
-              </p>
-              <!-- Tooltip for Bank loan payment -->
-              <div id="bankLoanPaymentTooltip" class="tooltip-box">
-                If you have borrowed money from the bank, you will pay it off with 10% interest in small payments as
-                shown here.
-              </div>
-              <p id="profession-card-bank-loan-payment">0</p>
-            </div>
+        <div class="deal-buttons">
+          <div>
+            <span id="order-input-span">How many shares you would like to buy:</span>
+            <input type="number" class="m-2" id="orderCountInput" min="1" max="100" step="1" value="1" />
           </div>
-
-          <div class="col-5" id="total-expenses-container">
-            <div>
-              <div class="d-flex justify-content-between">
-                <!-- Heading for Children -->
-                <p>
-                  Children:
-                  <span class="question-mark" onmouseover="showTooltip(event, 'childrenTooltip')"
-                    onmouseout="hideTooltip('childrenTooltip')"><i class="fa-regular fa-circle-question"></i></span>
-                </p>
-                <!-- Tooltip for Children -->
-                <div id="childrenTooltip" class="tooltip-box">This is the number of children you have.</div>
-                <p id="profession-card-children-count">0</p>
-              </div>
-              <div class="d-flex justify-content-between">
-                <!-- Heading for Cost Per Child -->
-                <p>
-                  Per Child Expense:
-                  <span class="question-mark" onmouseover="showTooltip(event, 'perChildTooltip')"
-                    onmouseout="hideTooltip('perChildTooltip')"><i class="fa-regular fa-circle-question"></i></span>
-                </p>
-                <!-- Tooltip for Cost Per Child -->
-                <div id="perChildTooltip" class="tooltip-box">
-                  This is the total cost of having a child, should you have more than one this will be multiplied by
-                  that number.
-                </div>
-                <p id="profession-card-per-child-expense">0</p>
-              </div>
-            </div>
-
-            <div>
-              <div class="d-flex justify-content-between">
-                <!-- Heading for Cost Per Child -->
-                <p>
-                  Total Expenses:
-                  <span class="qubankestion-mark" onmouseover="showTooltip(event, 'totalExpensesTooltip')"
-                    onmouseout="hideTooltip('totalExpensesTooltip')"><i
-                      class="fa-regular fa-circle-question"></i></span>
-                </p>
-                <!-- Tooltip for Cost Per Child -->
-                <div id="totalExpensesTooltip" class="tooltip-box">This is the sum of all expenses.</div>
-                <p id="profession-card-total-expenses">0</p>
-              </div>
-              <div class="d-flex justify-content-between">
-                <!-- Heading for Monthly Cash Flow -->
-                <p>
-                  Monthly Cash Flow:
-                  <span class="question-mark" onmouseover="showTooltip(event, 'monthlyCashFlowTooltip')"
-                    onmouseout="hideTooltip('monthlyCashFlowTooltip')"><i
-                      class="fa-regular fa-circle-question"></i></span>
-                </p>
-                <!-- Tooltip for Monthly Cash Flow -->
-                <div id="monthlyCashFlowTooltip" class="tooltip-box">What is this?</div>
-                <p id="profession-card-monthly-cashflow">0</p>
-              </div>
-            </div>
+          <div>
+            <button type="button" class="btn btn-danger m-2" id="reject-offer-btn" onclick="resetRollDiceBtn()">
+              Reject offer
+            </button>
           </div>
         </div>
-
-        <!-- ISSUE -->
-        <!-- Assets and Liabilities -->
-        <div class="row border">
-          <div class="col-7">
-            <div>
-              <!-- Assets Heading with Tooltip -->
-              <h2>
-                Assets
-                <span class="question-mark" onmouseover="showTooltip(event, 'assetsTooltip')"
-                  onmouseout="hideTooltip('assetsTooltip')"><i class="fa-regular fa-circle-question"></i></span>
-              </h2>
-              <!-- Tooltip for Assets -->
-              <div id="assetsTooltip" class="tooltip-box">
-                Assets are resources with economic value that an individual or company owns or controls with the
-                expectation that it will provide future benefit. You can get assets from making deals or through life
-                happenings.
-              </div>
-            </div>
-            <div class="d-flex justify-content-between">
-              <!-- Bank Balance Heading -->
-              <p>
-                Bank Balance:
-                <span class="question-mark" onmouseover="showTooltip(event, 'bankBalanceTooltip')"
-                  onmouseout="hideTooltip('bankBalanceTooltip')"><i class="fa-regular fa-circle-question"></i></span>
-              </p>
-              <!-- Tooltip for Bank Balance -->
-              <div id="bankBalanceTooltip" class="tooltip-box">
-                This is how much money you currently have in your bank account. Don't let this get below 0 if you have
-                a negative cash flow or you will lose the game!
-              </div>
-              <p id="profession-savings">0</p>
-            </div>
-            <!-- javascript renderet addditional assets -->
-            <div id="profession-card-additional-assets"></div>
-          </div>
-
-          <div class="col-5">
-            <div>
-              <!-- Liabilities Heading with Tooltip -->
-              <h2>
-                Liabilities
-                <span class="question-mark" onmouseover="showTooltip(event, 'liabilitiesTooltip')"
-                  onmouseout="hideTooltip('liabilitiesTooltip')"><i class="fa-regular fa-circle-question"></i></span>
-              </h2>
-              <!-- Tooltip for Liabilities -->
-              <div id="liabilitiesTooltip" class="tooltip-box">
-                Liabilities are the debts or obligations that come with your investments and other life choices. These
-                are paid off in small payments at payday but you can choose to pay these off at any time. Be careful
-                not to go bankrupt if you do pay them off early.
-              </div>
-            </div>
-            <div id="house-mortgage-container" class="d-flex justify-content-between">
-              <!-- Home Mortgage Pay-off button -->
-              <button class="liabilities-button" onclick="liabilityPayOff('house')"
-                onmouseover="showTooltip(event, 'payOffTooltip')" onmouseout="hideTooltip('payOffTooltip')">
-                <i class="fa-solid fa-credit-card"></i>
-              </button>
-              <!-- Home Mortgage Heading -->
-              <p>
-                House Mortgage:
-                <span class="question-mark" onmouseover="showTooltip(event, 'homeMotgageTooltip')"
-                  onmouseout="hideTooltip('homeMotgageTooltip')"><i class="fa-regular fa-circle-question"></i></span>
-              </p>
-              <!-- Tooltip for Home Mortgage -->
-              <div id="homeMotgageTooltip" class="tooltip-box">
-                You have this much left to pay off your house motgage.
-              </div>
-              <p id="profession-card-home-mortgage-liabilities">0</p>
-            </div>
-            <div id="student-loan-container" class="d-flex justify-content-between">
-              <!-- Student Loan Pay-off button -->
-              <button class="liabilities-button" onmouseover="showTooltip(event, 'payOffTooltip')"
-                onmouseout="hideTooltip('payOffTooltip')" onclick="liabilityPayOff('student')">
-                <i class="fa-solid fa-credit-card"></i>
-              </button>
-              <!-- Student Loan Heading -->
-              <p>
-                Student Loan:
-                <span class="question-mark" onmouseover="showTooltip(event, 'schoolLoanTooltip')"
-                  onmouseout="hideTooltip('schoolLoanTooltip')"><i class="fa-regular fa-circle-question"></i></span>
-              </p>
-              <!-- Tooltip for Student Loan -->
-              <div id="schoolLoanTooltip" class="tooltip-box">
-                It costs a lot of money to train up for your profession, this much infact! You have this much left to
-                pay off your Student loan.
-              </div>
-              <p id="profession-card-school-loan-liabilities">0</p>
-            </div>
-            <div id="car-loan-container" class="d-flex justify-content-between">
-              <!-- Car Loan Pay-off button -->
-              <button class="liabilities-button" onmouseover="showTooltip(event, 'payOffTooltip')"
-                onmouseout="hideTooltip('payOffTooltip')" onclick="liabilityPayOff('car')">
-                <i class="fa-solid fa-credit-card"></i>
-              </button>
-              <!-- Car Loan Heading -->
-              <p>
-                Car Loan:
-                <span class="question-mark" onmouseover="showTooltip(event, 'carLoanTooltip')"
-                  onmouseout="hideTooltip('carLoanTooltip')"><i class="fa-regular fa-circle-question"></i></span>
-              </p>
-              <!-- Tooltip for Car Loan -->
-              <div id="carLoanTooltip" class="tooltip-box">
-                Cars are expensive! You have this much left to pay off your car loan.
-              </div>
-              <p id="profession-card-car-loan-liabilities">0</p>
-            </div>
-            <div id="credit-card-container" class="d-flex justify-content-between">
-              <!-- Credit Card Pay-off button -->
-              <button class="liabilities-button" onmouseover="showTooltip(event, 'payOffTooltip')"
-                onmouseout="hideTooltip('payOffTooltip')" onclick="liabilityPayOff('creditCard')">
-                <i class="fa-solid fa-credit-card"></i>
-              </button>
-              <!-- Credit Card Heading -->
-              <p>
-                Credit Card:
-                <span class="question-mark" onmouseover="showTooltip(event, 'creditCardTooltip')"
-                  onmouseout="hideTooltip('creditCardTooltip')"><i class="fa-regular fa-circle-question"></i></span>
-              </p>
-              <!-- Tooltip for Credit Card -->
-              <div id="creditCardTooltip" class="tooltip-box">
-                You've been using your credit card to pay for things so have accumulated debt. You have this much left
-                to pay off.
-              </div>
-              <p id="profession-card-credit-card-liabilities">0</p>
-            </div>
-            <div id="retail-debt-container" class="d-flex justify-content-between">
-              <!-- Retail Debt Pay-off button -->
-              <button class="liabilities-button" onmouseover="showTooltip(event, 'payOffTooltip')"
-                onmouseout="hideTooltip('payOffTooltip')" onclick="liabilityPayOff('retail')">
-                <i class="fa-solid fa-credit-card"></i>
-              </button>
-              <!-- Retail Debt Heading -->
-              <p>
-                Retail Debt:
-                <span class="question-mark" onmouseover="showTooltip(event, 'retailDebtTooltip')"
-                  onmouseout="hideTooltip('retailDebtTooltip')"><i class="fa-regular fa-circle-question"></i></span>
-              </p>
-              <!-- Tooltip for Retail Debt -->
-              <div id="retailDebtTooltip" class="tooltip-box">
-                Those shoes were nice...but you have to pay for that. This is how much you have left to pay off from
-                your retail therapy.
-              </div>
-              <p id="profession-card-retail-liabilities">0</p>
-            </div>
-            <div id="bank-loan-container" class="d-flex justify-content-between">
-              <!-- Bank Loan Pay-off button -->
-              <button class="liabilities-button" onmouseover="showTooltip(event, 'payOffTooltip')"
-                onmouseout="hideTooltip('payOffTooltip')" onclick="liabilityPayOff('bank')">
-                <i class="fa-solid fa-credit-card"></i>
-              </button>
-              <!-- Bank Loan Heading -->
-              <p>
-                Bank Loan:
-                <span class="question-mark" onmouseover="showTooltip(event, 'bankLoanTooltip')"
-                  onmouseout="hideTooltip('bankLoanTooltip')"><i class="fa-regular fa-circle-question"></i></span>
-              </p>
-              <!-- Tooltip for Bank Loan -->
-              <div id="bankLoanTooltip" class="tooltip-box">
-                You borrowed money so you coud afford that nice ... thing. Now you have to pay back 110% of what you
-                borrowed!
-              </div>
-              <p id="profession-card-bank-loan">0</p>
-            </div>
-          </div>
-        </div>
-        <div id="payOffTooltip" class="tooltip-box">Pay off this liability in full.</div>
       </div>
 
-      <!-- Game column-->
-      <div class="col col-lg-6 border" id="game-collumn">
-        <!-- modal buttons -->
-        <div class="border game-board-components" id="button-container">
-          <div class="">
-            <!-- Button trigger modal -->
-            <div>
-              <button type="button" class="btn btn-success m-2" onclick="selectRandomEvent()" id="roll-dice-btn">
-                Start your Jorney
-              </button>
-            </div>
-            <div>
-              <button class="buy-button btn btn-info m-2" id="accept-offer-btn" onclick="acceptOffer()">
-                Accept offer
-              </button>
-            </div>
+      <div class="border game-board-components">
+        <div id="event-card"></div>
+      </div>
+      <div class="border game-board-components">
+        <div id="bank-container">
+          <div>
+            <form id="numberForm">
+              <p>
+                Barrowing money from bank add
+                <span id="bank-rate">10</span>% liability
+              </p>
+              <div>
+                <label for="numberInput">Barrow from bank:</label>
+                <input type="number" id="bankInput" step="100" min="100" value="100" />
+                <button type="button" onclick="barrowFromBank()">Barrow</button>
+              </div>
+            </form>
           </div>
-          <div class="deal-buttons">
-            <div>
-              <span id="order-input-span">How many shares you would like to buy:</span>
-              <input type="number" class="m-2" id="orderCountInput" min="1" max="100" step="1" value="1" />
-            </div>
-            <div>
-              <button type="button" class="btn btn-danger m-2" id="reject-offer-btn" onclick="resetRollDiceBtn()">
-                Reject offer
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="border game-board-components">
-          <div id="event-card"></div>
-        </div>
-        <div class="border game-board-components">
-          <div id="bank-container">
-            <div>
-              <form id="numberForm">
-                <p>
-                  Barrowing money from bank add
-                  <span id="bank-rate">10</span>% liability
-                </p>
-                <div>
-                  <label for="numberInput">Barrow from bank:</label>
-                  <input type="number" id="bankInput" step="100" min="100" value="100" />
-                  <button type="button" onclick="barrowFromBank()">Barrow</button>
-                </div>
-              </form>
-            </div>
-            <!-- game instructions trigger modal -->
-            <div>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                data-bs-target="#gameInstructionsModal">
-                How to Play
-              </button>
-            </div>
+          <!-- game instructions trigger modal -->
+          <div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  </div>
+
+
+  <!--CATEGORIES: 3 cards-->
+  <!-- Buttons to trigger modals -->
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#financialStatementModal">
+    Financial Statement
+  </button>
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#gameInstructionsModal">
+    How to Play
+  </button>
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#gameEndModal">
+    Game End Modal for styling
+  </button>
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#paydayModal">
+    Payday modal for styling
+  </button>
+  <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#dealModal">
+    Deal modal for styling
+  </button>
+  <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#lifeHappenedModal">
+    Life Happened! (Positive Outcome) for styling
+  </button>
+  <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#negativeOutcomeModal">
+    Life Happened! (Negative Outcome) for styling
+  </button>
 
   <!-- Game end modal -->
   <div class="modal fade" id="gameEndModal">
@@ -593,7 +144,517 @@
     </div>
   </div>
 
+  <!-- Financial Statement modal -->
+  <div class="modal fade" id="financialStatementModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="financialStatementModalLabel">
+            <!-- Financial Statement Heading with Tooltip -->
+            Financial Statement
+            <span class="question-mark" onmouseover="showTooltip(event, 'financialStatementTooltip')"
+              onmouseout="hideTooltip('financialStatementTooltip')"><i class="fa-regular fa-circle-question"></i></span>
+          </h3>
+          <!-- Tooltip for Financial Statement -->
+          <div id="financialStatementTooltip" class="tooltip-box">
+            A financial statement is a formal record of the financial activities and position of a business, person, or
+            other entity.
+          </div>
+          <div class="col">
+            <h5 id="profession-card-name" class="text-center">Profession: ???</h5>
+          </div>
+        </div>
+        <div class="modal-body" id="financialStatementModalContent">
+          <div>
+            <div id="payday-card"></div>
+          </div>
+          <!-- Income tab -->
+          <div id="income-section-container" class="finance-section-container">
+            <!-- Income Heading with Tooltip -->
+            <div id="income-heading-container" class="finance-heading-container">
+              <h4>
+                Income
+                <span class="question-mark" onmouseover="showTooltip(event, 'incomeTooltip')"
+                  onmouseout="hideTooltip('incomeTooltip')"><i class="fa-regular fa-circle-question"></i></span>
+              </h4>
+              <!-- Tooltip for Income -->
+              <div id="incomeTooltip" class="tooltip-box">
+                Income is money that comes into your bank account on payday.
+              </div>
+            </div>
+            <div>
+              <!-- salary -->
+              <div class="d-flex justify-content-between">
+                <!-- Salary Income Heading with Tooltip -->
+                <p>
+                  Salary:
+                  <span class="question-mark" onmouseover="showTooltip(event, 'salaryTooltip')"
+                    onmouseout="hideTooltip('salaryTooltip')"><i class="fa-regular fa-circle-question"></i></span>
+                </p>
+                <!-- Tooltip for Salary Income -->
+                <div id="salaryTooltip" class="tooltip-box">Salary is the income you get from your profession.</div>
+                <p id="profession-card-salary">0</p>
+              </div>
+              <!-- investment -->
+              <div class="d-flex justify-content-between">
+                <!-- Investments Income Heading with Tooltip -->
+                <p>
+                  Investments:
+                  <span class="question-mark" onmouseover="showTooltip(event, 'investmentTooltip')"
+                    onmouseout="hideTooltip('investmentTooltip')"><i class="fa-regular fa-circle-question"></i></span>
+                </p>
+                <!-- Tooltip for Investment Income -->
+                <div id="investmentTooltip" class="tooltip-box">
+                  This is a sum of the income you get from assets which provide a passive income. Buy assets with a
+                  higher passive income to increase this value. Take a look at the 'Assets' section of your financial
+                  statement; these are directly linked.
+                </div>
+                <p id="profession-card-real-estate">0</p>
+              </div>
+              <div class="finanice-section-divide-minor">
+                <p><strong>Totals:</strong></p>
+              </div>
+              <div class="d-flex justify-content-between">
+                <!-- Passive Income Heading with Tooltip -->
+                <p>
+                  Passive Income
+                  <span class="question-mark" onmouseover="showTooltip(event, 'passiveIncomeTooltip')"
+                    onmouseout="hideTooltip('passiveIncomeTooltip')"><i
+                      class="fa-regular fa-circle-question"></i></span>
+                </p>
+                <!-- Tooltip for Passive Income -->
+                <div id="passiveIncomeTooltip" class="tooltip-box">
+                  Passive income is money earned from an asset which requires little or no ongoing effort. Here, it is a
+                  sum of income from investments which have a cash flow. Increase passive income by investing in assets.
+                </div>
+                <p id="profession-card-pasive-income">0</p>
+              </div>
+              <div class="d-flex justify-content-between">
+                <!-- Total Income Heading with Tooltip -->
+                <p>
+                  Total income:
+                  <span class="question-mark" onmouseover="showTooltip(event, 'totalIncomeTooltip')"
+                    onmouseout="hideTooltip('totalIncomeTooltip')"><i class="fa-regular fa-circle-question"></i></span>
+                </p>
+                <!-- Tooltip for Total Income -->
+                <div id="totalIncomeTooltip" class="tooltip-box">
+                  The sum of all income. Essentially, this is your passive income plus your salary.
+                </div>
+                <p id="profession-card-total-income">0</p>
+              </div>
+
+            </div>
+          </div>
+          <!-- Expenses tab -->
+          <div id="expenses-section-container" class="finance-section-container">
+            <!-- Expenses Heading with Tooltip -->
+            <div id="expenses-heading-container" class="finance-heading-container">
+              <!-- Heading for Expenses -->
+              <h4>
+                Expenses
+                <span class="question-mark" onmouseover="showTooltip(event, 'expensesTooltip')"
+                  onmouseout="hideTooltip('expensesTooltip')"><i class="fa-regular fa-circle-question"></i></span>
+              </h4>
+              <!-- Tooltip for Expenses -->
+              <div id="expensesTooltip" class="tooltip-box">
+                Expenses incure throughout life. They are outgoings every payday and directly link to your
+                liabilities. Check your liabilities to see how they affect different items in your expenses.
+              </div>
+            </div>
+            <div id="expenses-content-container">
+              <div id="expenses-breakdown-container">
+                <!-- Taxes -->
+                <div class="d-flex justify-content-between">
+                  <!-- Heading for Taxes -->
+                  <p>
+                    Taxes:
+                    <span class="question-mark" onmouseover="showTooltip(event, 'taxesTooltip')"
+                      onmouseout="hideTooltip('taxesTooltip')"><i class="fa-regular fa-circle-question"></i></span>
+                  </p>
+                  <!-- Tooltip for Taxes -->
+                  <div id="taxesTooltip" class="tooltip-box">Tax is an unchangable figure based on your salary.</div>
+                  <p id="profession-card-taxes">0</p>
+                </div>
+                <!-- House Mortgages -->
+                <div class="d-flex justify-content-between">
+                  <!-- Heading for mortgages -->
+                  <p>
+                    House Mortgage Payment:
+                    <span class="question-mark" onmouseover="showTooltip(event, 'motgageTooltip')"
+                      onmouseout="hideTooltip('motgageTooltip')"><i class="fa-regular fa-circle-question"></i></span>
+                  </p>
+                  <!-- Tooltip for mortgages -->
+                  <div id="motgageTooltip" class="tooltip-box">
+                    You can gradually pay off your house mortgage with these smaller payments. See what's left to pay on
+                    your house mortgage by loooking at this item in the 'Liabilities' section of the financial
+                    statement.
+                  </div>
+                  <p id="profession-card-home-mortgage">0</p>
+                </div>
+                <!-- School Loans -->
+                <div class="d-flex justify-content-between">
+                  <!-- Heading for School Loans -->
+                  <p>
+                    Student Loan Payment:
+                    <span class="question-mark" onmouseover="showTooltip(event, 'schoolLoansTooltip')"
+                      onmouseout="hideTooltip('schoolLoansTooltip')"><i
+                        class="fa-regular fa-circle-question"></i></span>
+                  </p>
+                  <p id="profession-card-school-loan">0</p>
+                  <!-- Tooltip for School Loans Payment-->
+                  <div id="schoolLoansTooltip" class="tooltip-box">
+                    You can gradually pay off your student loans in small payments. See what's left to pay on your
+                    student
+                    loans by loooking at this item in the 'Liabilities' section of the financial statement.
+                  </div>
+                </div>
+                <!-- Car Loan Payment -->
+                <div class="d-flex justify-content-between">
+                  <!-- Heading for Car Loan Payment -->
+                  <p>
+                    Car Loan Payment:
+                    <span class="question-mark" onmouseover="showTooltip(event, 'carLoansTooltip')"
+                      onmouseout="hideTooltip('carLoansTooltip')"><i class="fa-regular fa-circle-question"></i></span>
+                  </p>
+                  <p id="profession-card-car-loan">0</p>
+                  <!-- Tooltip for Car Loan Payment -->
+                  <div id="carLoansTooltip" class="tooltip-box">
+                    If you a car you can gradually pay off your car loan in small payments. See what's left to pay on
+                    your
+                    car loan by loooking at this item in the 'Liabilities' section of the financial statement.
+                  </div>
+                </div>
+                <!-- Credit Card Payment -->
+                <div class="d-flex justify-content-between">
+                  <!-- Heading for Credit Card Payment -->
+                  <p>
+                    Credit Card Payment:
+                    <span class="question-mark" onmouseover="showTooltip(event, 'creditCardPaymentsTooltip')"
+                      onmouseout="hideTooltip('creditCardPaymentsTooltip')"><i
+                        class="fa-regular fa-circle-question"></i></span>
+                  </p>
+                  <p id="profession-card-credit-card">0</p>
+                  <!-- Tooltip for Credit Card Payment -->
+                  <div id="creditCardPaymentsTooltip" class="tooltip-box">
+                    You can pay off purchases made on your credit card debt in small payents. See what's left to pay on
+                    your credit card by loooking at this item in the 'Liabilities' section of the financial statement.
+                  </div>
+                </div>
+                <!-- Retail Payment -->
+                <div class="d-flex justify-content-between">
+                  <!-- Heading for Retail Payment -->
+                  <p>
+                    Retail Payment:
+                    <span class="question-mark" onmouseover="showTooltip(event, 'retailPaymentsTooltip')"
+                      onmouseout="hideTooltip('retailPaymentsTooltip')"><i
+                        class="fa-regular fa-circle-question"></i></span>
+                  </p>
+                  <!-- Tooltip for Credit Card Payment -->
+                  <div id="retailPaymentsTooltip" class="tooltip-box">
+                    If you have any retail dept in the 'Liabilities' section of the financial statement you can pay it
+                    off
+                    in small payments here.
+                  </div>
+                  <p id="profession-card-retail-expenses">0</p>
+                </div>
+                <!-- Other Expenses -->
+                <div class="d-flex justify-content-between">
+                  <!-- Heading for Other Expenses -->
+                  <p>
+                    Other Expenses:
+                    <span class="question-mark" onmouseover="showTooltip(event, 'otherExpensesTooltip')"
+                      onmouseout="hideTooltip('otherExpensesTooltip')"><i
+                        class="fa-regular fa-circle-question"></i></span>
+                  </p>
+                  <!-- Tooltip for other expenses -->
+                  <div id="otherExpensesTooltip" class="tooltip-box">
+                    This is the basic cost of living. For example, weekly grocery shopping and paying bills. This figure
+                    cannot be changed.
+                  </div>
+                  <p id="profession-card-other-expenses:">0</p>
+                </div>
+                <!-- Child Expenses -->
+                <div class="d-flex justify-content-between">
+                  <!-- Heading for Child Expenses -->
+                  <p>
+                    Child Expenses:
+                    <span class="question-mark" onmouseover="showTooltip(event, 'childExpensesTooltip')"
+                      onmouseout="hideTooltip('childExpensesTooltip')"><i
+                        class="fa-regular fa-circle-question"></i></span>
+                  </p>
+                  <!-- Tooltip for Child Expenses -->
+                  <div id="childExpensesTooltip" class="tooltip-box">
+                    If you have children they may add liabilities to that section of the financial statement. This
+                    excludes school costs.
+                  </div>
+                  <p id="profession-card-child-expenses:">0</p>
+                </div>
+                <!-- Bank loan payment -->
+                <div class="d-flex justify-content-between">
+                  <!-- Heading for Bank loan payment -->
+                  <p>
+                    Bank loan payment:
+                    <span class="question-mark" onmouseover="showTooltip(event, 'bankLoanPaymentTooltip')"
+                      onmouseout="hideTooltip('bankLoanPaymentTooltip')"><i
+                        class="fa-regular fa-circle-question"></i></span>
+                  </p>
+                  <!-- Tooltip for Bank loan payment -->
+                  <div id="bankLoanPaymentTooltip" class="tooltip-box">
+                    If you have borrowed money from the bank, you will pay it off with 10% interest in small payments as
+                    shown here.
+                  </div>
+                  <p id="profession-card-bank-loan-payment">0</p>
+                </div>
+                <!-- Children -->
+                <div class="d-flex justify-content-between">
+                  <!-- Heading for Children -->
+                  <p>
+                    Children:
+                    <span class="question-mark" onmouseover="showTooltip(event, 'childrenTooltip')"
+                      onmouseout="hideTooltip('childrenTooltip')"><i class="fa-regular fa-circle-question"></i></span>
+                  </p>
+                  <!-- Tooltip for Children -->
+                  <div id="childrenTooltip" class="tooltip-box">This is the number of children you have.</div>
+                  <p id="profession-card-children-count">0</p>
+                </div>
+                <!-- Cost Per Child -->
+                <div class="d-flex justify-content-between">
+                  <!-- Heading for Cost Per Child -->
+                  <p>
+                    Per Child Expense:
+                    <span class="question-mark" onmouseover="showTooltip(event, 'perChildTooltip')"
+                      onmouseout="hideTooltip('perChildTooltip')"><i class="fa-regular fa-circle-question"></i></span>
+                  </p>
+                  <!-- Tooltip for Cost Per Child -->
+                  <div id="perChildTooltip" class="tooltip-box">
+                    This is the total cost of having a child, should you have more than one this will be multiplied by
+                    that number.
+                  </div>
+                  <p id="profession-card-per-child-expense">0</p>
+                </div>
+              </div>
+              <div class="finanice-section-divide-minor">
+                <p><strong>Totals:</strong></p>
+              </div>
+              <div id="total-expenses-container">
+                <div class="d-flex justify-content-between">
+                  <!-- Heading for Cost Per Child -->
+                  <p>
+                    Total Expenses:
+                    <span class="qubankestion-mark" onmouseover="showTooltip(event, 'totalExpensesTooltip')"
+                      onmouseout="hideTooltip('totalExpensesTooltip')"><i
+                        class="fa-regular fa-circle-question"></i></span>
+                  </p>
+                  <!-- Tooltip for Cost Per Child -->
+                  <div id="totalExpensesTooltip" class="tooltip-box">This is the sum of all expenses.</div>
+                  <p id="profession-card-total-expenses">0</p>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <!-- Heading for Monthly Cash Flow -->
+                  <p>
+                    Monthly Cash Flow:
+                    <span class="question-mark" onmouseover="showTooltip(event, 'monthlyCashFlowTooltip')"
+                      onmouseout="hideTooltip('monthlyCashFlowTooltip')"><i
+                        class="fa-regular fa-circle-question"></i></span>
+                  </p>
+                  <!-- Tooltip for Monthly Cash Flow -->
+                  <div id="monthlyCashFlowTooltip" class="tooltip-box">What is this?</div>
+                  <p id="profession-card-monthly-cashflow">0</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Assets tab -->
+          <div id="assets-section-container" class="finance-section-container">
+            <!-- Assets Heading with Tooltip -->
+            <div id="assets-heading-container" class="finance-heading-container">
+              <h4>
+                Assets
+                <span class="question-mark" onmouseover="showTooltip(event, 'assetsTooltip')"
+                  onmouseout="hideTooltip('assetsTooltip')"><i class="fa-regular fa-circle-question"></i></span>
+              </h4>
+              <!-- Tooltip for Assets -->
+              <div id="assetsTooltip" class="tooltip-box">
+                Assets are resources with economic value that an individual or company owns or controls with the
+                expectation that it will provide future benefit. You can get assets from making deals or through life
+                happenings.
+              </div>
+            </div>
+            <div id="assets-content-container">
+              <div id="assets-breakdown-container">
+                <div class="d-flex justify-content-between">
+                  <!-- Bank Balance Heading -->
+                  <p>
+                    Bank Balance:
+                    <span class="question-mark" onmouseover="showTooltip(event, 'bankBalanceTooltip')"
+                      onmouseout="hideTooltip('bankBalanceTooltip')"><i
+                        class="fa-regular fa-circle-question"></i></span>
+                  </p>
+                  <!-- Tooltip for Bank Balance -->
+                  <div id="bankBalanceTooltip" class="tooltip-box">
+                    This is how much money you currently have in your bank account. Don't let this get below 0 if you
+                    have a negative cash flow or you will lose the game!
+                  </div>
+                  <p id="profession-savings">0</p>
+                </div>
+                <!-- javascript renders additional assets -->
+                <div id="profession-card-additional-assets"></div>
+              </div>
+            </div>
+          </div>
+          <!-- Liabilities tab -->
+          <div id="liabilities-section-container" class="finance-section-container">
+            <!-- Assets Heading with Tooltip -->
+            <div id="liabilities-heading-container" class="finance-heading-container">
+              <h4>
+                Liabilities
+                <span class="question-mark" onmouseover="showTooltip(event, 'liabilitiesTooltip')"
+                  onmouseout="hideTooltip('liabilitiesTooltip')"><i class="fa-regular fa-circle-question"></i></span>
+              </h4>
+              <!-- Tooltip for Liabilities -->
+              <div id="liabilitiesTooltip" class="tooltip-box">
+                Liabilities are the debts or obligations that come with your investments and other life choices. These
+                are paid off in small payments at payday but you can choose to pay these off at any time. Be careful
+                not to go bankrupt if you do pay them off early.
+              </div>
+            </div>
+            <div id="assets-content-container">
+              <div id="assets-breakdown-container">
+                <div id="house-mortgage-container" class="d-flex justify-content-between">
+                  <!-- Home Mortgage Heading -->
+                  <p>
+                    <!-- Home Mortgage Pay-off button -->
+                    <button class="liabilities-button" onclick="liabilityPayOff('house')"
+                      onmouseover="showTooltip(event, 'payOffTooltip')" onmouseout="hideTooltip('payOffTooltip')">
+                      <i class="fa-solid fa-credit-card"></i>
+                    </button>
+                    House Mortgage:
+                    <span class="question-mark" onmouseover="showTooltip(event, 'homeMotgageTooltip')"
+                      onmouseout="hideTooltip('homeMotgageTooltip')"><i
+                        class="fa-regular fa-circle-question"></i></span>
+                  </p>
+                  <!-- Tooltip for Home Mortgage -->
+                  <div id="homeMotgageTooltip" class="tooltip-box">
+                    You have this much left to pay off your house motgage.
+                  </div>
+                  <p id="profession-card-home-mortgage-liabilities">0</p>
+                </div>
+                <div id="student-loan-container" class="d-flex justify-content-between">
+                  <!-- Student Loan Heading -->
+                  <p>
+                    <!-- Student Loan Pay-off button -->
+                    <button class="liabilities-button" onmouseover="showTooltip(event, 'payOffTooltip')"
+                      onmouseout="hideTooltip('payOffTooltip')" onclick="liabilityPayOff('student')">
+                      <i class="fa-solid fa-credit-card"></i>
+                    </button>
+                    Student Loan:
+                    <span class="question-mark" onmouseover="showTooltip(event, 'schoolLoanTooltip')"
+                      onmouseout="hideTooltip('schoolLoanTooltip')"><i class="fa-regular fa-circle-question"></i></span>
+                  </p>
+                  <!-- Tooltip for Student Loan -->
+                  <div id="schoolLoanTooltip" class="tooltip-box">
+                    It costs a lot of money to train up for your profession, this much infact! You have this much left
+                    to
+                    pay off your Student loan.
+                  </div>
+                  <p id="profession-card-school-loan-liabilities">0</p>
+                </div>
+                <div id="car-loan-container" class="d-flex justify-content-between">
+                  <!-- Car Loan Heading -->
+                  <p>
+                    <!-- Car Loan Pay-off button -->
+                    <button class="liabilities-button" onmouseover="showTooltip(event, 'payOffTooltip')"
+                      onmouseout="hideTooltip('payOffTooltip')" onclick="liabilityPayOff('car')">
+                      <i class="fa-solid fa-credit-card"></i>
+                    </button>
+                    Car Loan:
+                    <span class="question-mark" onmouseover="showTooltip(event, 'carLoanTooltip')"
+                      onmouseout="hideTooltip('carLoanTooltip')"><i class="fa-regular fa-circle-question"></i></span>
+                  </p>
+                  <!-- Tooltip for Car Loan -->
+                  <div id="carLoanTooltip" class="tooltip-box">
+                    Cars are expensive! You have this much left to pay off your car loan.
+                  </div>
+                  <p id="profession-card-car-loan-liabilities">0</p>
+                </div>
+                <div id="credit-card-container" class="d-flex justify-content-between">
+                  <!-- Credit Card Heading -->
+                  <p>
+                    <!-- Credit Card Pay-off button -->
+                    <button class="liabilities-button" onmouseover="showTooltip(event, 'payOffTooltip')"
+                      onmouseout="hideTooltip('payOffTooltip')" onclick="liabilityPayOff('creditCard')">
+                      <i class="fa-solid fa-credit-card"></i>
+                    </button>
+                    Credit Card:
+                    <span class="question-mark" onmouseover="showTooltip(event, 'creditCardTooltip')"
+                      onmouseout="hideTooltip('creditCardTooltip')"><i class="fa-regular fa-circle-question"></i></span>
+                  </p>
+                  <!-- Tooltip for Credit Card -->
+                  <div id="creditCardTooltip" class="tooltip-box">
+                    You've been using your credit card to pay for things so have accumulated debt. You have this much
+                    left
+                    to pay off.
+                  </div>
+                  <p id="profession-card-credit-card-liabilities">0</p>
+                </div>
+                <div id="retail-debt-container" class="d-flex justify-content-between">
+                  <!-- Retail Debt Heading -->
+                  <p>
+                    <!-- Retail Debt Pay-off button -->
+                    <button class="liabilities-button" onmouseover="showTooltip(event, 'payOffTooltip')"
+                      onmouseout="hideTooltip('payOffTooltip')" onclick="liabilityPayOff('retail')">
+                      <i class="fa-solid fa-credit-card"></i>
+                    </button>
+                    Retail Debt:
+                    <span class="question-mark" onmouseover="showTooltip(event, 'retailDebtTooltip')"
+                      onmouseout="hideTooltip('retailDebtTooltip')"><i class="fa-regular fa-circle-question"></i></span>
+                  </p>
+                  <!-- Tooltip for Retail Debt -->
+                  <div id="retailDebtTooltip" class="tooltip-box">
+                    Those shoes were nice...but you have to pay for that. This is how much you have left to pay off from
+                    your retail therapy.
+                  </div>
+                  <p id="profession-card-retail-liabilities">0</p>
+                </div>
+                <div id="bank-loan-container" class="d-flex justify-content-between">
+                  <!-- Bank Loan Heading -->
+                  <p>
+                    <!-- Bank Loan Pay-off button -->
+                    <button class="liabilities-button" onmouseover="showTooltip(event, 'payOffTooltip')"
+                      onmouseout="hideTooltip('payOffTooltip')" onclick="liabilityPayOff('bank')">
+                      <i class="fa-solid fa-credit-card"></i>
+                    </button>
+                    Bank Loan:
+                    <span class="question-mark" onmouseover="showTooltip(event, 'bankLoanTooltip')"
+                      onmouseout="hideTooltip('bankLoanTooltip')"><i class="fa-regular fa-circle-question"></i></span>
+                  </p>
+                  <!-- Tooltip for Bank Loan -->
+                  <div id="bankLoanTooltip" class="tooltip-box">
+                    You borrowed money so you coud afford that nice ... thing. Now you have to pay back 110% of what you
+                    borrowed!
+                  </div>
+                  <p id="profession-card-bank-loan">0</p>
+                </div>
+              </div>
+            </div>
+            <div id="payOffTooltip" class="tooltip-box">Pay off this liability in full.</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <!-- Option to change profession and try again -->
+      <button id="tryAgain" type="button" class="btn btn-secondary" onclick="">BUTTON</button>
+      <!-- End Game -->
+      <button id="exit" type="button" class="btn btn-primary" onclick="endGame()">BUTTON</button>
+    </div>
+  </div>
+  </div>
+  </div>
+
   <!-- Game Instructions Modal -->
+  <!-- Please make sure to add any changes to the instructions modal in welcome.html as well -->
   <div class="modal fade" id="gameInstructionsModal" tabindex="-1" aria-labelledby="gameInstructionsModalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -615,9 +676,12 @@
                 The purpose of #game name# is to create a passive income that is greater than your total expenses.
                 <br />
                 <strong>Goal = passive income > total expenses</strong> <br />
-                You can get an idea of how far you are from achieving this by looking at your goal tracker, displayed
-                in your financial statement and on the main screen. It’s not that simple though… the goal will change
-                depending on your total expenses. So to win you will have to keep your expenses down and your passive
+                You can get an idea of how far you are from achieving this by looking at your goal tracker,
+                displayed
+                in your financial statement and on the main screen. It’s not that simple though… the goal will
+                change
+                depending on your total expenses. So to win you will have to keep your expenses down and your
+                passive
                 income flowing in!
               </p>
             </div>
@@ -628,9 +692,11 @@
             <p>
               If you land on a DEAL or LIFE card, you could get the opportunity to gain an asset that provides a
               positive cash flow. An example could be a property that you invest in. If that property is rented out,
-              you could get passive income without doing any extra work! How nice. Be careful though, each opportunity
+              you could get passive income without doing any extra work! How nice. Be careful though, each
+              opportunity
               should be carefully considered as they don’t all provide the same benefits. Some may provide you with
-              quick cash, while some may be slow burners which slowly push you towards your goal. So keep a close eye
+              quick cash, while some may be slow burners which slowly push you towards your goal. So keep a close
+              eye
               on your financial statement so you can make well calculated decisions.
             </p>
           </div>
@@ -643,7 +709,8 @@
               or accumulate throughout the game. Your aim is to pay off your liabilities so that your expenses are
               less! This means you don’t need so much passive income to win the game. <br />
               As an example, you have a home mortgage of £38000 to pay off. You pay £400 every pay day towards your
-              mortgage until your mortgage is £0. Maybe you get lucky with some stocks (... I mean skillful) and earn
+              mortgage until your mortgage is £0. Maybe you get lucky with some stocks (... I mean skillful) and
+              earn
               lots of cash; this might be a good time to make a bulk payment to your mortgage.
             </p>
           </div>
@@ -663,8 +730,10 @@
           <div id="step5" class="step" style="display: none">
             <h3>What happens if I go bankrupt?</h3>
             <p>
-              Unfortunately this means you have lost #GAME NAME#. But that doesn’t have to be the end… start again and
-              maybe try a different strategy, make different investment decisions, or maybe pay off some liabilities a
+              Unfortunately this means you have lost #GAME NAME#. But that doesn’t have to be the end… start again
+              and
+              maybe try a different strategy, make different investment decisions, or maybe pay off some liabilities
+              a
               bit sooner… or later.
             </p>
           </div>
@@ -687,7 +756,8 @@
               Step 2: Check on your financial situation then spin the wheel of life!
             </h3>
             <p>
-              Make sure to keep checking your financial statement to stay on top of your finances. Who knows what the
+              Make sure to keep checking your financial statement to stay on top of your finances. Who knows what
+              the
               wheel of life will throw at you?... a payday?... a deal to buy assets? … or some other random life
               occurrence that could make or break the bank?
             </p>
@@ -699,9 +769,11 @@
               Step 3: Follow the instructions for the tile the wheel lands on.
             </h3>
             <p>
-              PAYDAY - your total income and total expenses will be paid. Make sure to check your financial statement
+              PAYDAY - your total income and total expenses will be paid. Make sure to check your financial
+              statement
               after payday as this could change your position in the game. <br />
-              DEAL - you have a choice. Invest or don’t… just remember, you’d have to get very lucky to increase your
+              DEAL - you have a choice. Invest or don’t… just remember, you’d have to get very lucky to increase
+              your
               passive income without investing. <br />
               LIFE - s**t happens. You might win, you might lose, but you have no say over it sometimes so roll with
               the punches and check your bank balance afterwards.
@@ -732,24 +804,7 @@
     </div>
   </div>
 
-  <!--CATEGORIES: 3 cards-->
-  <!-- Buttons to trigger modals -->
-
-  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#paydayModal">
-    It's Payday!
-  </button>
-  <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#dealModal">
-    You've got a Deal!
-  </button>
-  <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#lifeHappenedModal">
-    Life Happened! (Positive Outcome)
-  </button>
-  <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#negativeOutcomeModal">
-    Life Happened! (Negative Outcome)
-  </button>
-
   <!-- Payday Modal -->
-
   <div class="modal fade" id="paydayModal" tabindex="-1" aria-labelledby="paydayModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -772,7 +827,6 @@
   </div>
 
   <!-- Deal Modal -->
-
   <div class="modal fade" id="dealModal" tabindex="-1" aria-labelledby="dealModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -861,9 +915,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-body text-center">
-          <h5 class="modal-title" id="welcomeModalLabel">Welcome to Our Board Game</h5>
-          <p>Please chose profession you woudl like to play</p>
-
+          <h5 class="modal-title" id="welcomeModalLabel">Select a profession to get started</h5>
           <!-- profesion Carousel -->
           <div id="carouselExample" class="carousel carousel-dark slide">
             <div class="carousel-inner"></div>
