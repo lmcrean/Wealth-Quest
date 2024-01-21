@@ -11,6 +11,20 @@ document
     $("#welcomeModal").modal("hide");
   });
 
+// Add event listener to open game card on dice roll.
 document.getElementById("roll-dice-btn").addEventListener("click", function () {
   $("#randomCardModal").modal("show");
 });
+
+// Add event listener to close game card on accept of decline
+document
+  .getElementById("reject-offer-btn")
+  .addEventListener("click", function () {
+    $("#randomCardModal").modal("hide");
+  });
+
+document
+  .getElementById("accept-offer-btn")
+  .addEventListener("click", function () {
+    $("#randomCardModal").modal("hide");
+  });
