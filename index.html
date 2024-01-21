@@ -33,6 +33,13 @@
       crossorigin="anonymous"
     />
 
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
+
+  <link rel="stylesheet" href="game_board.scss">
+  <link rel="stylesheet" href="static/css/game_board.css">
+
     <script src="https://kit.fontawesome.com/c7515a9d31.js" crossorigin="anonymous"></script>
   </head>
 
@@ -57,7 +64,12 @@
           aria-valuemin="0"
           aria-valuemax="100"
         >
-          <div class="progress-bar progress-bar-striped bg-info" id="progress-bar">0/0</div>
+          <div
+            class="progress-bar progress-bar-striped bg-info"
+            id="progress-bar"
+          >
+            0/0
+          </div>
         </div>
       </div>
 
@@ -78,8 +90,8 @@
           <div id="financialStatementTooltip" class="tooltip-box">
             What is a Financial Statement? <br />
 
-            A financial statement is a formal record of the financial activities and position of a business, person, or
-            other entity.
+            A financial statement is a formal record of the financial activities
+            and position of a business, person, or other entity.
           </div>
 
           <div id="payday-card"></div>
@@ -114,7 +126,9 @@
                 </p>
                 <!-- Tooltip for Salary Income -->
 
-                <div id="salaryTooltip" class="tooltip-box">Salary is the income you get from your profession.</div>
+                <div id="salaryTooltip" class="tooltip-box">
+                  Salary is the income you get from your profession.
+                </div>
                 <p id="profession-card-salary">0</p>
               </div>
 
@@ -132,9 +146,10 @@
                 </p>
                 <!-- Tooltip for Investment Income -->
                 <div id="investmentTooltip" class="tooltip-box">
-                  This is a sum of the income you get from assets which provide a passive income. Buy assets with a
-                  higher passive income to increase this value. Take a look at the 'Assets' section of your financial
-                  statement; these are directly linked.
+                  This is a sum of the income you get from assets which provide
+                  a passive income. Buy assets with a higher passive income to
+                  increase this value. Take a look at the 'Assets' section of
+                  your financial statement; these are directly linked.
                 </div>
                 <p id="profession-card-real-estate">0</p>
               </div>
@@ -154,8 +169,10 @@
                 </p>
                 <!-- Tooltip for Passive Income -->
                 <div id="passiveIncomeTooltip" class="tooltip-box">
-                  Passive income is money earned from an asset which requires little or no ongoing effort. Here, it is a
-                  sum of 'interest' and 'investments'. Increase passive income by increasing these two values.
+                  Passive income is money earned from an asset which requires
+                  little or no ongoing effort. Here, it is a sum of 'interest'
+                  and 'investments'. Increase passive income by increasing these
+                  two values.
                 </div>
                 <p id="profession-card-pasive-income">0</p>
               </div>
@@ -173,7 +190,8 @@
                 </p>
                 <!-- Tooltip for Total Income -->
                 <div id="totalIncomeTooltip" class="tooltip-box">
-                  The sum of all income. Essentially, this is your passive income plus your salary.
+                  The sum of all income. Essentially, this is your passive
+                  income plus your salary.
                 </div>
                 <p id="profession-card-total-income">0</p>
               </div>
@@ -196,8 +214,10 @@
                 </h2>
                 <!-- Tooltip for Expenses -->
                 <div id="expensesTooltip" class="tooltip-box">
-                  Expenses incure throughout life. They are outgoings every payday and directly link to your
-                  liabilities. Check your liabilities to see how they affect different items in your expenses.
+                  Expenses incure throughout life. They are outgoings every
+                  payday and directly link to your liabilities. Check your
+                  liabilities to see how they affect different items in your
+                  expenses.
                 </div>
               </div>
               <div class="d-flex justify-content-between">
@@ -213,7 +233,9 @@
                 </p>
                 <!-- Tooltip for Taxes -->
 
-                <div id="taxesTooltip" class="tooltip-box">Tax is an unchangable figure based on your salary.</div>
+                <div id="taxesTooltip" class="tooltip-box">
+                  Tax is an unchangable figure based on your salary.
+                </div>
 
                 <p id="profession-card-taxes">0</p>
               </div>
@@ -230,8 +252,10 @@
                 </p>
                 <!-- Tooltip for mortgages -->
                 <div id="motgageTooltip" class="tooltip-box">
-                  You can gradually pay off your house mortgage with these smaller payments. See what's left to pay on
-                  your house mortgage by loooking at this item in the 'Liabilities' section of the financial statement.
+                  You can gradually pay off your house mortgage with these
+                  smaller payments. See what's left to pay on your house
+                  mortgage by loooking at this item in the 'Liabilities' section
+                  of the financial statement.
                 </div>
                 <p id="profession-card-home-mortgage">0</p>
               </div>
@@ -250,8 +274,10 @@
                 <p id="profession-card-school-loan">0</p>
                 <!-- Tooltip for School Loans Payment-->
                 <div id="schoolLoansTooltip" class="tooltip-box">
-                  You can gradually pay off your student loans in small payments. See what's left to pay on your student
-                  loans by loooking at this item in the 'Liabilities' section of the financial statement.
+                  You can gradually pay off your student loans in small
+                  payments. See what's left to pay on your student loans by
+                  loooking at this item in the 'Liabilities' section of the
+                  financial statement.
                 </div>
               </div>
               <div class="d-flex justify-content-between">
@@ -268,8 +294,10 @@
                 <p id="profession-card-car-loan">0</p>
                 <!-- Tooltip for Car Loan Payment -->
                 <div id="carLoansTooltip" class="tooltip-box">
-                  If you a car you can gradually pay off your car loan in small payments. See what's left to pay on your
-                  car loan by loooking at this item in the 'Liabilities' section of the financial statement.
+                  If you a car you can gradually pay off your car loan in small
+                  payments. See what's left to pay on your car loan by loooking
+                  at this item in the 'Liabilities' section of the financial
+                  statement.
                 </div>
               </div>
               <div class="d-flex justify-content-between">
@@ -286,8 +314,10 @@
                 <p id="profession-card-credit-card">0</p>
                 <!-- Tooltip for Credit Card Payment -->
                 <div id="creditCardPaymentsTooltip" class="tooltip-box">
-                  You can pay off purchases made on your credit card debt in small payents. See what's left to pay on
-                  your credit card by loooking at this item in the 'Liabilities' section of the financial statement.
+                  You can pay off purchases made on your credit card debt in
+                  small payents. See what's left to pay on your credit card by
+                  loooking at this item in the 'Liabilities' section of the
+                  financial statement.
                 </div>
               </div>
               <div class="d-flex justify-content-between">
@@ -303,8 +333,9 @@
                 </p>
                 <!-- Tooltip for Credit Card Payment -->
                 <div id="retailPaymentsTooltip" class="tooltip-box">
-                  If you have any retail dept in the 'Liabilities' section of the financial statement you can pay it off
-                  in small payments here.
+                  If you have any retail dept in the 'Liabilities' section of
+                  the financial statement you can pay it off in small payments
+                  here.
                 </div>
                 <p id="profession-card-retail-expenses">0</p>
               </div>
@@ -321,8 +352,8 @@
                 </p>
                 <!-- Tooltip for other expenses -->
                 <div id="otherExpensesTooltip" class="tooltip-box">
-                  This is the basic cost of living. For example, weekly grocery shopping and paying bills. This figure
-                  cannot be changed.
+                  This is the basic cost of living. For example, weekly grocery
+                  shopping and paying bills. This figure cannot be changed.
                 </div>
                 <p id="profession-card-other-expenses:">0</p>
               </div>
@@ -339,8 +370,8 @@
                 </p>
                 <!-- Tooltip for Child Expenses -->
                 <div id="childExpensesTooltip" class="tooltip-box">
-                  If you have children they may add liabilities to that section of the financial statement. This
-                  excludes school costs.
+                  If you have children they may add liabilities to that section
+                  of the financial statement. This excludes school costs.
                 </div>
                 <p id="profession-card-child-expenses:">0</p>
               </div>
@@ -357,8 +388,8 @@
                 </p>
                 <!-- Tooltip for Bank loan payment -->
                 <div id="bankLoanPaymentTooltip" class="tooltip-box">
-                  If you have borrowed money from the bank, you will pay it off with 10% interest in small payments as
-                  shown here.
+                  If you have borrowed money from the bank, you will pay it off
+                  with 10% interest in small payments as shown here.
                 </div>
                 <p id="profession-card-bank-loan-payment">0</p>
               </div>
@@ -378,7 +409,9 @@
                     ></span>
                   </p>
                   <!-- Tooltip for Children -->
-                  <div id="childrenTooltip" class="tooltip-box">This is the number of children you have.</div>
+                  <div id="childrenTooltip" class="tooltip-box">
+                    This is the number of children you have.
+                  </div>
                   <p id="profession-card-children-count">0</p>
                 </div>
                 <div class="d-flex justify-content-between">
@@ -394,8 +427,8 @@
                   </p>
                   <!-- Tooltip for Cost Per Child -->
                   <div id="perChildTooltip" class="tooltip-box">
-                    This is the total cost of having a child, should you have more than one this will be multiplied by
-                    that number.
+                    This is the total cost of having a child, should you have
+                    more than one this will be multiplied by that number.
                   </div>
                   <p id="profession-card-per-child-expense">0</p>
                 </div>
@@ -414,7 +447,9 @@
                     ></span>
                   </p>
                   <!-- Tooltip for Cost Per Child -->
-                  <div id="totalExpensesTooltip" class="tooltip-box">This is the sum of all expenses.</div>
+                  <div id="totalExpensesTooltip" class="tooltip-box">
+                    This is the sum of all expenses.
+                  </div>
                   <p id="profession-card-total-expenses">0</p>
                 </div>
                 <div class="d-flex justify-content-between">
@@ -429,7 +464,9 @@
                     ></span>
                   </p>
                   <!-- Tooltip for Monthly Cash Flow -->
-                  <div id="monthlyCashFlowTooltip" class="tooltip-box">What is this?</div>
+                  <div id="monthlyCashFlowTooltip" class="tooltip-box">
+                    What is this?
+                  </div>
                   <p id="profession-card-monthly-cashflow">0</p>
                 </div>
               </div>
@@ -453,9 +490,10 @@
                 </h2>
                 <!-- Tooltip for Assets -->
                 <div id="assetsTooltip" class="tooltip-box">
-                  Assets are resources with economic value that an individual or company owns or controls with the
-                  expectation that it will provide future benefit. You can get assets from making deals or through life
-                  happenings.
+                  Assets are resources with economic value that an individual or
+                  company owns or controls with the expectation that it will
+                  provide future benefit. You can get assets from making deals
+                  or through life happenings.
                 </div>
               </div>
               <div class="d-flex justify-content-between">
@@ -471,8 +509,9 @@
                 </p>
                 <!-- Tooltip for Bank Balance -->
                 <div id="bankBalanceTooltip" class="tooltip-box">
-                  This is how much money you currently have in your bank account. Don't let this get below 0 if you have
-                  a negative cash flow or you will lose the game!
+                  This is how much money you currently have in your bank
+                  account. Don't let this get below 0 if you have a negative
+                  cash flow or you will lose the game!
                 </div>
                 <p id="profession-savings">0</p>
               </div>
@@ -494,12 +533,17 @@
                 </h2>
                 <!-- Tooltip for Liabilities -->
                 <div id="liabilitiesTooltip" class="tooltip-box">
-                  Liabilities are the debts or obligations that come with your investments and other life choices. These
-                  are paid off in small payments at payday but you can choose to pay these off at any time. Be careful
-                  not to go bankrupt if you do pay them off early.
+                  Liabilities are the debts or obligations that come with your
+                  investments and other life choices. These are paid off in
+                  small payments at payday but you can choose to pay these off
+                  at any time. Be careful not to go bankrupt if you do pay them
+                  off early.
                 </div>
               </div>
-              <div id="house-mortgage-container" class="d-flex justify-content-between">
+              <div
+                id="house-mortgage-container"
+                class="d-flex justify-content-between"
+              >
                 <!-- Home Mortgage Pay-off button -->
                 <button
                   class="liabilities-button"
@@ -525,7 +569,10 @@
                 </div>
                 <p id="profession-card-home-mortgage-liabilities">0</p>
               </div>
-              <div id="student-loan-container" class="d-flex justify-content-between">
+              <div
+                id="student-loan-container"
+                class="d-flex justify-content-between"
+              >
                 <!-- Student Loan Pay-off button -->
                 <button
                   class="liabilities-button"
@@ -547,12 +594,16 @@
                 </p>
                 <!-- Tooltip for Student Loan -->
                 <div id="schoolLoanTooltip" class="tooltip-box">
-                  It costs a lot of money to train up for your profession, this much infact! You have this much left to
-                  pay off your Student loan.
+                  It costs a lot of money to train up for your profession, this
+                  much infact! You have this much left to pay off your Student
+                  loan.
                 </div>
                 <p id="profession-card-school-loan-liabilities">0</p>
               </div>
-              <div id="car-loan-container" class="d-flex justify-content-between">
+              <div
+                id="car-loan-container"
+                class="d-flex justify-content-between"
+              >
                 <!-- Car Loan Pay-off button -->
                 <button
                   class="liabilities-button"
@@ -574,11 +625,15 @@
                 </p>
                 <!-- Tooltip for Car Loan -->
                 <div id="carLoanTooltip" class="tooltip-box">
-                  Cars are expensive! You have this much left to pay off your car loan.
+                  Cars are expensive! You have this much left to pay off your
+                  car loan.
                 </div>
                 <p id="profession-card-car-loan-liabilities">0</p>
               </div>
-              <div id="credit-card-container" class="d-flex justify-content-between">
+              <div
+                id="credit-card-container"
+                class="d-flex justify-content-between"
+              >
                 <!-- Credit Card Pay-off button -->
                 <button
                   class="liabilities-button"
@@ -600,12 +655,15 @@
                 </p>
                 <!-- Tooltip for Credit Card -->
                 <div id="creditCardTooltip" class="tooltip-box">
-                  You've been using your credit card to pay for things so have accumulated debt. You have this much left
-                  to pay off.
+                  You've been using your credit card to pay for things so have
+                  accumulated debt. You have this much left to pay off.
                 </div>
                 <p id="profession-card-credit-card-liabilities">0</p>
               </div>
-              <div id="retail-debt-container" class="d-flex justify-content-between">
+              <div
+                id="retail-debt-container"
+                class="d-flex justify-content-between"
+              >
                 <!-- Retail Debt Pay-off button -->
                 <button
                   class="liabilities-button"
@@ -627,12 +685,15 @@
                 </p>
                 <!-- Tooltip for Retail Debt -->
                 <div id="retailDebtTooltip" class="tooltip-box">
-                  Those shoes were nice...but you have to pay for that. This is how much you have left to pay off from
-                  your retail therapy.
+                  Those shoes were nice...but you have to pay for that. This is
+                  how much you have left to pay off from your retail therapy.
                 </div>
                 <p id="profession-card-retail-liabilities">0</p>
               </div>
-              <div id="bank-loan-container" class="d-flex justify-content-between">
+              <div
+                id="bank-loan-container"
+                class="d-flex justify-content-between"
+              >
                 <!-- Bank Loan Pay-off button -->
                 <button
                   class="liabilities-button"
@@ -654,14 +715,16 @@
                 </p>
                 <!-- Tooltip for Bank Loan -->
                 <div id="bankLoanTooltip" class="tooltip-box">
-                  You borrowed money so you coud afford that nice ... thing. Now you have to pay back 110% of what you
-                  borrowed!
+                  You borrowed money so you coud afford that nice ... thing. Now
+                  you have to pay back 110% of what you borrowed!
                 </div>
                 <p id="profession-card-bank-loan">0</p>
               </div>
             </div>
           </div>
-          <div id="payOffTooltip" class="tooltip-box">Pay off this liability in full.</div>
+          <div id="payOffTooltip" class="tooltip-box">
+            Pay off this liability in full.
+          </div>
         </div>
 
         <!-- Game column-->
@@ -671,23 +734,47 @@
             <div class="">
               <!-- Button trigger modal -->
               <div>
-                <button type="button" class="btn btn-success m-2" onclick="selectRandomEvent()" id="roll-dice-btn">
+                <button
+                  type="button"
+                  class="btn btn-success m-2"
+                  onclick="selectRandomEvent()"
+                  id="roll-dice-btn"
+                >
                   Start your Jorney
                 </button>
               </div>
               <div>
-                <button class="buy-button btn btn-info m-2" id="accept-offer-btn" onclick="acceptOffer()">
+                <button
+                  class="buy-button btn btn-info m-2"
+                  id="accept-offer-btn"
+                  onclick="acceptOffer()"
+                >
                   Accept offer
                 </button>
               </div>
             </div>
             <div class="deal-buttons">
               <div>
-                <span id="order-input-span">How many shares you would like to buy:</span>
-                <input type="number" class="m-2" id="orderCountInput" min="1" max="100" step="1" value="1" />
+                <span id="order-input-span"
+                  >How many shares you would like to buy:</span
+                >
+                <input
+                  type="number"
+                  class="m-2"
+                  id="orderCountInput"
+                  min="1"
+                  max="100"
+                  step="1"
+                  value="1"
+                />
               </div>
               <div>
-                <button type="button" class="btn btn-danger m-2" id="reject-offer-btn" onclick="resetRollDiceBtn()">
+                <button
+                  type="button"
+                  class="btn btn-danger m-2"
+                  id="reject-offer-btn"
+                  onclick="resetRollDiceBtn()"
+                >
                   Reject offer
                 </button>
               </div>
@@ -706,9 +793,19 @@
                     <span id="bank-rate">10</span>% liability
                   </p>
                   <div>
+
                     <label for="numberInput">Barrow from bank:£</label>
-                    <input type="number" id="bankInput" step="100" min="100" value="100" />
-                    <button type="button" onclick="barrowFromBank()">Barrow</button>
+                    <input
+                      type="number"
+                      id="bankInput"
+                      step="100"
+                      min="100"
+                      value="100"
+                    />
+                    <button type="button" onclick="barrowFromBank()">
+                      Barrow
+                    </button>
+
                   </div>
                 </form>
               </div>
@@ -734,14 +831,30 @@
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="gameEndModalLabel">CONGRATULATIONS OR UNLUCKY AUTOFILL</h5>
+            <h5 class="modal-title" id="gameEndModalLabel">
+              CONGRATULATIONS OR UNLUCKY AUTOFILL
+            </h5>
           </div>
           <div class="modal-body" id="gameEndModalContent">AUTOFILLED</div>
           <div class="modal-footer">
             <!-- Option to change profession and try again -->
-            <button id="tryAgain" type="button" class="btn btn-secondary" onclick="">Try again!</button>
+            <button
+              id="tryAgain"
+              type="button"
+              class="btn btn-secondary"
+              onclick=""
+            >
+              Try again!
+            </button>
             <!-- End Game -->
-            <button id="exit" type="button" class="btn btn-primary" onclick="endGame()">Exit</button>
+            <button
+              id="exit"
+              type="button"
+              class="btn btn-primary"
+              onclick="endGame()"
+            >
+              Exit
+            </button>
           </div>
         </div>
       </div>
@@ -758,8 +871,15 @@
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="gameInstructionsModalLabel">How to Play ##GAME NAME##</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h5 class="modal-title" id="gameInstructionsModalLabel">
+              How to Play ##GAME NAME##
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
           </div>
           <div class="modal-body">
             <div id="stepContent">
@@ -778,12 +898,15 @@
               <div id="step1" class="step">
                 <h3>Purpose:</h3>
                 <p>
-                  The purpose of #game name# is to create a passive income that is greater than your total expenses.
+                  The purpose of #game name# is to create a passive income that
+                  is greater than your total expenses.
                   <br />
                   <strong>Goal = passive income > total expenses</strong> <br />
-                  You can get an idea of how far you are from achieving this by looking at your goal tracker, displayed
-                  in your financial statement and on the main screen. It’s not that simple though… the goal will change
-                  depending on your total expenses. So to win you will have to keep your expenses down and your passive
+                  You can get an idea of how far you are from achieving this by
+                  looking at your goal tracker, displayed in your financial
+                  statement and on the main screen. It’s not that simple though…
+                  the goal will change depending on your total expenses. So to
+                  win you will have to keep your expenses down and your passive
                   income flowing in!
                 </p>
               </div>
@@ -792,12 +915,16 @@
             <div id="step2" class="step" style="display: none">
               <h3>How do I increase my passive income?</h3>
               <p>
-                If you land on a DEAL or LIFE card, you could get the opportunity to gain an asset that provides a
-                positive cash flow. An example could be a property that you invest in. If that property is rented out,
-                you could get passive income without doing any extra work! How nice. Be careful though, each opportunity
-                should be carefully considered as they don’t all provide the same benefits. Some may provide you with
-                quick cash, while some may be slow burners which slowly push you towards your goal. So keep a close eye
-                on your financial statement so you can make well calculated decisions.
+                If you land on a DEAL or LIFE card, you could get the
+                opportunity to gain an asset that provides a positive cash flow.
+                An example could be a property that you invest in. If that
+                property is rented out, you could get passive income without
+                doing any extra work! How nice. Be careful though, each
+                opportunity should be carefully considered as they don’t all
+                provide the same benefits. Some may provide you with quick cash,
+                while some may be slow burners which slowly push you towards
+                your goal. So keep a close eye on your financial statement so
+                you can make well calculated decisions.
               </p>
             </div>
 
@@ -805,12 +932,16 @@
             <div id="step3" class="step" style="display: none">
               <h3>How do my expenses change?</h3>
               <p>
-                Expenses are what you pay out at payday. They are determined by your liabilities which you can pay-off
-                or accumulate throughout the game. Your aim is to pay off your liabilities so that your expenses are
-                less! This means you don’t need so much passive income to win the game. <br />
-                As an example, you have a home mortgage of £38000 to pay off. You pay £400 every pay day towards your
-                mortgage until your mortgage is £0. Maybe you get lucky with some stocks (... I mean skillful) and earn
-                lots of cash; this might be a good time to make a bulk payment to your mortgage.
+                Expenses are what you pay out at payday. They are determined by
+                your liabilities which you can pay-off or accumulate throughout
+                the game. Your aim is to pay off your liabilities so that your
+                expenses are less! This means you don’t need so much passive
+                income to win the game. <br />
+                As an example, you have a home mortgage of £38000 to pay off.
+                You pay £400 every pay day towards your mortgage until your
+                mortgage is £0. Maybe you get lucky with some stocks (... I mean
+                skillful) and earn lots of cash; this might be a good time to
+                make a bulk payment to your mortgage.
               </p>
             </div>
 
@@ -818,10 +949,13 @@
             <div id="step4" class="step" style="display: none">
               <h3>So I just need to get rich to win?</h3>
               <p>
-                Not really, no. Your aim is to afford to live without working. You may start off in a really high paid
-                profession but as a result your expenses may be more; if you want to leave your job early, you could
-                very quickly go bankrupt without an income but high expenses. You want to build up your passive income
-                to cover those expenses every payday so you don’t have to worry about bankruptcy.
+                Not really, no. Your aim is to afford to live without working.
+                You may start off in a really high paid profession but as a
+                result your expenses may be more; if you want to leave your job
+                early, you could very quickly go bankrupt without an income but
+                high expenses. You want to build up your passive income to cover
+                those expenses every payday so you don’t have to worry about
+                bankruptcy.
               </p>
             </div>
 
@@ -829,9 +963,10 @@
             <div id="step5" class="step" style="display: none">
               <h3>What happens if I go bankrupt?</h3>
               <p>
-                Unfortunately this means you have lost #GAME NAME#. But that doesn’t have to be the end… start again and
-                maybe try a different strategy, make different investment decisions, or maybe pay off some liabilities a
-                bit sooner… or later.
+                Unfortunately this means you have lost #GAME NAME#. But that
+                doesn’t have to be the end… start again and maybe try a
+                different strategy, make different investment decisions, or
+                maybe pay off some liabilities a bit sooner… or later.
               </p>
             </div>
 
@@ -842,20 +977,23 @@
                 Step 1: Select an occupation
               </h3>
               <p>
-                Higher paid professions usually have higher expenses so your goal post is a little further away to
-                start. But maybe it’ll be easier to invest in assets with a higher income…
+                Higher paid professions usually have higher expenses so your
+                goal post is a little further away to start. But maybe it’ll be
+                easier to invest in assets with a higher income…
               </p>
             </div>
             <!-- Step 2 -->
             <div id="step7" class="step" style="display: none">
               <h3>
                 This is the flow...<br />
-                Step 2: Check on your financial situation then spin the wheel of life!
+                Step 2: Check on your financial situation then spin the wheel of
+                life!
               </h3>
               <p>
-                Make sure to keep checking your financial statement to stay on top of your finances. Who knows what the
-                wheel of life will throw at you?... a payday?... a deal to buy assets? … or some other random life
-                occurrence that could make or break the bank?
+                Make sure to keep checking your financial statement to stay on
+                top of your finances. Who knows what the wheel of life will
+                throw at you?... a payday?... a deal to buy assets? … or some
+                other random life occurrence that could make or break the bank?
               </p>
             </div>
             <!-- Step 3 -->
@@ -865,12 +1003,15 @@
                 Step 3: Follow the instructions for the tile the wheel lands on.
               </h3>
               <p>
-                PAYDAY - your total income and total expenses will be paid. Make sure to check your financial statement
-                after payday as this could change your position in the game. <br />
-                DEAL - you have a choice. Invest or don’t… just remember, you’d have to get very lucky to increase your
-                passive income without investing. <br />
-                LIFE - s**t happens. You might win, you might lose, but you have no say over it sometimes so roll with
-                the punches and check your bank balance afterwards.
+                PAYDAY - your total income and total expenses will be paid. Make
+                sure to check your financial statement after payday as this
+                could change your position in the game. <br />
+                DEAL - you have a choice. Invest or don’t… just remember, you’d
+                have to get very lucky to increase your passive income without
+                investing. <br />
+                LIFE - s**t happens. You might win, you might lose, but you have
+                no say over it sometimes so roll with the punches and check your
+                bank balance afterwards.
               </p>
             </div>
             <!-- Step 4 -->
@@ -880,19 +1021,37 @@
                 Step 4: Go again!
               </h3>
               <p>
-                You keep getting turns until you win or lose. Ie. you go bankrupt (lose) or your passive income is
-                greater than your expenses (win)!
+                You keep getting turns until you win or lose. Ie. you go
+                bankrupt (lose) or your passive income is greater than your
+                expenses (win)!
               </p>
             </div>
             <!-- Remember -->
             <div id="step10" class="step" style="display: none">
               <h3>Remember:</h3>
-              <p>You can pay off liabilities at any time, just make sure you don’t go bankrupt!</p>
+              <p>
+                You can pay off liabilities at any time, just make sure you
+                don’t go bankrupt!
+              </p>
             </div>
           </div>
           <div class="modal-footer">
-            <button id="prevStep" type="button" class="btn btn-secondary" onclick="changeStep(-1)">Previous</button>
-            <button id="nextStep" type="button" class="btn btn-primary" onclick="changeStep(1)">Next</button>
+            <button
+              id="prevStep"
+              type="button"
+              class="btn btn-secondary"
+              onclick="changeStep(-1)"
+            >
+              Previous
+            </button>
+            <button
+              id="nextStep"
+              type="button"
+              class="btn btn-primary"
+              onclick="changeStep(1)"
+            >
+              Next
+            </button>
           </div>
         </div>
       </div>
@@ -901,22 +1060,48 @@
     <!--CATEGORIES: 3 cards-->
     <!-- Buttons to trigger modals -->
 
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#paydayModal">
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-bs-toggle="modal"
+      data-bs-target="#paydayModal"
+    >
       It's Payday!
     </button>
-    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#dealModal">
+    <button
+      type="button"
+      class="btn btn-secondary"
+      data-bs-toggle="modal"
+      data-bs-target="#dealModal"
+    >
       You've got a Deal!
     </button>
-    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#lifeHappenedModal">
+    <button
+      type="button"
+      class="btn btn-success"
+      data-bs-toggle="modal"
+      data-bs-target="#lifeHappenedModal"
+    >
       Life Happened! (Positive Outcome)
     </button>
-    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#negativeOutcomeModal">
+    <button
+      type="button"
+      class="btn btn-danger"
+      data-bs-toggle="modal"
+      data-bs-target="#negativeOutcomeModal"
+    >
       Life Happened! (Negative Outcome)
     </button>
 
     <!-- Payday Modal -->
 
-    <div class="modal fade" id="paydayModal" tabindex="-1" aria-labelledby="paydayModalLabel" aria-hidden="true">
+    <div
+      class="modal fade"
+      id="paydayModal"
+      tabindex="-1"
+      aria-labelledby="paydayModalLabel"
+      aria-hidden="true"
+    >
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-body">
@@ -930,12 +1115,19 @@
               ></span>
             </h1>
             <!-- Tooltip for Payday -->
-            <div id="paydayTooltip" class="tooltip-box">
+            <div id="paydayTooltip" class="tooltip-box-modal">
               What is Payday? <br />
 
-              Payday is the day you receive your salary and see an increase in your cash flow.
+              Payday is the day you receive your salary and see an increase in
+              your cash flow.
             </div>
-            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Continue</button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              Continue
+            </button>
           </div>
         </div>
       </div>
@@ -943,7 +1135,13 @@
 
     <!-- Deal Modal -->
 
-    <div class="modal fade" id="dealModal" tabindex="-1" aria-labelledby="dealModalLabel" aria-hidden="true">
+    <div
+      class="modal fade"
+      id="dealModal"
+      tabindex="-1"
+      aria-labelledby="dealModalLabel"
+      aria-hidden="true"
+    >
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-body">
@@ -959,17 +1157,32 @@
               ></span>
             </h2>
             <!-- Tooltip for Deal -->
-            <div id="dealTooltip" class="tooltip-box">
+            <div id="dealTooltip" class="tooltip-box-modal">
               What is a Deal? <br />
 
-              A deal represents a financial opportunity where you can invest and potentially increase your passive
-              income.
+              A deal represents a financial opportunity where you can invest and
+              potentially increase your passive income.
             </div>
-            <p>Your Friends tell you about a chance encounter they had with Elon Musk...</p>
+            <p>
+              Your Friends tell you about a chance encounter they had with Elon
+              Musk...
+            </p>
             <p>Risky Tesla Shares</p>
             <p>ROI: 24% Cost: 2500</p>
-            <button type="button" class="btn btn-success" data-bs-dismiss="modal">Accept</button>
-            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Reject</button>
+            <button
+              type="button"
+              class="btn btn-success"
+              data-bs-dismiss="modal"
+            >
+              Accept
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+            >
+              Reject
+            </button>
           </div>
         </div>
       </div>
@@ -998,14 +1211,21 @@
               ></span>
             </h2>
             <!-- Tooltip for Life Happening -->
-            <div id="lifeHappeningTooltip" class="tooltip-box">
+            <div id="lifeHappeningTooltip" class="tooltip-box-modal">
               What does Life Happening mean? <br />
 
-              Life Happening events are unexpected occurrences that can affect your finances positively or negatively.
+              Life Happening events are unexpected occurrences that can affect
+              your finances positively or negatively.
             </div>
 
             <p>Look's like you won the lottery ticket! well done!</p>
-            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Continue</button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              Continue
+            </button>
           </div>
         </div>
       </div>
@@ -1034,14 +1254,24 @@
               ></span>
             </h2>
             <!-- Tooltip for Life Happening -->
-            <div id="lifeHappeningTooltip2" class="tooltip-box">
+            <div id="lifeHappeningTooltip2" class="tooltip-box-modal">
               What does Life Happening mean? <br />
 
-              Life Happening events are unexpected occurrences that can affect your finances positively or negatively.
+              Life Happening events are unexpected occurrences that can affect
+              your finances positively or negatively.
             </div>
 
-            <p>Unexpected expenses arose from your car breaking down. Time to tighten the budget.</p>
-            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Continue</button>
+            <p>
+              Unexpected expenses arose from your car breaking down. Time to
+              tighten the budget.
+            </p>
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+            >
+              Continue
+            </button>
           </div>
         </div>
       </div>
@@ -1060,7 +1290,9 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-body text-center">
-            <h5 class="modal-title" id="welcomeModalLabel">Welcome to Our Board Game</h5>
+            <h5 class="modal-title" id="welcomeModalLabel">
+              Welcome to Our Board Game
+            </h5>
             <p>Please chose profession you woudl like to play</p>
 
             <!-- profesion Carousel -->
@@ -1072,7 +1304,10 @@
                 data-bs-target="#carouselExample"
                 data-bs-slide="prev"
               >
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
                 <span class="visually-hidden">Previous</span>
               </button>
               <button
@@ -1081,7 +1316,10 @@
                 data-bs-target="#carouselExample"
                 data-bs-slide="next"
               >
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
                 <span class="visually-hidden">Next</span>
               </button>
             </div>
@@ -1089,7 +1327,12 @@
             <i class="fas fa-gamepad fa-3x my-3"></i>
             <!-- Font Awesome Icon -->
             <div>
-              <button type="button" class="btn btn-primary me-2" id="startGameButton" onclick="selectProfession()">
+              <button
+                type="button"
+                class="btn btn-primary me-2"
+                id="startGameButton"
+                onclick="selectProfession()"
+              >
                 Select Profession
               </button>
 
@@ -1108,10 +1351,7 @@
     </div>
 
     <!-- Main script -->
-
     <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
-
     <script defer src="static/js/initial_script.js"></script>
     <script defer src="static/js/calculator_functions.js"></script>
     <script defer src="static/js/card_updates.js"></script>
@@ -1120,21 +1360,87 @@
 
     <script defer src="static/js/welcome_modal.js"></script>
 
-    <!-- Bootstrap -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-      crossorigin="anonymous"
-    ></script>
-
     <!-- Font Awesome -->
-
     <script src="https://kit.fontawesome.com/be71380b34.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/e9c73d7092.js" crossorigin="anonymous"></script>
-  </body>
+
+
+
+
+<!-- Game Board-->  
+<div id="app" v-cloak>
+    <!-- status buttons-->
+    <div class="game-status">
+      <div class="toggle" @click="isToggle = !isToggle"></div>
+      <transition name="slide-fade">
+        <div class="status-container" v-if="isToggle">
+          <div class="times">CHANCE <span>{{time_remaining}}</span></div>
+          <div class="buttons">
+            <button class="btn btn-primary" :class="{'active':current_year===2017}"
+              @click="setCurrentYear(2017)">2017</button>
+            <button class="btn btn-primary" :class="{'active':current_year===2018}"
+              @click="setCurrentYear(2018)">2018</button>
+            <button class="btn btn-secondary" @click="restart">Restart</button>
+          </div>
+        </div>
+      </transition>
+    </div>
+
+    <div class="lucky-wheel">
+      <div class="pointer-container">
+        <!-- pointer -->
+        <div class="pointer" ref="pointer" id="pointer" :style="{'transform':rotate_deg,'transition': prize_transition}"
+          @click="rotateHandler(num)">
+        </div>
+      </div>
+      <!-- lucky wheel -->
+      <div :class="containerClass">
+        <div v-for="(item,index) in prizes" :key="item.name" ref="item" :class="itemClass">
+          <div :class="contentClass">
+            <i class="material-icons">
+              {{item.icon}}
+            </i>
+            <span>{{item.name}}
+              <span :class="countClass">{{item.count}}</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- display results -->
+      <transition name="slide-fade">
+        <div class="prize" v-if="isShow==isClicked">
+          <div class="prize-container">
+            <div class="prize-title">WELL</br> DONE!</div>
+            <div class="prize-title">YOU GET A FREE...</br>
+              <span class="prize-item">{{prize_name}}</span>
+            </div>
+            <div class="prize-background">
+              <template v-for="(prizeIcon,index) in 9">
+                <i class="material-icons">
+                  {{prize_icon}}
+                </i>
+              </template>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </div>
+  </div>
+  </div>
+
+    <script type="module" src="game_board.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.8/vue.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js'></script>
+
+  <!-- Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
+
+</body>
+
 </html>
