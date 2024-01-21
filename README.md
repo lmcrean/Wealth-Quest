@@ -68,7 +68,7 @@ Our website was built as a part of the January 2024 Budget-Buster-themed hackath
 
 #### Target Audience
 
-- This quiz is designed for users of any background or age, but will most likely gain more interest from those interested in budgeting, saving and investing
+- This game is designed for users of any background or age, but will most likely gain more interest from those interested in budgeting, saving and investing
 - It is also likely to draw in users who want to play around with different incomes and learn how to generate passive income 
 - The simplicity of the game makes it easy for adults, teenagers and even children to take, and retake, the game as many times as they want, until they win
 
@@ -101,7 +101,7 @@ These user stories gave us a clear scope for the game and enabled us to stay on 
 
 #### Wireframes
 
-I used [Figma](https://figma.com/) in the initial design phase, before the coding process. This enabled me to develop the game's structure, skeleton, layout and overall look and style. We created designs for desktop, tablet and mobile screens to ensure that responsiveness was at the forefront of the application from the beginning.
+We used [Figma](https://figma.com/) in the initial design phase, before the coding process. This enabled us to develop the game's structure, skeleton, layout and overall look and style. We created designs for desktop, tablet and mobile screens to ensure that responsiveness was at the forefront of the application from the beginning.
 
 <details><summary>Screenshots</summary>
 
@@ -230,3 +230,27 @@ You can clone the repository to use locally by following these steps:
 6. Type git clone copied-git-url into the IDE terminal.
 
 The project will now be cloned locally for you to use.
+
+## Credits
+
+### Design and Planning
+
+- [Adobe Color](https://color.adobe.com/create/color-wheel) helped in developing the colour palette for the initial design phase of the website.
+
+### Code
+
+- [W3C Schools](https://www.w3schools.com/jsref/dom_obj_event.asp) helped in providing a list to all DOM elements and how to manipulate them.
+- [StackOverflow](https://stackoverflow.com/) helped with offering solutions on how to debug css and javascript code for certain functions.
+- [W3C Schools](https://www.w3schools.com/w3css/w3css_progressbar.asp) helped in initial structure and styling of progress bar.
+- [JS Docs](https://jsdoc.app/about-getting-started.html) helped in naming the variables correctly in the javascript files.
+
+### Acknowledgements
+
+- Our Hackathon Team:
+    - Laurie: Scrum Master, Frontend design, Testing
+    - Sian: Databases, Flowchart, Backend Functionality, Testing
+    - Lauren: Databases, Readme, Flowchart, Testing
+    - Erik: JavaScript Backend Functionality, Databases, Testing
+    - Renwar: Wireframes, Frontend design
+We had great fun making this project together and learnt a lot through the experience. 
+- The whole hackathon team at [Code Institute](https://codeinstitute.net/) for their teaching and support.
