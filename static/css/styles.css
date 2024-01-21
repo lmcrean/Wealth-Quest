@@ -48,11 +48,13 @@ body {
   flex-direction: column;
   min-height: 100vh;
   overflow-x: hidden;
+  background-color: var(--background) !important;
 }
 
 p {
   letter-spacing: 1.5px;
   margin-bottom: 0 !important;
+  color: var(--text-color) !important;
 }
 
 h1,
@@ -63,6 +65,11 @@ h5,
 h6 {
   font-family: var(--title);
   letter-spacing: 2px;
+  color: var(--primary-color) !important;
+}
+
+.modal-body {
+  background-color: var(--secondary-color) !important;
 }
 
 /* profesion carousel */
