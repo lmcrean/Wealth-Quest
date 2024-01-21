@@ -6,6 +6,7 @@
 :root {
   /* fonts */
 <<<<<<< HEAD
+<<<<<<< HEAD
   --title: "Lato", sans-serif;
   --heading-font: "Playfair Display", serif;
   --body-font: "Nunito Sans", sans-serif;
@@ -14,6 +15,11 @@
   --heading-font: "Playfair Display", serif;
   --body-font: "Roboto Condensed", sans-serif;
 >>>>>>> a2d00d1a16181bfabd632ec4a93c37d6793e6655
+=======
+  --title: "Halant", sans-serif;
+  --heading-font: "Playfair Display", serif;
+  --body-font: "Roboto Condensed", sans-serif;
+>>>>>>> origin/main
 
   /* Colours */
   --text: #000000;
@@ -61,9 +67,13 @@ p {
   margin-bottom: 0 !important;
   color: var(--text-color) !important;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   font-family: var(--body-font) !;
 >>>>>>> a2d00d1a16181bfabd632ec4a93c37d6793e6655
+=======
+  font-family: var(--body-font) !;
+>>>>>>> origin/main
 }
 
 h1,
@@ -80,7 +90,10 @@ h6 {
 .modal-body {
   background-color: var(--secondary-color) !important;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/main
 }
 .modal-header,
 .modal-footer {
@@ -95,7 +108,10 @@ h6 {
 /* hide close button on modal */
 button.btn-close {
   display: none !important;
+<<<<<<< HEAD
 >>>>>>> a2d00d1a16181bfabd632ec4a93c37d6793e6655
+=======
+>>>>>>> origin/main
 }
 
 /* profesion carousel */
