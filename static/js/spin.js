@@ -5,6 +5,7 @@ let totalClicks = 1;
 
 function spinWhell(targetSectionIndex) {
   // Increment the total clicks
+  totalClicks++;
 
   // Calculate the target degree based on the section index
   const targetDegree = initialDegree * totalClicks + targetSectionIndex * (360 / 6);
@@ -30,11 +31,10 @@ function spinWhell(targetSectionIndex) {
                  that it has a 30-degree angle and therefore, 
                  exactly aligned with the spin btn */
       if (sectionOffsetTop < 23.89) {
-        console.log("<<<<<<<<");
         document.getElementById("spin").classList.add("spin");
         setTimeout(function () {
           document.getElementById("spin").classList.remove("spin");
-        }, 100);
+        }, 1000);
       }
     }, 10);
 

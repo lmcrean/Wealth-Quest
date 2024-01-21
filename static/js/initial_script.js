@@ -5,7 +5,6 @@ const professionCard = {
 
   // Income tab
   salary: document.getElementById("profession-card-salary"),
-  realEstate: document.getElementById("profession-card-real-estate"),
   passiveIncome: document.getElementById("profession-card-pasive-income"),
   totalIncome: document.getElementById("profession-card-total-income"),
 
@@ -28,26 +27,14 @@ const professionCard = {
   // Assets
   savings: document.getElementById("profession-savings"),
 
-  additionalAssets: document.getElementById(
-    "profession-card-additional-assets"
-  ),
+  additionalAssets: document.getElementById("profession-card-additional-assets"),
 
   // Liabilities
-  homeMortgageLiabilities: document.getElementById(
-    "profession-card-home-mortgage-liabilities"
-  ),
-  schoolLoanLiabilities: document.getElementById(
-    "profession-card-school-loan-liabilities"
-  ),
-  carLoanLiabilities: document.getElementById(
-    "profession-card-car-loan-liabilities"
-  ),
-  creditCardLiabilities: document.getElementById(
-    "profession-card-credit-card-liabilities"
-  ),
-  retailLiabilities: document.getElementById(
-    "profession-card-retail-liabilities"
-  ),
+  homeMortgageLiabilities: document.getElementById("profession-card-home-mortgage-liabilities"),
+  schoolLoanLiabilities: document.getElementById("profession-card-school-loan-liabilities"),
+  carLoanLiabilities: document.getElementById("profession-card-car-loan-liabilities"),
+  creditCardLiabilities: document.getElementById("profession-card-credit-card-liabilities"),
+  retailLiabilities: document.getElementById("profession-card-retail-liabilities"),
 
   bankLiabilities: document.getElementById("profession-card-bank-loan"),
 };
@@ -62,7 +49,6 @@ const gameDataHTML = {
 // Profession card modal carousel
 const carouselInner = document.querySelector(".carousel-inner");
 
-const rollDiceBtn = document.getElementById("roll-dice-btn");
 const orderInputSpan = document.getElementById("order-input-span");
 const orderCountInput = document.getElementById("orderCountInput");
 const acceptOfferBtn = document.getElementById("accept-offer-btn");
@@ -157,21 +143,11 @@ fetch("static/game_data/child_events.json")
     childEvents = json;
   });
 
-let buttonTitles;
-fetch("static/game_data/buttons.json")
-  .then((response) => response.json())
-  .then((json) => {
-    buttonTitles = json;
-  });
-
 function createProfessionCarousel() {
   professions.forEach((profession, index) => {
-    console.log(storedProfessions[index]);
     const isActive = index === 0 ? "active" : "";
     const carouselItem = `
-          <div class="carousel-item ${isActive}" data-profession-id="${
-      profession.id
-    }">
+          <div class="carousel-item ${isActive}" data-profession-id="${profession.id}">
             <h5>${profession.profession}</h5>
             <p>Salary: £${profession.incomes.salary}</p>
             <p>Total Expenses: £${calculateTotalExpenses(profession)}</p>
@@ -189,8 +165,7 @@ function createProfessionCarousel() {
 
 // Sets up initial bank rate for display
 function setInitialBankRate() {
-  document.getElementById("bank-rate").textContent =
-    gameData.bankLoanProcentage;
+  document.getElementById("bank-rate").textContent = gameData.bankLoanProcentage;
 }
 
 setInitialBankRate();
@@ -225,7 +200,6 @@ function checkForGameEnd() {
 }
 
 function win() {
-
   updateProfessionsLS();
   // Get the modal element
   const gameEndModal = new bootstrap.Modal(document.getElementById("gameEndModal"));
@@ -257,7 +231,6 @@ function lose() {
 
 function endGame() {
   // resset buttons
-  rollDiceBtnOff(false);
   acceptBtnOff(true);
   rejectBtnOff(true);
   orderInputOff(true);

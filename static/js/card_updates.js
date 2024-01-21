@@ -65,7 +65,6 @@ function selectRandomEvent() {
     default:
       break;
   }
-  createButtonName();
   finishTurn();
 }
 
@@ -73,7 +72,6 @@ function selectRandomEvent() {
 function updateProfessionHTML() {
   // Income tab
   professionCard.salary.innerText = `£${profession.incomes.salary}`;
-  professionCard.realEstate.innerText = `£${profession.incomes.realEstate}`;
   professionCard.passiveIncome.innerText = `£${profession.passiveIncome}`;
   professionCard.totalIncome.innerText = `£${profession.totalIncome}`;
 
@@ -229,20 +227,6 @@ function liabilityPayOff(liability) {
   finishTurn();
 }
 
-// create button name function
-function createButtonName() {
-  const button = choseRandomEvent(buttonTitles);
-  rollDiceBtn.innerText = button.title;
-}
-
-function rollDiceBtnOff(status) {
-  if (status) {
-    rollDiceBtn.style.display = `none`;
-  } else {
-    rollDiceBtn.style.display = "inline-block";
-  }
-}
-
 // value input off and initial set up
 function orderInputOff(status) {
   if (status) {
@@ -274,9 +258,3 @@ function rejectBtnOff(status) {
   }
 }
 rejectBtnOff(true);
-
-// Resset button roll dice
-function resetRollDiceBtn() {
-  rollDiceBtnOff(false);
-  rejectBtnOff(true);
-}
