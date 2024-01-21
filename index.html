@@ -73,31 +73,12 @@
           </div>
         </div>
       </div>
-
-      <div class="border game-board-components">
-        <div id="event-card"></div>
-      </div>
-      <div class="border game-board-components">
-        <div id="bank-container">
-          <div>
-            <form id="numberForm">
-              <p>
-                Barrowing money from bank add
-                <span id="bank-rate">10</span>% liability
-              </p>
-              <div>
-                <label for="numberInput">Barrow from bank:</label>
-                <input type="number" id="bankInput" step="100" min="100" value="100" />
-                <button type="button" onclick="barrowFromBank()">Barrow</button>
-              </div>
-            </form>
-          </div>
-          <!-- game instructions trigger modal -->
-          <div>
-          </div>
-        </div>
+      <!-- game instructions trigger modal -->
+      <div>
       </div>
     </div>
+  </div>
+  </div>
   </div>
   </div>
 
@@ -124,6 +105,9 @@
   </button>
   <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#negativeOutcomeModal">
     Life Happened! (Negative Outcome) for styling
+  </button>
+  <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#borrowFromTheBankModal">
+    Borrow from the bank
   </button>
 
   <!-- Game end modal -->
@@ -638,7 +622,6 @@
               </div>
             </div>
             <div id="payOffTooltip" class="tooltip-box">Pay off this liability in full.</div>
-
           </div>
         </div>
       </div>
@@ -649,8 +632,6 @@
       <!-- End Game -->
       <button id="exit" type="button" class="btn btn-primary" onclick="endGame()">BUTTON</button>
     </div>
-  </div>
-  </div>
   </div>
 
   <!-- Game Instructions Modal -->
@@ -821,6 +802,34 @@
             Payday is the day you receive your salary and see an increase in your cash flow.
           </div>
           <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Continue</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Borrow from the bank modal -->
+  <div class="modal fade" id="borrowFromTheBankModal" tabindex="-1" aria-labelledby="borrowFromTheBankModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="borrowFromTheBankModalLabel">Borrow from the bank</h5>
+        </div>
+        <div class="modal-body" id="bank-container">
+          <form id="numberForm">
+            <p>
+              You can borrow from the bank with an interest rate of <span id="bank-rate">10</span>%. You can see this in
+              your 'liabilities' section of your financial statement.
+            </p>
+            <div>
+              <label for="numberInput">Borrow from bank:</label>
+              <input type="number" id="bankInput" step="100" min="100" value="100" />
+              <button type="button" onclick="barrowFromBank()">Borrow</button>
+            </div>
+          </form>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">close</button>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+            data-bs-target="#financialStatementModal">View financial statement</button>
         </div>
       </div>
     </div>
