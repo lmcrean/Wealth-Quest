@@ -1,32 +1,30 @@
 // https://github.com/HuiyuLiz/vue-lucky-wheel
 // main.js or entry point of your application
 
-
-
 (function () {
   let app = new Vue({
     el: "#app",
     data: {
-      prizes: [],
-      prizes_2017: [],
-      prizes_2018: [],
-      prize_name: "",
-      prize_icon: "",
-      prize_rotate: [],
-      prize_transition: "",
-      each_deg: 0,
-      rotate_deg: 0,
-      start_deg: 0,
-      current_deg: 0,
-      index: 0,
-      current_year: 2017,
-      duration: 3000,
-      time_remaining: 20,
-      num: 0,
-      numbers: [], //紀錄還有獎品的編號
-      isToggle: false, //顯示隱藏按鈕
-      isClicked: false, //轉動中禁止觸發
-      isShow: true
+      prizes: [], // Array to store prizes
+      prizes_2017: [], // Prizes for the year 2017
+      prizes_2018: [], // Prizes for the year 2018
+      prize_name: "", // Current prize name
+      prize_icon: "", // Current prize icon
+      prize_rotate: [], // Rotation angles for each prize
+      prize_transition: "", // CSS transition property for animation
+      each_deg: 0, // Angle for each wheel slice
+      rotate_deg: 0, // Current rotation angle of the wheel
+      start_deg: 0, // Initial rotation angle
+      current_deg: 0, // Current calculated rotation angle
+      index: 0, // Index of the selected prize
+      current_year: 2017, // Current selected year
+      duration: 3000, // Duration of wheel spin animation
+      time_remaining: 20, // Remaining time for spinning
+      num: 0, // Total number of prizes
+      numbers: [], // Array to store remaining prize indices
+      isToggle: false, // Toggle button state
+      isClicked: false, // Flag to prevent multiple clicks during wheel spin
+      isShow: true, // Flag to control visibility of certain elements
     },
     mounted() {
       let vm = this;
@@ -34,37 +32,31 @@
     },
     watch: {
       current_year: {
-        handler: "restart"
-      }
+        handler: "restart",
+      },
     },
     computed: {
-      // 判斷轉盤 class
+      // Determine wheel class based on the current year
       containerClass() {
         let vm = this;
-        return vm.current_year === 2017
-          ? "container"
-          : "container container-large";
+        return vm.current_year === 2017 ? "container" : "container container-large";
       },
       itemClass() {
         let vm = this;
-        return vm.current_year === 2017
-          ? "item item-skew"
-          : "item item-skew-large";
+        return vm.current_year === 2017 ? "item item-skew" : "item item-skew-large";
       },
       contentClass() {
         let vm = this;
-        return vm.current_year === 2017
-          ? "item-content"
-          : "item-content item-content-large";
+        return vm.current_year === 2017 ? "item-content" : "item-content item-content-large";
       },
       countClass() {
         let vm = this;
         return vm.current_year === 2017 ? "count" : "count count-large";
-      }
+      },
     },
     methods: {
       prizeActive() {
-        // 抽到獎品後變更 item 的 css
+        // Apply CSS class for the selected prize after spinning
         let vm = this;
         setTimeout(() => {
           vm.$refs.item[vm.index].classList.value = `${vm.itemClass} active`;
@@ -90,6 +82,7 @@
         }
       },
       reset() {
+        // Reset various properties to their initial values
         let vm = this;
         vm.isShow = true;
         vm.index = 0;
@@ -105,38 +98,15 @@
         console.log("RESET");
       },
       initPrize() {
+        // Initialize prizes for the year 2017
         let vm = this;
         vm.prizes_2017 = [
-          {
-            name: "Payday",
-            icon: "cake",
-            count: 5
-          },
-          {
-            name: "Deal",
-            icon: "stars",
-            count: 5
-          },
-          {
-            name: "Life",
-            icon: "child_care",
-            count: 4
-          },
-          {
-            name: "Payday",
-            icon: " cake",
-            count: 1
-          },
-          {
-            name: "Deal",
-            icon: "wifi",
-            count: 5
-          },
-          {
-            name: "Bonus",
-            icon: "movie_filter",
-            count: 0
-          }
+          { name: "Payday", icon: "cake", count: 5 },
+          { name: "Deal", icon: "stars", count: 5 },
+          { name: "Life", icon: "child_care", count: 4 },
+          { name: "Payday", icon: " cake", count: 1 },
+          { name: "Deal", icon: "wifi", count: 5 },
+          { name: "Bonus", icon: "movie_filter", count: 0 },
         ];
         vm.num = vm.prizes_2017.length;
         vm.degree(vm.num);
@@ -144,6 +114,7 @@
         vm.numberArray();
       },
       initPrize_2018() {
+        // Initialize prizes for the year 2018
         let vm = this;
         vm.prizes_2018 = [];
         for (let i = 1; i <= 120; i++) {
@@ -180,7 +151,7 @@
         vm.numberArray();
       },
       degree(num) {
-        // 計算每個轉盤角度
+        // Calculate the rotation angle for each wheel slice
         let vm = this;
         for (let i = 1; i <= num; i++) {
           let deg = 360 / num;
@@ -191,7 +162,7 @@
         }
       },
       numberArray() {
-        // 產生獎品 index 編號 => [0,1,2,3,4,5]
+        // Generate an array of prize indices [0,1,2,3,4,5]
         let vm = this;
         vm.numbers = vm.prizes.map((prize, index) => {
           return index;
@@ -199,7 +170,7 @@
       },
       rotateHandler(num) {
         let vm = this;
-        // 刪去沒有獎品的 index
+        // Filter out indices of prizes with count <= 0
         vm.prizes.filter((prize, index) => {
           let filterArray;
           if (prize.count <= 0) {
@@ -212,7 +183,7 @@
 
         if (vm.time_remaining > 0) {
           vm.$refs.item[vm.index].classList.value = vm.itemClass;
-          // 執行旋轉
+          // Trigger wheel spin
           vm.prize_draw(num);
         } else if (vm.time_remaining <= 0) {
           vm.$refs.item[vm.index].classList.value = vm.itemClass;
@@ -220,56 +191,47 @@
         }
       },
       prize_draw(num) {
-        // 執行抽獎
+        // Perform the spinning animation
         let vm = this;
         if (vm.isClicked) return;
         vm.isShow = vm.isClicked;
 
-        // 移除抽到獎品 active 狀態
+        // Remove 'active' class from the previously selected prize
         vm.$refs.item[vm.index].classList.value = vm.itemClass;
 
-        // 取出 0-5之間隨機整數
+        // Select a random index from the remaining indices
         vm.index = vm.numbers[Math.floor(Math.random() * vm.numbers.length)];
-        console.log("1.剩餘牌號", vm.numbers);
+        console.log("1. Remaining indices", vm.numbers);
 
-        // 預先旋轉四圈
+        // Perform a preliminary rotation of four circles
         let circle = 4;
         let degree;
-        //degree=初始角度 + 旋轉4圈 + 獎品旋轉角度[隨機數] - 餘數
-        degree =
-          vm.start_deg +
-          circle * 360 +
-          vm.prize_rotate[vm.index] -
-          (vm.start_deg % 360);
+        // degree = initial angle + 4 circles + prize rotation angle[random] - remainder
+        degree = vm.start_deg + circle * 360 + vm.prize_rotate[vm.index] - (vm.start_deg % 360);
 
-        // 將初始角度 start_deg:0度 = 旋轉後的角度 degree，下次執行從當下角度開始
+        // Set the initial angle to the calculated angle for the next rotation
         vm.start_deg = degree;
-        //綁定旋轉角度到指針
+        // Bind the rotation angle to the pointer
         vm.current_year === 2017
           ? (vm.rotate_deg = `rotate(${degree}deg)`)
           : (vm.rotate_deg = `rotate(${degree - vm.each_deg / 2}deg)`);
 
-        vm.prize_transition = `all ${
-          vm.duration / 1000
-        }s cubic-bezier(0.42, 0, 0.2, 0.91)`;
+        vm.prize_transition = `all ${vm.duration / 1000}s cubic-bezier(0.42, 0, 0.2, 0.91)`;
         vm.time_remaining--;
         vm.isClicked = true;
 
-        // 取當下開始角度的餘數，與輪盤角度比對(除錯用)
+        // Get the remainder of the current starting angle, compared to the wheel angle (for debugging)
         let remainder = vm.start_deg % 360;
         if (remainder <= 0) {
-          // 為了不產生負數或0，加360
           vm.current_year === 2017
             ? (vm.current_deg = remainder + 360)
             : (vm.current_deg = remainder + 360 - vm.each_deg / 2);
         } else if (remainder > 0) {
-          vm.current_year === 2017
-            ? (vm.current_deg = remainder)
-            : (vm.current_deg = remainder - vm.each_deg / 2);
+          vm.current_year === 2017 ? (vm.current_deg = remainder) : (vm.current_deg = remainder - vm.each_deg / 2);
         }
-        console.log("2.執行旋轉", degree, "index", vm.index);
+        console.log("2. Perform rotation", degree, "index", vm.index);
 
-        // 將vm.index設為抽中獎品索引數，獎品抽完的索引數將不再出現，直到獎品全數抽完，重新 RESET
+        // Set vm.index as the selected prize index, and reduce the count of the selected prize
         let prize = vm.prizes[vm.index];
         vm.prize_name = prize.name;
         vm.prize_icon = prize.icon;
@@ -280,24 +242,24 @@
         setTimeout(() => {
           prize.count--;
           console.log(
-            "3.旋轉角度:",
+            "3. Rotation angle:",
             vm.current_deg,
-            "獎品:",
+            "Prize:",
             prize.name,
-            "剩餘數量:",
+            "Remaining quantity:",
             prize.count,
-            " index",
+            " Index",
             vm.index
           );
         }, vm.duration);
 
-        // 點選動畫結束後，將"已點選"改回"未點選"
+        // After the animation ends, set "isClicked" back to false
         setTimeout(() => {
           if (vm.isClicked === true) {
             vm.isClicked = false;
           }
         }, vm.duration);
-      }
-    }
+      },
+    },
   });
 })();

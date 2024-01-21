@@ -109,13 +109,42 @@ let professions;
 // variable that is selected by player chosing his profession within selectProfession() function
 let profession;
 
-fetch("static/game_data/professions.json")
-  .then((response) => response.json())
-  .then((json) => {
+// Functions for local storage operations
+function setLocalStorage(data) {
+  localStorage.setItem(`professions`, JSON.stringify(data));
+}
+
+function getLocalStorage() {
+  const data = localStorage.getItem(`professions`);
+  return data ? JSON.parse(data) : null;
+}
+
+// Function to fetch initial data
+function fetchInitialData() {
+  return fetch("static/game_data/professions.json").then((response) => {
+    if (!response.ok) {
+      throw new Error(`Failed to fetch data: ${response.status}`);
+    }
+    return response.json();
+  });
+}
+// Check local storage for saved game
+const storedProfessions = getLocalStorage();
+
+if (storedProfessions) {
+  // Use stored data if available
+  professions = storedProfessions;
+  createProfessionCarousel();
+} else {
+  // Fetch initial data if not found in local storage
+  fetchInitialData().then((json) => {
+    // Process and use fetched data
     professions = json;
     createProfessionCarousel();
   });
+}
 
+// Collects deals from database
 let deals;
 fetch("static/game_data/deals.json")
   .then((response) => response.json())
@@ -145,7 +174,10 @@ fetch("static/game_data/buttons.json")
   });
 
 function createProfessionCarousel() {
+  console.log(professions);
   professions.forEach((profession, index) => {
+    console.log(profession);
+    console.log(profession.id);
     const isActive = index === 0 ? "active" : "";
     const carouselItem = `
           <div class="carousel-item ${isActive}" data-profession-id="${
@@ -155,6 +187,11 @@ function createProfessionCarousel() {
             <p>Salary: £${profession.incomes.salary}</p>
             <p>Total Expenses: £${calculateTotalExpenses(profession)}</p>
             <p>Savings: £${profession.assets.saving}</p>
+            ${
+              profession.victory === 0
+                ? "<p>You have not won the game as this profesion</p>"
+                : `<p>Fastest financial Freedom in ${profession.victory} months</p>`
+            }
           </div>
         `;
     carouselInner.innerHTML += carouselItem;
@@ -200,6 +237,11 @@ function checkForGameEnd() {
 }
 
 function win() {
+
+  updateProfessionsLS();
+  // Get the modal element
+  const gameEndModal = new bootstrap.Modal(document.getElementById("gameEndModal"));
+
   // Change the modal title and content
   document.getElementById("gameEndModalLabel").innerText = "Congratulations!";
   document.getElementById("gameEndModalContent").innerText =
@@ -247,4 +289,14 @@ function endGame() {
     (gameData.offerId = 0),
     (profession = null);
   // Return user to welcome page?
+}
+
+function updateProfessionsLS() {
+  const index = professions.findIndex((profession) => profession.id === profession.id);
+  if (professions[index].victory === 0) {
+    professions[index].victory = gameData.currentMonth;
+  } else if (professions[index].victory > gameData.currentMonth) {
+    professions[index].victory = gameData.currentMonth;
+  }
+  setLocalStorage(professions);
 }
