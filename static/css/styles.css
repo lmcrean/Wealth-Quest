@@ -207,3 +207,10 @@ button.btn-close {
 #order-input-span {
   color: var(--text-color);
 }
+
+.important-number {
+  border: var(--text-color) 0.1rem solid;
+  border-radius: 1rem;
+  padding: 0.05rem 0.5rem 0.1rem;
+  margin: 0 1rem 0 -0.6rem;
+}
