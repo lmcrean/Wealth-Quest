@@ -2,11 +2,7 @@
 
 ![Mockup](static/docs/amiresponsive.png)
 
-#### By Hackathon Team 6 (Our team names are in the acknowledgements)
-
-[Click here to view the live web application](Live link here)
-
-#### By Hackathon Team 6
+#### By Let's Keep It Simple 
 
 [Click here to view the live web application](https://lmcrean.github.io/Wealth-Quest/)
 
