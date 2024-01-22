@@ -6,19 +6,19 @@
 
 @media screen and (max-width: 768px) {
   :root {
-    --variable: 8;
+    --variable: 7;
   }
 }
 
 @media screen and (max-width: 425px) {
   :root {
-    --variable: 7;
+    --variable: 5;
   }
 }
 
 @media screen and (max-width: 375px) {
   :root {
-    --variable: 6;
+    --variable: 5;
   }
 }
 
@@ -127,7 +127,8 @@
   font-size: calc(var(--variable) * 8px);
   margin-left: calc(var(--variable) * -4px);
 
-  text-shadow: rgba(255, 255, 255, 0.1) 0px -1px 0px, rgba(0, 0, 0, 0.2) 0px 1px 0px;
+  text-shadow: rgba(255, 255, 255, 0.1) 0px -1px 0px,
+    rgba(0, 0, 0, 0.2) 0px 1px 0px;
 }
 
 #spin {
@@ -186,8 +187,8 @@
   border-radius: 50%;
 
   z-index: 999;
-  box-shadow: rgba(255, 255, 255, 1) 0px -2px 0px inset, rgba(255, 255, 255, 1) 0px 2px 0px inset,
-    rgba(0, 0, 0, 0.4) 0px 0px 5px;
+  box-shadow: rgba(255, 255, 255, 1) 0px -2px 0px inset,
+    rgba(255, 255, 255, 1) 0px 2px 0px inset, rgba(0, 0, 0, 0.4) 0px 0px 5px;
 
   background: rgb(255, 255, 255); /* Old browsers */
   background: -moz-radial-gradient(
@@ -223,7 +224,11 @@
     rgba(255, 255, 255, 1) 0%,
     rgba(234, 234, 234, 1) 100%
   ); /* IE10+ */
-  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 0%, rgba(234, 234, 234, 1) 100%); /* W3C */
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(234, 234, 234, 1) 100%
+  ); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eaeaea',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
