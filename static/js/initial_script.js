@@ -27,14 +27,26 @@ const professionCard = {
   // Assets
   savings: document.getElementById("profession-savings"),
 
-  additionalAssets: document.getElementById("profession-card-additional-assets"),
+  additionalAssets: document.getElementById(
+    "profession-card-additional-assets"
+  ),
 
   // Liabilities
-  homeMortgageLiabilities: document.getElementById("profession-card-home-mortgage-liabilities"),
-  schoolLoanLiabilities: document.getElementById("profession-card-school-loan-liabilities"),
-  carLoanLiabilities: document.getElementById("profession-card-car-loan-liabilities"),
-  creditCardLiabilities: document.getElementById("profession-card-credit-card-liabilities"),
-  retailLiabilities: document.getElementById("profession-card-retail-liabilities"),
+  homeMortgageLiabilities: document.getElementById(
+    "profession-card-home-mortgage-liabilities"
+  ),
+  schoolLoanLiabilities: document.getElementById(
+    "profession-card-school-loan-liabilities"
+  ),
+  carLoanLiabilities: document.getElementById(
+    "profession-card-car-loan-liabilities"
+  ),
+  creditCardLiabilities: document.getElementById(
+    "profession-card-credit-card-liabilities"
+  ),
+  retailLiabilities: document.getElementById(
+    "profession-card-retail-liabilities"
+  ),
 
   bankLiabilities: document.getElementById("profession-card-bank-loan"),
 };
@@ -114,7 +126,10 @@ fetch("static/game_data/professions.json")
   .then((json) => {
     professions = json;
     if (!getLocalStorage()) {
-      storedProfessions = professions.map(({ id, victory }) => ({ id, victory }));
+      storedProfessions = professions.map(({ id, victory }) => ({
+        id,
+        victory,
+      }));
     } else {
       storedProfessions = getLocalStorage();
     }
@@ -147,7 +162,9 @@ function createProfessionCarousel() {
   professions.forEach((profession, index) => {
     const isActive = index === 0 ? "active" : "";
     const carouselItem = `
-          <div class="carousel-item ${isActive}" data-profession-id="${profession.id}">
+          <div class="carousel-item ${isActive}" data-profession-id="${
+      profession.id
+    }">
             <h5>${profession.profession}</h5>
             <p>Salary: £${profession.incomes.salary}</p>
             <p>Total Expenses: £${calculateTotalExpenses(profession)}</p>
@@ -165,7 +182,8 @@ function createProfessionCarousel() {
 
 // Sets up initial bank rate for display
 function setInitialBankRate() {
-  document.getElementById("bank-rate").textContent = gameData.bankLoanProcentage;
+  document.getElementById("bank-rate").textContent =
+    gameData.bankLoanProcentage;
 }
 
 setInitialBankRate();
@@ -202,7 +220,9 @@ function checkForGameEnd() {
 function win() {
   updateProfessionsLS();
   // Get the modal element
-  const gameEndModal = new bootstrap.Modal(document.getElementById("gameEndModal"));
+  const gameEndModal = new bootstrap.Modal(
+    document.getElementById("gameEndModal")
+  );
 
   // Change the modal title and content
   document.getElementById("gameEndModalLabel").innerText = "Congratulations!";
@@ -249,12 +269,13 @@ function endGame() {
     (gameData.bankLoanProcentage = 10),
     (gameData.offerId = 0),
     (profession = null);
-  // Return user to welcome page?
 }
 
 function updateProfessionsLS() {
   if (storedProfessions) {
-    const index = storedProfessions.findIndex((person) => person.id === profession.id);
+    const index = storedProfessions.findIndex(
+      (person) => person.id === profession.id
+    );
     if (storedProfessions[index].victory === 0) {
       storedProfessions[index].victory = gameData.currentMonth;
     } else if (storedProfessions[index].victory > gameData.currentMonth) {
@@ -265,3 +286,7 @@ function updateProfessionsLS() {
     console.error("No professions found in local storage");
   }
 }
+
+document.getElementById("exit").addEventListener("click", function () {
+  location.reload();
+});
