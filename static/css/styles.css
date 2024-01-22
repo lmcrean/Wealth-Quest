@@ -239,7 +239,7 @@ header img {
   margin: auto;
 }
 
-main {
+#game-components {
   padding: 15px;
   width: 60%;
   margin: auto;
@@ -262,4 +262,7 @@ main {
 
 #main-current-card-button {
   width: 200px;
+}
+
+@media only screen and (max-width: 1450px) {
 }
