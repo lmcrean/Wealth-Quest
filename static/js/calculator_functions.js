@@ -23,7 +23,10 @@ function calculateTotalIncome(profession) {
 // call this function when player interest and real estate changes
 function calculatePassiveIncome(profession) {
   if (profession.additionalAssets) {
-    const totalPassiveIncome = profession.additionalAssets.reduce((total, asset) => total + asset.passive_income, 0);
+    const totalPassiveIncome = profession.additionalAssets.reduce(
+      (total, asset) => total + asset.passive_income,
+      0
+    );
     profession.incomes.realEstate = totalPassiveIncome;
   }
   let totalPasiveIncome = profession.incomes.realEstate;
@@ -35,7 +38,8 @@ function childrenCountChange(value) {
   if (profession.childrenCount < 3) {
     profession.childrenCount += value;
   }
-  profession.expenses.child = profession.perChildExpense * profession.childrenCount;
+  profession.expenses.child =
+    profession.perChildExpense * profession.childrenCount;
 }
 
 function calculateProgressBar() {
@@ -107,13 +111,17 @@ function lifeEvent() {
     const event = choseRandomEvent(childEvents);
     profession.assets.saving += event.amount_loss;
     cardTitleValue = event.description;
-    cardDescriptionValue = `You lost ${Math.abs(event.amount_loss)} from your savings, your new total savings is £${
+    cardDescriptionValue = `You lost ${Math.abs(
+      event.amount_loss
+    )} from your savings, your new total savings is £${
       profession.assets.saving
     }`;
   } else {
     profession.assets.saving += deal.ammount_change;
     cardTitleValue = deal.description;
-    cardDescriptionValue = `You ${deal.ammount_change < 0 ? "lost" : "gain"} £${Math.abs(deal.ammount_change)} ${
+    cardDescriptionValue = `You ${
+      deal.ammount_change < 0 ? "lost" : "gain"
+    } £${Math.abs(deal.ammount_change)} ${
       deal.ammount_change < 0 ? "from" : "towards"
     } your savings, your new total savings is £${profession.assets.saving}`;
   }
@@ -305,11 +313,13 @@ function opportunity() {
 
   switch (dealType) {
     case "property":
-      dealChangedCost = Math.round(radnomInt(deal.min_resell, deal.max_resell) / 100) * 100;
+      dealChangedCost =
+        Math.round(radnomInt(deal.min_resell, deal.max_resell) / 100) * 100;
       cardDetails = propertyOpportunity(deal, dealChangedCost);
       break;
     case "business":
-      dealChangedCost = Math.round(radnomInt(deal.min_resell, deal.max_resell) / 100) * 100;
+      dealChangedCost =
+        Math.round(radnomInt(deal.min_resell, deal.max_resell) / 100) * 100;
       cardDetails = businessOpportunity(deal, dealChangedCost);
       break;
     case "stocks":
@@ -345,12 +355,18 @@ function opportunity() {
 function propertyOpportunity(deal, dealChangedCost) {
   deal.newPrice = dealChangedCost;
   const dealchange = dealChangedCost - deal.initial_cost;
-  const cardTitleValue = `${deal.title} - ${dealchange > 0 ? "Rising" : "Falling apart"}?`;
-  const cardDescription1 = `You can sell your property to for £${Math.abs(dealChangedCost)}`;
+  const cardTitleValue = `${deal.title} - ${
+    dealchange > 0 ? "Rising" : "Falling apart"
+  }?`;
+  const cardDescription1 = `You can sell your property to for £${Math.abs(
+    dealChangedCost
+  )}`;
   const cardDescription2 = `ROI: ${deal.resell_roi}%, May sell later for: £${deal.min_resell} to £${deal.max_resell}.`;
   const cardInitialCost = `Bought for:\n£${deal.initial_cost}`;
   const cardDownpay = `Downpay:\n£${deal.down_pay}`;
-  const cardMortgage = `Total Profit:\n£${dealChangedCost - (deal.initial_cost - deal.down_pay)}`;
+  const cardMortgage = `Total Profit:\n£${
+    dealChangedCost - (deal.initial_cost - deal.down_pay)
+  }`;
   const passiveIncome = `Passive Income loss:\n-£${deal.passive_income}`;
 
   const values = [
@@ -369,12 +385,18 @@ function propertyOpportunity(deal, dealChangedCost) {
 function businessOpportunity(deal, dealChangedCost) {
   deal.newPrice = dealChangedCost;
   const dealchange = dealChangedCost - deal.initial_cost;
-  const cardTitleValue = `${deal.title} - ${dealchange > 0 ? "Rising" : "Falling apart"}?`;
-  const cardDescription1 = `You can sell your business to for £${Math.abs(dealChangedCost)}`;
+  const cardTitleValue = `${deal.title} - ${
+    dealchange > 0 ? "Rising" : "Falling apart"
+  }?`;
+  const cardDescription1 = `You can sell your business to for £${Math.abs(
+    dealChangedCost
+  )}`;
   const cardDescription2 = `ROI: ${deal.resell_roi}%, May sell later for: £${deal.min_resell} to £${deal.max_resell}.`;
   const cardInitialCost = `Bought for:\n£${deal.initial_cost}`;
   const cardDownpay = `Downpay:\n£${deal.down_pay}`;
-  const cardMortgage = `Total Profit:\n£${dealChangedCost - (deal.initial_cost - deal.down_pay)}`;
+  const cardMortgage = `Total Profit:\n£${
+    dealChangedCost - (deal.initial_cost - deal.down_pay)
+  }`;
   const passiveIncome = `Passive Income loss:\n-£${deal.passive_income}`;
 
   const values = [
@@ -398,10 +420,15 @@ function stocksOpportunity(deal, dealChangedCost) {
   const dealchange = dealChangedCost - deal.initial_cost;
 
   const totalStocksValue = dealChangedCost * deal.additionalAmount;
-  const totalProfitValue = totalStocksValue - deal.initial_cost * deal.additionalAmount;
+  const totalProfitValue =
+    totalStocksValue - deal.initial_cost * deal.additionalAmount;
 
-  const cardTitleValue = `${deal.title} - ${dealchange > 0 ? "Rising" : "Falling apart"}?`;
-  const cardDescription1 = `You can sell your stocks to for £${Math.abs(dealChangedCost)} each`;
+  const cardTitleValue = `${deal.title} - ${
+    dealchange > 0 ? "Rising" : "Falling apart"
+  }?`;
+  const cardDescription1 = `You can sell your stocks to for £${Math.abs(
+    dealChangedCost
+  )} each`;
   const cardDescription2 = `ROI: ${deal.resell_roi}%, May sell later for: £${deal.min_resell} to £${deal.max_resell} each.`;
   const cardInitialCost = `Bought for:\n£${deal.initial_cost} each`;
   const cardDownpay = `Total Stocks owned:\n${deal.additionalAmount}`;
@@ -425,8 +452,10 @@ function stocksOpportunity(deal, dealChangedCost) {
 function acceptOffer() {
   if (gameData.dealorOpportunity === "deal") {
     acceptDeal();
+    closeAllModals();
   } else if (gameData.dealorOpportunity === "opportunity") {
     acceptOpportunity();
+    closeAllModals();
   } else {
     alert("Something went wrong");
   }
@@ -457,7 +486,9 @@ function acceptDeal() {
     profession.assets.saving -= deal.down_pay * acceptedValue;
 
     // check if deal is already in additional assets array
-    const originalDeal = profession.additionalAssets.find((original) => original.id === deal.id);
+    const originalDeal = profession.additionalAssets.find(
+      (original) => original.id === deal.id
+    );
     if (originalDeal) {
       originalDeal.additionalAmount += acceptedValue;
       return;
@@ -506,7 +537,8 @@ function acceptOpportunity() {
       deals.push(deal);
       removeDealById(profession.additionalAssets, deal.id);
     } else {
-      if (deal.additionalAmount === 0) removeDealById(profession.additionalAssets, deal.id);
+      if (deal.additionalAmount === 0)
+        removeDealById(profession.additionalAssets, deal.id);
     }
 
     if (profession.additionalAssets.length == 0) {
@@ -535,4 +567,9 @@ function removeDealById(dealsArray, targetId) {
 function setMinMaxValues(max) {
   orderCountInput.max = max;
   orderCountInput.value = max;
+}
+
+// Function to close all modals
+function closeAllModals() {
+  $(".modal").modal("hide");
 }
