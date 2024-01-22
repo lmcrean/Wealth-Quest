@@ -240,7 +240,30 @@ This website used a combination of three different Front-End development languag
 
 Due to the limited time frame of this hackathon (5 days), we decided to focus mainly on manual testing. If we had a longer time frame, we would have also undergone automated testing.
 
-#### Browser Compatibility
+### Testing User Stories
+
+We manually tested all of the features on the site, including responsiveness and functionality. Please see results below:
+
+| # | Feature | Expected Outcome | Testing Performed | Pass/Fail |
+| :---: | :--- | :---: | :---: | :---: |
+| | Navigation | | | |
+| 1 | Navbar | The navigation bar should stay fixed at the top even when you scroll down or up | Scroll up the page manually, and observe. The navigation bar should stay at the viewpoint. | ✅ |
+| 2 | Navbar Responsiveness | The sticky navigation bar smoothly transitions into the hamburger menu when the screen size is reduced. | Manually resize the browser window or use developer tools to simulate a smaller screen. Open the hamburger menu and click on menu items. Confirm that the navigation functions correctly | ✅ |
+| 3 | Navbar buttons | Should display all buttons needed for the game | Check if buttons are visual on all screens | ✅ |
+| | Game Play | | | |
+| 4 | Spinning Wheel moving | The spinning wheel should spin when clicked in the center | Click to see if the spinning wheel spins | ✅ |
+| 5 | Choose Profession | Modal should pop up for user to choose their profession | Click and select a profession and check that the financial statement updates | ✅ |
+| 6 | Instructions | User can go through instructions easily and learn how to play | Check instructions and read through if they are clear | ✅ |
+| | Cards | | | |
+| 7 | Deal Card | Deal Card modal should pop up after a player lands on the deal part of the spinning wheel | Check that player lands on deal card and modal pops up with life scenario | ✅ |
+| 8 | Life Happening Card | Life Happenings modal should pop up after a player lands on this part of the spinning wheel | Check that player lands on life happenings card and modal pops up with life scenario | ✅ |
+| 9 | Payday | Payday Card modal should pop up after a player lands on this part of the spinning wheel, or every third turn | Check that player lands on payday and modal pops up with payday information | ✅ |
+| 10 | Accept or reject deal buttons | Player has the option of accepting or rejecting the deal, depending on how much money they have | Click ""Accept"" and ""Reject"" and ensure that the financial statement is updated appropriately | ✅ |
+| | Winning the Game | | | |
+| 11 | Winning the game | Player should win the game when their passive income > total expenses | Play the full game and show screen that player wins after playing | ✅ |
+| 12 | Losing the game | The player cannot lose the game, but the game will not end or break until they win | Play the full game and check that game does not end until the player wins | ✅ |
+
+### Browser Compatibility
 
 The site was tested on the following browsers, with no browser-specific bugs detected.
 
@@ -248,7 +271,7 @@ The site was tested on the following browsers, with no browser-specific bugs det
 - Mozilla Firefox
 - Apple Safari
 
-#### Responsiveness/Device Testing
+### Responsiveness/Device Testing
 
 The game was tested on the following devices:
 
@@ -311,6 +334,12 @@ The project will now be cloned locally for you to use.
 
 ### Acknowledgements
 
-- Our Hackathon Team: - Laurie: Scrum Master, Frontend design, Testing - Sian: Databases, Flowchart, Backend Functionality, Testing - Lauren: Databases, Readme, Flowchart, Testing - Erik: JavaScript Backend Functionality, Databases, Testing - Renwar: Wireframes, Frontend design
-  We had great fun making this project together and learnt a lot through the experience.
+- Our Hackathon Team: 
+  - Laurie: Scrum Master, Frontend design, Testing 
+  - Sian: Databases, Flowchart, Backend Functionality, Testing 
+  - Lauren: Databases, Readme, Flowchart, Testing
+  - Erik: JavaScript Backend Functionality, Databases, Testing
+  - Renwar: Wireframes, Frontend design
+  
+- We had great fun making this project together and learnt a lot through the experience.
 - The whole hackathon team at [Code Institute](https://codeinstitute.net/) for their teaching and support.
