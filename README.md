@@ -34,18 +34,8 @@ This is the documentation for our website: A financial game inspired the origina
    - [Tools](#tools)
 3. [Features](#features)
    - [Whole Site](#whole-site)
-     - [Favicon](#favicon)
-     - [Footer](#footer)
-   - [Other Pages](#other-pages)
-     - [404 page](#404-page)
    - [Future Features](#future-features)
 4. [Testing](#testing)
-   - [Automated Testing](#automated-testing)
-     - [HTML Validator Testing](#html-validator-testing)
-     - [CSS Validator Testing](#css-validator-testing)
-     - [JS Validator Testing](#js-validator-testing)
-     - [Accessibility](#accessibility)
-     - [Performance](#performance)
    - [Manual Testing](#manual-testing)
      - [Responsiveness / Device Testing](#responsiveness-/-device-testing)
      - [Browser Compatibility](#browser-compatibility)
@@ -138,6 +128,83 @@ _Colour Palette for entire website_
 
 Our choice of font was [Roboto](https://fonts.google.com/specimen/Roboto). The light font was used for all paragraphs and and the bold font was used for all headings and buttons. This font choice was imported from [Google Fonts](https://fonts.google.com/) and had a backup font of Serif. We chose this font for my website because the style contributed to the financial game theme, whilst also providing a professional, legible finish.
 
+## Features
+
+Our game is only one page, with JavaScript functionality that either hides or shows screens as the game progresses.
+
+### Instructions and How to Play modal
+
+Before the user can start the game, they need to first read through all of the instructions to understand how the game works. After that they will choose their profession. 
+
+#### How to win
+
+In order to win the game, the player must make their passive income higher than their expenses. They should reach the goal of letting their passive income pay off all of their debts so they no longer need to work.
+
+<details><summary>Screenshots</summary>
+
+<img src="static/docs/instructions.png">
+
+_Instructions_
+
+</details>
+
+### Navbar
+
+The navbar shows all of the game's main features, including the progress bar, start game button, instructions button and more.
+
+<details><summary>Screenshots</summary>
+
+<img src="static/docs/navbar_progress.png">
+
+_Navbar_
+
+</details>
+
+### Spinning Wheel
+
+The spinning wheel is the main element of the game. Here the user clicks the middle of the spinwheel, and the spinwheel shows the player which card they have been drawn. Details of the cards drawn are explained below.
+
+<details><summary>Screenshots</summary>
+
+<img src="static/docs/spinwheel.png">
+
+_Spinning Wheel_
+
+</details>
+
+### Cards: Deals, life happenings and Paydays
+
+After spinning the wheel, the user will land on 1 of 3 cards:
+- Deals
+  - Here the user will be given a deal, e.g. "You have been given the option of investing in a new property", with the option to accept or reject the offer.
+  - Note: The user cannot accept an offer if they do not have enough money.
+- Life Happenings
+  - Here the user will get either a positive or negative life happening, e.g. "A failed investment" or "A Birthday gift".
+  - Money varies depending on the life happening, but this will affect outcome of the financial statement.
+- Paydays
+  - The user will get a payday or salary every third turn, so they are getting continuous income. 
+
+<details><summary>Screenshots</summary>
+
+<img src="static/docs/deal.png">
+<img src="static/docs/borrow_bank.png">
+
+_Deals_
+
+</details>
+
+### Financial Statement
+
+This is a summary of the user's finances and gets updated throughout the game as the player gets cards.
+
+<details><summary>Screenshots</summary>
+
+<img src="static/docs/financial_statement.png">
+
+_Deals_
+
+</details>
+
 ## Technologies Used
 
 This website used a combination of three different Front-End development languages, as well as some web tools for the initial planning. A list of those included in the project can be seen as follows:
@@ -172,12 +239,6 @@ This website used a combination of three different Front-End development languag
 ## Testing
 
 Due to the limited time frame of this hackathon (5 days), we decided to focus mainly on manual testing. If we had a longer time frame, we would have also undergone automated testing.
-
-#### HTML Validator Testing
-
-#### CSS Validator Testing
-
-#### JS Validator Testing
 
 #### Browser Compatibility
 
