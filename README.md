@@ -132,7 +132,9 @@ Our choice of font was [Roboto](https://fonts.google.com/specimen/Roboto). The l
 
 Our game is only one page, with JavaScript functionality that either hides or shows screens as the game progresses.
 
-### Instructions and How to Play modal
+### Whole Site
+
+#### Instructions and How to Play modal
 
 Before the user can start the game, they need to first read through all of the instructions to understand how the game works. After that they will choose their profession. 
 
@@ -148,7 +150,7 @@ _Instructions_
 
 </details>
 
-### Navbar
+#### Navbar
 
 The navbar shows all of the game's main features, including the progress bar, start game button, instructions button and more.
 
@@ -160,7 +162,7 @@ _Navbar_
 
 </details>
 
-### Spinning Wheel
+#### Spinning Wheel
 
 The spinning wheel is the main element of the game. Here the user clicks the middle of the spinwheel, and the spinwheel shows the player which card they have been drawn. Details of the cards drawn are explained below.
 
@@ -172,7 +174,7 @@ _Spinning Wheel_
 
 </details>
 
-### Cards: Deals, life happenings and Paydays
+#### Cards: Deals, life happenings and Paydays
 
 After spinning the wheel, the user will land on 1 of 3 cards:
 - Deals
@@ -193,7 +195,7 @@ _Deals_
 
 </details>
 
-### Financial Statement
+#### Financial Statement
 
 This is a summary of the user's finances and gets updated throughout the game as the player gets cards.
 
@@ -204,6 +206,14 @@ This is a summary of the user's finances and gets updated throughout the game as
 _Deals_
 
 </details>
+
+### Future Features
+
+Given the time restriction of this project, we could not achieve everything we wanted to. However, if given more time and resources, here are the following future features we thought of:
+
+1. A sign up and login page so users can see their game history
+2. Levels of difficulty which will affect how easy or difficult it is for the player to win
+3. Characters that are graphically designed and animated so the player feels more connected with the profession they chose
 
 ## Technologies Used
 
