@@ -248,3 +248,18 @@ main {
 .img-container {
   display: flex;
 }
+
+#main-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 20px !important;
+}
+
+#main-how-to-play-button {
+  width: 100%;
+}
+
+#main-current-card-button {
+  width: 200px;
+}

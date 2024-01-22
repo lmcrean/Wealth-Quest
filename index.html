@@ -47,6 +47,10 @@
     </nav>
   </header>
   <main>
+    <button id="main-how-to-play-button" type="button" class="btn btn-primary" data-bs-toggle="modal"
+      data-bs-target="#gameInstructionsModal">
+      How to Play
+    </button>
     <div class="container">
       <div class="row">
         <!-- progress Bar -->
@@ -61,18 +65,18 @@
 
       <!--CATEGORIES: 3 cards-->
       <!-- Buttons to trigger modals -->
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#financialStatementModal">
-        Financial Statement
-      </button>
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#gameInstructionsModal">
-        How to Play
-      </button>
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#randomCardModal">
-        Latest event
-      </button>
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#borrowFromTheBankModal">
-        Bank <br>Loan
-      </button>
+      <div id="main-buttons">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#financialStatementModal">
+          Financial Statement
+        </button>
+        <button id="main-current-card-button" type="button" class="btn btn-primary" data-bs-toggle="modal"
+          data-bs-target="#randomCardModal">
+          View My Current Card
+        </button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#borrowFromTheBankModal">
+          Bank <br>Loan
+        </button>
+      </div>
 
       <!-- Game end modal -->
       <div class="modal fade" id="gameEndModal">
