@@ -32,7 +32,7 @@
 
   <link rel="stylesheet" href="static/css/game_board.css">
   <link rel="stylesheet" href="static/css/spin.css">
-  
+
 
   <script src="https://kit.fontawesome.com/c7515a9d31.js" crossorigin="anonymous"></script>
 </head>
@@ -106,12 +106,14 @@
             </div>
             <div class="col">
               <h3 id="profession-card-name" class="text-center">Profession: ???</h3>
-              <div class="text-center"> <p id="payday-card"></p></div>
+              <div class="text-center">
+                <p id="payday-card"></p>
+              </div>
             </div>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body" id="financialStatementModalContent">
-      
+
             <!-- Income tab -->
             <div id="income-section-container" class="finance-section-container">
               <!-- Income Heading with Tooltip -->
@@ -139,7 +141,7 @@
                   <div id="salaryTooltip" class="tooltip-box">Salary is the income you get from your profession.</div>
                   <p id="profession-card-salary">0</p>
                 </div>
-      
+
                 <div class="d-flex justify-content-between">
                   <!-- Passive Income Heading with Tooltip -->
                   <p class="important-number">
@@ -393,7 +395,8 @@
                           class="fa-regular fa-circle-question"></i></span>
                     </p>
                     <!-- Tooltip for Monthly Cash Flow -->
-                    <div id="monthlyCashFlowTooltip" class="tooltip-box">What is this?</div>
+                    <div id="monthlyCashFlowTooltip" class="tooltip-box">This is your total income with total expenses
+                      subtracted. This number will be added to your bank balance.</div>
                     <p id="profession-card-monthly-cashflow">0</p>
                   </div>
                 </div>
@@ -416,7 +419,7 @@
                   happenings.
                 </div>
               </div>
-             
+
               <div id="assets-content-container">
                 <div id="assets-breakdown-container">
                   <div class="d-flex justify-content-between">
@@ -439,7 +442,7 @@
                 </div>
               </div>
             </div>
-             <hr>
+            <hr>
             <!-- Liabilities tab -->
             <div id="liabilities-section-container" class="finance-section-container">
               <!-- Assets Heading with Tooltip -->
@@ -841,31 +844,31 @@
     </div>
 
     <div id="wrapper">
-            
-        <div id="wheel">
-            <div id="inner-wheel">
-                <div class="sec"><i class="fa-sp fa-solid fa-handshake-simple"></i></div>
-                <div class="sec"><i class="fa-sp fa-solid fa-sack-dollar"></i></div>
-                <div class="sec"><i class="fa-sp fa-solid fa-arrows-spin"></i></div>
-                <div class="sec"><i class="fa-sp fa-solid fa-boxes-stacked"></i></div>
-                <div class="sec"><i class="fa-sp fa-solid fa-sack-dollar"></i></div>
-                <div class="sec"><i class="fa-sp fa-solid fa-arrows-spin"></i></div>
-            </div>       
-           
-            <button id="spin" onclick="selectRandomEvent()" id="roll-dice-btn">
-                <div  class="inner-spin" id="roll-dice-btn"></div>
-            </button>
-            
-            <div id="shine"></div>
+
+      <div id="wheel">
+        <div id="inner-wheel">
+          <div class="sec"><i class="fa-sp fa-solid fa-handshake-simple"></i></div>
+          <div class="sec"><i class="fa-sp fa-solid fa-sack-dollar"></i></div>
+          <div class="sec"><i class="fa-sp fa-solid fa-arrows-spin"></i></div>
+          <div class="sec"><i class="fa-sp fa-solid fa-boxes-stacked"></i></div>
+          <div class="sec"><i class="fa-sp fa-solid fa-sack-dollar"></i></div>
+          <div class="sec"><i class="fa-sp fa-solid fa-arrows-spin"></i></div>
         </div>
-        
-        
-        <div id="txt"></div>
-  </div>
-    
+
+        <button id="spin" onclick="selectRandomEvent()" id="roll-dice-btn">
+          <div class="inner-spin" id="roll-dice-btn"></div>
+        </button>
+
+        <div id="shine"></div>
+      </div>
+
+
+      <div id="txt"></div>
+    </div>
+
     <!-- Main script -->
-    
-    
+
+
 
     <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
@@ -876,7 +879,7 @@
     <script defer src="static/js/how_to_play.js"></script>
     <script defer src="static/js/tooltips.js"></script>
     <script defer src="static/js/spin.js"></script>
-    
+
     <script defer src="static/js/welcome_modal.js"></script>
 
     <!-- Bootstrap -->

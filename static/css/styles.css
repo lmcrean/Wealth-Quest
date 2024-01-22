@@ -79,7 +79,8 @@ h6 {
   background-color: var(--secondary-color) !important;
 }
 .modal-header,
-.modal-footer {
+.modal-footer,
+.modal-content {
   background-color: var(--secondary-color) !important;
   color: var(--text-color) !important;
 }
@@ -213,4 +214,9 @@ button.btn-close {
   border-radius: 1rem;
   padding: 0.05rem 0.5rem 0.1rem;
   margin: 0 1rem 0 -0.6rem;
+}
+
+#financialStatementModalContent {
+  width: 550px;
+  margin: auto;
 }
