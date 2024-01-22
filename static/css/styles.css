@@ -221,11 +221,6 @@ button.btn-close {
   margin: auto;
 }
 
-#progress-bar-container {
-  width: 500px;
-  margin: auto;
-}
-
 #footer {
   display: flex;
   flex-direction: row;
@@ -246,6 +241,8 @@ header img {
 
 main {
   padding: 15px;
+  width: 60%;
+  margin: auto;
 }
 
 .img-container {
