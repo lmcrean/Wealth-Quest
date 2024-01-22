@@ -290,3 +290,7 @@ function updateProfessionsLS() {
 document.getElementById("exit").addEventListener("click", function () {
   location.reload();
 });
+
+document.getElementById("tryAgain").addEventListener("click", function () {
+  location.reload();
+});
