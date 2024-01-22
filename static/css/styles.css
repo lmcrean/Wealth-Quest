@@ -79,7 +79,8 @@ h6 {
   background-color: var(--secondary-color) !important;
 }
 .modal-header,
-.modal-footer {
+.modal-footer,
+.modal-content {
   background-color: var(--secondary-color) !important;
   color: var(--text-color) !important;
 }
@@ -213,4 +214,61 @@ button.btn-close {
   border-radius: 1rem;
   padding: 0.05rem 0.5rem 0.1rem;
   margin: 0 1rem 0 -0.6rem;
+}
+
+#financialStatementModalContent {
+  width: 550px;
+  margin: auto;
+}
+
+#footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+header {
+  height: 80px;
+  position: relative;
+}
+
+header img {
+  height: 80px;
+  padding: 5px;
+  margin: auto;
+}
+
+#game-components {
+  padding: 15px;
+  width: 60%;
+  margin: auto;
+}
+
+.img-container {
+  display: flex;
+}
+
+#main-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 20px !important;
+}
+
+#main-how-to-play-button {
+  width: 100%;
+}
+
+#main-current-card-button {
+  width: 200px;
+}
+
+#event-card {
+  min-width: 200px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
