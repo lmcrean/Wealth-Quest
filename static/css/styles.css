@@ -220,3 +220,34 @@ button.btn-close {
   width: 550px;
   margin: auto;
 }
+
+#progress-bar-container {
+  width: 500px;
+  margin: auto;
+}
+
+#footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+header {
+  height: 80px;
+  position: relative;
+}
+
+header img {
+  height: 80px;
+  padding: 5px;
+  margin: auto;
+}
+
+main {
+  padding: 15px;
+}
+
+.img-container {
+  display: flex;
+}
