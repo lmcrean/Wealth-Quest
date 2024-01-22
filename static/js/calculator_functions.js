@@ -77,7 +77,7 @@ function payday() {
 
   // Add information to the card
   const cardTitle = document.createElement("h2");
-  cardTitle.textContent = "Congradulations you got paid!";
+  cardTitle.textContent = "Congratulations you got paid!";
   card.appendChild(cardTitle);
 
   // Add information to the card
@@ -102,7 +102,7 @@ function lifeEvent() {
   if (deal.id === 0 && profession.childrenCount < 3) {
     profession.childrenCount += 1;
     cardTitleValue = `It is a ${Math.random() < 0.5 ? "boy" : "girl"}!`;
-    cardDescriptionValue = `Congradulations! You just had a newborn!`;
+    cardDescriptionValue = `Congratulations! You just had a newborn!`;
   } else if (deal.id === 0 && profession.childrenCount === 3) {
     const event = choseRandomEvent(childEvents);
     profession.assets.saving += event.amount_loss;
