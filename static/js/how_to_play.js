@@ -13,9 +13,7 @@ function changeStep(step) {
   if (currentStep < 1) {
     currentStep = 1; // prevent going below the first step
   } else if (currentStep === totalSteps) {
-    document.getElementById("nextStep").textContent = "Start Game";
-    document.getElementById("nextStep").disabled = false; // Enable the button
-    document.getElementById("nextStep").onclick = startGame; // Assign the startGame function to the onclick event
+    document.getElementById("nextStep").disabled = true; // Disable the button
   } else if (currentStep > totalSteps) {
     currentStep = totalSteps; // prevent going above the last step
   }
@@ -31,15 +29,10 @@ function changeStep(step) {
   document.getElementById("prevStep").disabled = currentStep === 1;
 
   // Change the "Next" button to "Start Game" on the final step
-  if (currentStep === totalSteps) {
-    document.getElementById("nextStep").textContent = "Start Game";
-    document.getElementById("nextStep").onclick = startGame; // Assign the startGame function to the onclick event
-  } else {
-    document.getElementById("nextStep").textContent = "Next";
-    document.getElementById("nextStep").onclick = function () {
-      changeStep(1);
-    };
-  }
+  document.getElementById("nextStep").textContent = "Next";
+  document.getElementById("nextStep").onclick = function () {
+    changeStep(1);
+  };
 }
 
 function updateProgressBar() {
@@ -47,12 +40,6 @@ function updateProgressBar() {
   var progressBar = document.getElementById("progressBar");
   progressBar.style.width = progress + "%";
   progressBar.ariaValueNow = progress;
-}
-
-function startGame() {
-  // close the modal
-  var modal = document.getElementById("howToPlayModal");
-  $("#gameInstructionsModal").modal("hide");
 }
 
 // Initialize the modal with the first step visible and correct progress bar
