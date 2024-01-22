@@ -200,7 +200,7 @@ function barrowFromBank() {
     profession.assets.saving += bankLoan;
 
     finishTurn();
-    alert(`You have barrowed from bank ${bankLoan}.`);
+    alert(`You have borrowed £ ${bankLoan} from the bank .`);
   } else {
     alert("Please enter a valid multiple of 100.");
   }
