@@ -114,7 +114,7 @@ button.btn-close {
 
 .tooltip-box {
   display: none;
-				color: black;
+  color: black;
   position: absolute;
   background-color: white;
   border: 1px solid #ddd;
@@ -272,4 +272,32 @@ header img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  margin-top: auto;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+#footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.footer-section {
+  margin: 0;
 }
